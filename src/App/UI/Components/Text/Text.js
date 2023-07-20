@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextApp = ({inputText}) => {
   return (
-    <div>{inputText}</div>
+    <div><p>{inputText}</p></div>
   )
 }
 
