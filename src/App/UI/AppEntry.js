@@ -1,10 +1,9 @@
 import React from 'react';
+import Navbar from './Components/Navbar/Navbar';
 
 const AppEntry = () => {
   return (
-    <View>
-      <Text>This is where the main app Begins</Text>
-    </View>
+    <Navbar/>
   )
 }
 
