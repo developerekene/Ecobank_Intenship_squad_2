@@ -43,7 +43,7 @@
 }
 @media (min-width:670px) {
     .nav-item-container .nav-links div p:hover{
-        color:#FF7A00;
+        color: #FF7A00;
         cursor: pointer;
     }
     

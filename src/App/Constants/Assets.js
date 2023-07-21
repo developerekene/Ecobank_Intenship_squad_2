@@ -1,5 +1,12 @@
+import darkModeLogo from "../Image/svg/IlinkLogo-darkmode.svg"
+import lightModeLogo from "../Image/svg/IlinkLogo-lightmode.svg"
 export const Assets = {
-  images: {},
+  images: {
+    "logo-lightmode":lightModeLogo,
+    "logo-darkmode": darkModeLogo
+  },
   sizes: {},
-  colors: {},
+  colors: {
+    "primaryColor":"#FF7A00", 
+  }
 };

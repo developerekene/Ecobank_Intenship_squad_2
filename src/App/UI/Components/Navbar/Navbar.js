@@ -3,13 +3,14 @@ import "../Navbar/Navbar.css";
 import TextApp from '../Text/Text';
 import {navLinks} from '../../../Constants/data'
 import { HiMenu, HiX } from "react-icons/hi";
-import iLinkLogo from "../../../Image/svg/IlinkLogo-darkmode.svg"
+import { Assets } from '../../../Constants/Assets';
 
 const Navbar = () => {
+  
   const [openNav, setOpenNav] = useState(false)
   return (
     <div className='nav-item-container'>
-      <img src={iLinkLogo} height={"60px"} alt="iLinkLogo" />
+      <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
       <div className="nav-links">
         {
           navLinks.map((item)=>{
