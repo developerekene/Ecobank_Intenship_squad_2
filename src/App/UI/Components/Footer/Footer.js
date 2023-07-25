@@ -5,27 +5,27 @@ import './Footer.css';
 
 const Footer=()=>{
     return(
-    <div className="Footer">
+    <Footer className="Footer">
         <div className="sb__Footer section_padding">
          <div className="sb__Footer-links"> 
             <div  className="sb__Footer-links-div">
                 <h4>For Business</h4> 
-                <a href=""></a>
+                <a href="#"></a>
                 <p> Partnership</p>
 
-                <a href=""></a>
+                <a href="#"></a>
                 <p>Advertise</p>
             </div> 
 
             <div className="sb__Footer-links-div">
                <h4>Company</h4>
-               <a href=""></a>
+               <a href="#"></a>
                <p>Developers</p>
 
-               <a href=""></a>
+               <a href="#"></a>
                <p>About</p> 
                
-               <a href=""></a>
+               <a href="#"></a>
                <p>Contact</p>
                 </div>      
          </div>
@@ -46,14 +46,14 @@ const Footer=()=>{
                 </p>
             </div>
             <div className="sb__Footer-below-links">
-                <a href><p>Privacy</p></a>
+                <a href="#"><p>Privacy</p></a>
             </div>
          </div>
 
 
 
         </div>
-    </div>
+    </Footer>
     )
 }
  export default Footer;
