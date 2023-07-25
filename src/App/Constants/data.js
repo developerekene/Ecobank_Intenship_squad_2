@@ -19,5 +19,20 @@ export const navLinks = [
     },
     {
         title: "Register",
+    }
+]
+
+export const footerLinks = [
+    {
+        header: "For Business",
+        links : ["Partnership","Advertise"]
     },
+    {
+        header: "Company",
+        links : ["Developer","About","Contact","Privacy"]
+    },
+    {
+        header:"Partners",
+        links: ["Ecobank Nigeria","E-Process","Google"]
+    }
 ]
