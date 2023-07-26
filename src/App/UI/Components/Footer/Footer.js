@@ -19,7 +19,7 @@ const Footer=()=>{
                 <h4>{item.header}</h4>
                 <div>
                   {
-                  item.links.map((el)=>(<a href="#" >{el}</a>))
+                  item.links.map((el)=>(<a href="#" >{el.link}</a>))
                   }
                 </div>
               </div>

@@ -1,6 +1,8 @@
 export const navLinks = [
     {
         title: "features",
+        href: "/features",
+        color: "#000000",
     },
     {
         title: "UseCase",
@@ -25,14 +27,23 @@ export const navLinks = [
 export const footerLinks = [
     {
         header: "For Business",
-        links : ["Partnership","Advertise"]
+        links : [
+            {link:"Partnership"},
+            {link:"Advertise"}
+        ]
+            
     },
     {
-        header: "Company",
-        links : ["Developer","About","Contact","Privacy"]
+        header: "Company",                
+        links : [{link:"Developer"},
+                    {link:"About"},
+                    {link:"Contact"},
+                    {link:"Privacy"}]
     },
     {
         header:"Partners",
-        links: ["Ecobank Nigeria","E-Process","Google"]
+        links: [{link:"Ecobank Nigeria"},
+                 {link:"E-Process"},
+                    {link: "Google"}]
     }
 ]
