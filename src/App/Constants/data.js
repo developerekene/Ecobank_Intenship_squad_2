@@ -1,6 +1,6 @@
 export const navLinks = [
     {
-        title: "features",
+        title: "Features",
         href: "/features",
         color: "#000000",
     },
@@ -15,7 +15,9 @@ export const navLinks = [
     },
     {
         title: "About",
-    },
+    }
+]
+export const navButton =[
     {
         title: "Login",
     },
@@ -23,7 +25,6 @@ export const navLinks = [
         title: "Register",
     }
 ]
-
 export const footerLinks = [
     {
         header: "For Business",

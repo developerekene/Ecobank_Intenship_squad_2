@@ -1,9 +1,10 @@
 import React, {  useState } from 'react';
 import "../Navbar/Navbar.css";
 import TextApp from '../Text/Text';
-import {navLinks} from '../../../Constants/data'
+import {navLinks,navButton} from '../../../Constants/data'
 import { HiMenu, HiX } from "react-icons/hi";
 import { Assets } from '../../../Constants/Assets';
+import Button from "../button/Button"
 
 const Navbar = () => {
   
@@ -15,11 +16,24 @@ const Navbar = () => {
         {
           navLinks.map((item)=>{
             return(
-              <TextApp inputText={item.title} key={item.title}/>
+              <div className='nav-link'>
+                {
+                <TextApp inputText={item.title} key={item.title}/>
+                }
+              </div>
+              
             )
           })
         }
+        <div className='navButtons'>
+          {
+            navButton.map((item)=>(
+              <Button text={item.title}/>
+            ))
+          }
+        </div>
       </div>
+
       <div className={!openNav? "openIcon" : "closeIcon"} onClick={()=>{setOpenNav(!openNav)}}>
         { !openNav ? <HiMenu /> : <HiX />}
       </div>
@@ -31,6 +45,13 @@ const Navbar = () => {
             )
           })
         } 
+        <div className='navButtons'>
+          {
+            navButton.map((item)=>(
+              <Button text={item.title}/>
+            ))
+          }
+        </div>
       </div>
     </div>
   )

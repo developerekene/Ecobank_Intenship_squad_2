@@ -9,10 +9,11 @@
 .button {
     background-color: #FF7A00;
     padding: 12px 24px;
+    border: none;
     border-radius: 6px;
     font-weight: 600;
     letter-spacing: 1.2px;
-    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 

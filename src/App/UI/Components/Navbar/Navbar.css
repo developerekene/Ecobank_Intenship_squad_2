@@ -18,6 +18,18 @@
     display: flex;
     gap: 1rem;
     justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+.nav-item-container .nav-links .nav-link:hover{
+    text-decoration: underline;
+    text-underline-offset:5px;
+    
+}
+
+.nav-item-container .navButtons{
+    display: flex;
+    
 }
 .openIcon{
     display: none;
@@ -36,6 +48,9 @@
 .open-navbar div p{
     color: #fff !important;
 }
+.closeIcon svg{
+    color: #FF7A00;
+}
 @media (min-width: 1000px) {
     .nav-item-container .nav-links{
         gap: 2rem;
@@ -48,7 +63,7 @@
     }
     
 }
-@media (max-width:670px) {
+@media (max-width:860px) {
     .nav-item-container .nav-links{
         display: none;
     }
@@ -78,6 +93,17 @@
         flex-direction: column;
         align-items: center;
         padding-top: 80px;
+    }
+    .nav-item-container .nav-links .nav-link:hover{
+        text-decoration: underline;
+        text-decoration-color: #FF7A00;
+    }
+    .nav-item-container .navButtons{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-item-container .navButtons button{
+        border: 1px solid #FF7A00;
     }
 
 }
