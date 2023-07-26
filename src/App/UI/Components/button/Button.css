@@ -1,0 +1,23 @@
+.button {
+    margin: 6px 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: #FF7A00;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.button:hover {
+    background-color: rgba(5, 3, 4, 0.938);
+    transition: background-color 0.5s;
+    color: #FF7A00;
+}
