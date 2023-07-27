@@ -10,50 +10,53 @@ const Navbar = () => {
   
   const [openNav, setOpenNav] = useState(false)
   return (
-    <div className='nav-item-container'>
-      <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
-      <div className="nav-links">
-        {
-          navLinks.map((item)=>{
-            return(
-              <div className='nav-link'>
-                {
-                <TextApp inputText={item.title} key={item.title}/>
-                }
-              </div>
-              
-            )
-          })
-        }
-        <div className='navButtons'>
+    <div className='navbar'>
+        <div className='nav-item-container'>
+        <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
+        <div className="nav-links">
           {
-            navButton.map((item)=>(
-              <Button text={item.title}/>
-            ))
+            navLinks.map((item)=>{
+              return(
+                <div className='nav-link'>
+                  {
+                  <TextApp inputText={item.title} key={item.title}/>
+                  }
+                </div>
+                
+              )
+            })
           }
+          <div className='navButtons'>
+            {
+              navButton.map((item)=>(
+                <Button text={item.title}/>
+              ))
+            }
+          </div>
         </div>
-      </div>
 
-      <div className={!openNav? "openIcon" : "closeIcon"} onClick={()=>{setOpenNav(!openNav)}}>
-        { !openNav ? <HiMenu /> : <HiX />}
-      </div>
-      <div className={openNav ? "open-navbar" : "close-navbar"}>
-        {
-          navLinks.map((item)=>{
-            return(
-              <TextApp inputText={item.title} key={item.title}/>
-            )
-          })
-        } 
-        <div className='navButtons'>
+        <div className={!openNav? "openIcon" : "closeIcon"} onClick={()=>{setOpenNav(!openNav)}}>
+          { !openNav ? <HiMenu /> : <HiX />}
+        </div>
+        <div className={openNav ? "open-navbar" : "close-navbar"}>
           {
-            navButton.map((item)=>(
-              <Button text={item.title}/>
-            ))
-          }
+            navLinks.map((item)=>{
+              return(
+                <TextApp inputText={item.title} key={item.title}/>
+              )
+            })
+          } 
+          <div className='navButtons'>
+            {
+              navButton.map((item)=>(
+                <Button props = {{text:item.title}}/>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
+    
   )
 }
 

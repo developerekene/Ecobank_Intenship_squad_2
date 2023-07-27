@@ -22,7 +22,7 @@ export const navButton =[
         title: "Login",
     },
     {
-        title: "Register",
+        title: "Signup",
     }
 ]
 export const footerLinks = [

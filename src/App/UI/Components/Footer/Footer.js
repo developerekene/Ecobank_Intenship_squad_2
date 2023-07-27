@@ -9,7 +9,7 @@ import {footerLinks} from "../../../Constants/data"
 
 const Footer=()=>{
     return(
-    <footer className="Footer">
+    <div className="footer">
         <div className="sb__Footer section_padding">
   
          <div className="sb__Footer-links-div">
@@ -40,7 +40,7 @@ const Footer=()=>{
 
 
         </div>
-    </footer>
+    </div>
     )
 }
  export default Footer;

@@ -1,0 +1,48 @@
+.cover{
+    width: 80%;
+    height:60vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+h2{
+    margin-block: 20px;
+    font-weight: 900;
+}
+form{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+form label{
+    align-self: flex-start;
+    font-weight: 600;
+}
+form input{
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+form input:focus{
+    outline-color: #FF7A00;
+}
+form button{
+    align-self: center;
+}
+.social-networks{
+    margin-top: 1rem;
+    display: flex;
+    gap:2rem;
+}
+.social-networks div{
+    font-size: 2rem;
+}
+.social-networks div:hover{
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.15);
+}

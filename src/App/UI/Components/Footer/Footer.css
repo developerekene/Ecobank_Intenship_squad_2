@@ -1,4 +1,8 @@
-
+.footer{
+   /* position: relative;
+   width: 100%;
+   bottom:0; */
+}
 .section__padding{
     padding-inline: 5rem;
     
@@ -19,9 +23,9 @@
 }
 
 .sb__Footer-links-div{
-    padding-inline: 5rem;
     margin: auto;
     display: flex ;
+    padding-inline: 5rem;
     justify-content: space-between;
     box-sizing: border-box;
     max-width: 830px;

@@ -19,6 +19,6 @@
 
 .button:hover {
     background-color: rgba(5, 3, 4, 0.938);
-    transition: background-color 0.5s;
+    transition: all 0.3s ease-in-out;
     color: #FF7A00;
 }

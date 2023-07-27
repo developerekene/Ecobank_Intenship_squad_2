@@ -3,7 +3,11 @@
     margin:0;
     padding:0;
 }
-
+.navbar{
+    position: sticky;
+    top: 0;
+    margin-bottom: 3rem;
+}
 .nav-item-container{
     margin-top:1rem;
     box-sizing: border-box;
@@ -12,7 +16,6 @@
     align-items: center;
     padding-inline:5rem;
     flex: 1 4;
-    position: relative;
 }
 .nav-item-container .nav-links{
     display: flex;
