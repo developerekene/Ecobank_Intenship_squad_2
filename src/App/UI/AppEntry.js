@@ -1,10 +1,10 @@
 import React from 'react';
-import LoginAndSignup from './Pages/LoginAndSignup/LoginAndSignup';
+import Profile from './Pages/Profile/Profile'; 
 
 const AppEntry = () => {
   return (
     <>
-      <LoginAndSignup />
+      <Profile />
     </>
   )
 }
