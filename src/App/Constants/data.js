@@ -1,30 +1,30 @@
 export const navLinks = [
     {
-        title: "Features",
-        href: "/features",
-        color: "#000000",
+        title: "Home",
+        href: "/home",
     },
     {
-        title: "UseCase",
+        title: "Browse",
+        href: "/browse",
     },
     {
-        title: "Pricing",
+        title: "Post ",
+        href: "/post",
     },
     {
-        title: "Docs",
+        title: "How it works",
+        href: "/howitworks",
     },
     {
-        title: "About",
+        title: "Testimonials",
+        href: "/testimonials",
+    },
+    {
+        title: "FAQs",
+        href: "/faqs",
     }
 ]
-export const navButton =[
-    {
-        title: "Login",
-    },
-    {
-        title: "Signup",
-    }
-]
+
 export const footerLinks = [
     {
         header: "For Business",

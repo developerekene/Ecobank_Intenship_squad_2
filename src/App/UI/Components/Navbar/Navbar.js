@@ -1,10 +1,11 @@
 import React, {  useState } from 'react';
 import "../Navbar/Navbar.css";
 import TextApp from '../Text/Text';
-import {navLinks,navButton} from '../../../Constants/data'
+import {navLinks} from '../../../Constants/data'
 import { HiMenu, HiX } from "react-icons/hi";
 import { Assets } from '../../../Constants/Assets';
 import Button from "../button/Button"
+import Andres from "../../../Image/png/Andres.png"
 
 const Navbar = () => {
   
@@ -14,24 +15,22 @@ const Navbar = () => {
         <div className='nav-item-container'>
         <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
         <div className="nav-links">
-          {
-            navLinks.map((item)=>{
-              return(
-                <div className='nav-link'>
-                  {
-                  <TextApp inputText={item.title} key={item.title}/>
-                  }
-                </div>
-                
-              )
-            })
-          }
+        <div className='nav-right-elements'>
+              {
+                navLinks.map((item)=>{
+                  return(
+                    <div className="nav-link">
+                      {
+                        <TextApp inputText={item.title} key={item.title}/>
+                      }
+                      </div>
+                  )
+                })
+              }
+          </div>
           <div className='navButtons'>
-            {
-              navButton.map((item)=>(
-                <Button text={item.title}/>
-              ))
-            }
+            <Button text={'Login'} />
+            <img className='profile-picture' src={Andres} alt="profile" />
           </div>
         </div>
 
@@ -47,11 +46,7 @@ const Navbar = () => {
             })
           } 
           <div className='navButtons'>
-            {
-              navButton.map((item)=>(
-                <Button props = {{text:item.title}}/>
-              ))
-            }
+            <Button text={'Login'} />
           </div>
         </div>
       </div>

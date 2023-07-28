@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LoginAndSignup.css'
 import Signup from "./signup/Signup";
 import Login from './login/Login';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -12,7 +13,7 @@ const LoginAndSignup = () => {
   return (
     <div className='LoginSignup'>
       <Navbar />
-        <div className='cover'>
+        <div className='card'>
           {
             currentForm==="Login"?<Login onFormSwitch={toggleForm}/>:
             <Signup onFormSwitch={toggleForm} />
