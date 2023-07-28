@@ -17,7 +17,7 @@ const Signup = ({onFormSwitch}) =>{
         <div className="cover">
             <h2>SIGNUP</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Full Name</label>
                 <input type="username" name="username" onChange={(e)=>setUsername(e.target.value)}
                  value={username} placeholder="Full Name"/>
                 <label htmlFor="email">Email</label>
