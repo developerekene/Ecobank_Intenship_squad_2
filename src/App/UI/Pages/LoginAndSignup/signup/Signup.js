@@ -17,9 +17,9 @@ const Signup = ({onFormSwitch}) =>{
         <div className="cover">
             <h2>SIGNUP</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Full Name</label>
                 <input type="username" name="username" onChange={(e)=>setUsername(e.target.value)}
-                 value={username} placeholder="example@gmail.com"/>
+                 value={username} placeholder="Full Name"/>
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" onChange={(e)=>setEmail(e.target.value)}
                  value={email} placeholder="example@gmail.com"/>
@@ -28,7 +28,7 @@ const Signup = ({onFormSwitch}) =>{
                  value={password} placeholder="*****"/>
                 <Button text={"Signup"} type={"submit"}/>
             </form>
-            <Button onClick={()=>onFormSwitch("Login")} text={"Don't have an Account? Signup"} />
+            <Button onClick={()=>onFormSwitch("Login")} text={"Already have an account? Login"} />
             <div className="social-networks">
                 <div>
                    <AiFillGoogleCircle /> 
