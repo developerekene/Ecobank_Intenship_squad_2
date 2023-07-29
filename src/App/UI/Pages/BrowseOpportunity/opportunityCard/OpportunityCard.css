@@ -1,0 +1,45 @@
+.OpportunityCard{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 30px;
+    width:100%;
+    margin-bottom:1rem;
+    padding-block: 2rem;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.36);
+    border: 1px solid rgba(128, 128, 128, 0.162);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.OpportunityCard:hover{
+    transform: scale(1.06);
+    
+    animation: borderTop 0.5s linear;
+    border-top: 4px solid #FF7A00;
+}
+.sponsor-logo {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-left: 5%;
+    text-align: center;
+}
+.sponsor-logo img{
+    height: 50px;
+    width: 50px;
+}
+.Opportunity-description{
+    flex: 2;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.Opportunity-description>div{
+    width: 60px;
+    border-radius: 10px;
+    background-color: #FF7A00;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+}

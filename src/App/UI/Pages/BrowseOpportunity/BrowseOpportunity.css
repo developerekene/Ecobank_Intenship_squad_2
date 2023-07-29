@@ -1,0 +1,17 @@
+.BrowseOpportunity{
+    display: flex;
+    
+}
+.result-display{
+    width: 60%;
+    padding-right: 5rem;
+}
+.search-result{
+    padding-block: 1rem;
+}
+.search-result ~ hr{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.36);
+}

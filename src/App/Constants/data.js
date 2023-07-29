@@ -45,3 +45,33 @@ export const footerLinks = [
                     {link: "Google"}]
     }
 ]
+
+export const filters =[
+    {
+        name:"Industry",
+        options:[
+            {link:"Technology"},
+            {link:"Marketing"},
+            {link:"Design"}]
+    },
+    {
+        name:"Type Of Opportunity",
+        options:[
+            {link:"Internship"},
+            {link:"Project"},
+            {link:"Volunteer"}]
+    },
+    {
+        name:"Nature Of Job",
+        options:[
+            {link:"Onsite"},
+            {link:"Hybrid"},
+            {link:"Remote"}]
+    },
+    {
+        name:"Duration",
+        options:[
+            {link:"Short-term"},
+           {link:"Long-term"}]
+    }
+]

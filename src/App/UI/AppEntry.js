@@ -1,11 +1,13 @@
 import React from 'react';
-import LoginAndSignup from './Pages/LoginAndSignup/LoginAndSignup';
 import Footer from './Components/Footer/Footer'
+import Navbar from './Components/Navbar/Navbar';
+import BrowseOpportunity from './Pages/BrowseOpportunity/BrowseOpportunity';
 
 const AppEntry = () => {
   return (
     <>
-      <LoginAndSignup />
+      <Navbar />
+      <BrowseOpportunity />
       <Footer />
     </>
   )

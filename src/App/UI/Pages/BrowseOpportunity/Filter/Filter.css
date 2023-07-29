@@ -1,0 +1,25 @@
+.filter-container{
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+}
+.filter-item{
+    font-family: monospace;
+    letter-spacing: -1px;
+    height: 20px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
+    padding: 5px;
+    border: 1px solid #FF7A00;
+    border-radius: 10px;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+.filter-item:hover{
+    background-color: #FF7A00;
+
+}
+.filter >h4{
+    font-size:14px;
+}
