@@ -10,10 +10,10 @@
     border: 1px solid rgba(128, 128, 128, 0.162);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 .OpportunityCard:hover{
     transform: scale(1.06);
-    
     animation: borderTop 0.5s linear;
     border-top: 4px solid #FF7A00;
 }
@@ -39,7 +39,37 @@
     width: 60px;
     border-radius: 10px;
     background-color: #FF7A00;
+    color: white;
     padding: 5px;
     font-size: 12px;
     text-align: center;
+}
+.OpportunityCard .Opportunity-description p{
+    color: rgba(0, 0, 0, 0.493);
+}
+.OpportunityCard .Opportunity-description div ~ p{
+    color: rgba(0, 0, 0, 0.493);
+}
+.OpportunityCard .Opportunity-description h3{
+    color: rgba(0, 0, 0, 0.743);
+}
+.OpportunityCard .Opportunity-description h2{
+    word-spacing: -3px;
+}
+@media (max-width:860px){
+    .OpportunityCard{
+        gap: 20px;
+    }
+    .OpportunityCard .Opportunity-description p{
+        font-size: 12px;
+    }
+    .OpportunityCard .Opportunity-description h2{
+        font-size: 14px;
+    }
+    .OpportunityCard .Opportunity-description h3{
+        font-size: 12px;
+    }
+    .OpportunityCard .Opportunity-description div ~ p{
+        font-size: 10px;
+    }
 }

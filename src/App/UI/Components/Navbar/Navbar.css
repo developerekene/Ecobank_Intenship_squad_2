@@ -8,7 +8,7 @@
     top: 0;
     background-color:#fff;
     padding-bottom:1rem;
-    border-bottom: 1px dotted black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.196);
     z-index: 10;
 }
 .nav-item-container{
@@ -60,6 +60,11 @@
 .openIcon{
     display: none;
 }
+.openIcon svg{
+    cursor: pointer;
+    color: #0000009c;
+    font-size: 24px;
+}
 .closeIcon{
     display:none;
     right: 0;
@@ -76,6 +81,7 @@
 }
 .closeIcon svg{
     color: #FF7A00;
+    cursor: pointer;
 }
 
 
