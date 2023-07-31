@@ -34,10 +34,14 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className={!openNav? "openIcon" : "closeIcon"} onClick={()=>{setOpenNav(!openNav)}}>
-          { !openNav ? <HiMenu /> : <HiX />}
+        <div className="openIcon" onClick={()=>{setOpenNav(!openNav)}}>
+          <HiMenu />
         </div>
         <div className={openNav ? "open-navbar" : "close-navbar"}>
+        <div className="closeIcon" onClick={()=>{setOpenNav(!openNav)}}>
+           <HiX />
+        </div>
+        
           {
             navLinks.map((item)=>{
               return(
