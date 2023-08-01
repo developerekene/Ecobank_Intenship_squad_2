@@ -1,30 +1,27 @@
 export const navLinks = [
     {
-        title: "Features",
-        href: "/features",
-        color: "#000000",
-    },
-    {
-        title: "UseCase",
-    },
-    {
-        title: "Pricing",
-    },
-    {
-        title: "Docs",
-    },
-    {
         title: "About",
-    }
-]
-export const navButton =[
-    {
-        title: "Login",
+        href: "/about",
     },
     {
-        title: "Signup",
+        title: "Opportunity",
+        href: "/opportunity",
+    },
+    {
+        title: "Post ",
+        href: "/post",
+    },
+    {
+        title: "How it works",
+        href: "/howitworks",
+    }
+    ,
+    {
+        title: "FAQs",
+        href: "/faqs",
     }
 ]
+
 export const footerLinks = [
     {
         header: "For Business",
@@ -46,5 +43,35 @@ export const footerLinks = [
         links: [{link:"Ecobank Nigeria"},
                  {link:"E-Process"},
                     {link: "Google"}]
+    }
+]
+
+export const filters =[
+    {
+        name:"Industry",
+        options:[
+            {link:"Technology"},
+            {link:"Marketing"},
+            {link:"Design"}]
+    },
+    {
+        name:"Type Of Opportunity",
+        options:[
+            {link:"Internship"},
+            {link:"Project"},
+            {link:"Volunteer"}]
+    },
+    {
+        name:"Nature Of Job",
+        options:[
+            {link:"Onsite"},
+            {link:"Hybrid"},
+            {link:"Remote"}]
+    },
+    {
+        name:"Duration",
+        options:[
+            {link:"Short-term"},
+           {link:"Long-term"}]
     }
 ]
