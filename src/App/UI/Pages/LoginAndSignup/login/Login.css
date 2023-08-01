@@ -1,6 +1,6 @@
 .cover{
     width: 80%;
-    height:60vh;
+    height:100%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -10,6 +10,7 @@
 h2{
     margin-block: 20px;
     font-weight: 900;
+    font-size: 2rem;
 }
 form{
     width:80%;
@@ -26,6 +27,7 @@ form input{
     margin-bottom: 10px;
     height: 40px;
     width: 100%;
+    border: 1px solid rgba(77, 77, 77, 0.441);
     text-align: center;
 }
 form input:focus{

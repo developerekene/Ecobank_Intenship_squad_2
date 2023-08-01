@@ -1,72 +1,11 @@
-.cover {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+a {
+    color: #FF7A00;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: #FF7A00;
 }
 
-
-.Profile {
-    width: 300px;
-    height: 500px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 1px 10px 1px black;
-}
-
-.upper-container {
-    height: 100px;
-    background: linear-gradient(to left, #FF7A00, black);
-}
-
-.image-container img {
-    background: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    padding: 5px;
-    transform: translate(95px, 45px);
-}
-
-img {
-    border: 2px solid #FF7A00;
-}
-
-.lower-container {
-    margin-top: 60px;
-    height: 300px;
-    background: white;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.lower-container h3,
-h4,
-p {
-    margin: 0.5;
-    padding: 0.5;
-}
-
-.lower-container h3 {
-    color: #2f2d2e;
-    font-weight: 600;
-    font-size: 1.5rem;
-}
-
-.lower-container h4 {
-    color: #2f2d2e;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.lower-container p {
-    margin: 1rem;
-    color: #2f2d2e;
-    font-weight: 300;
-    font-size: 0.9rem;
-    text-align: justify;
-}
 
 button {
     margin: 1rem;
@@ -82,5 +21,8 @@ button {
 }
 
 button:hover {
-    background-image: ;
+    background-image: linear-gradient(to left, #FF7A00, black);
+    transform: scale(1.2);
+    border: none;
+    color: white;
 }
