@@ -1,14 +1,12 @@
 import React from 'react';
-import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Navbar/Navbar';
-import IndexRouter from './../Route/IndexRouter'
+import Footer from './Components/Footer/Footer';
 
 const AppEntry = () => {
   return (
     <>
-      <Navbar />
-      <IndexRouter />
-      <Footer />
+    <Navbar />
+    <Footer />
     </>
   )
 }
