@@ -8,9 +8,7 @@
     padding-inline: 5rem;
     
 }
-.footer{
-    background-color: rgb(243, 229, 203);;;
-}
+
 .sb__footer{
     display: flex;
     flex-direction: column;
