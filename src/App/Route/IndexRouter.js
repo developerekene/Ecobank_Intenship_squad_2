@@ -10,8 +10,8 @@ const index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route Component={Home} path={"/home"}></Route>
         <Route Component={LoginAndSignup} path={"/"}></Route>
+        <Route Component={Home} path={"/home"}></Route>
         <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
         <Route Component={Profile} path={"/profile"}></Route>
       </Routes>
