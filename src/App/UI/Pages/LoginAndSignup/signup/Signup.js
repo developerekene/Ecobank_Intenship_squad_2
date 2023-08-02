@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import './Signup.css'
-import Button from "../../../Components/button/Button";
+import Button from "../../../Components/button/ToggleSignupLogin/Button";
+import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton"
 import {AiFillGoogleCircle, AiFillApple,AiFillGithub} from 'react-icons/ai'
+import {HiMiniEye, HiMiniEyeSlash} from "react-icons/hi2";
 
 const Signup = ({onFormSwitch}) =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[username, setUsername] = useState("");
+    const [viewPassword, setViewPassword]= useState(false)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -24,9 +27,23 @@ const Signup = ({onFormSwitch}) =>{
                 <input type="email" name="email" onChange={(e)=>setEmail(e.target.value)}
                  value={email} placeholder="example@gmail.com"/>
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" onChange={(e)=>setPassword(e.target.value)}
-                 value={password} placeholder="*****"/>
-                <Button text={"Signup"} type={"submit"}/>
+                <div>
+                <input
+                type={viewPassword?"text":"password" }
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="*****"
+                />
+                {
+                viewPassword ?
+                <HiMiniEyeSlash onClick={()=>setViewPassword(false)}/>
+                :
+                <HiMiniEye onClick={()=>setViewPassword(true)}/>
+
+                }
+                </div>
+                <NavigateButton text={"Signup"} type={"submit"} link="/home"/>
             </form>
             <Button onClick={()=>onFormSwitch("Login")} text={"Already have an account? Login"} />
             <div className="social-networks">

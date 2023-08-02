@@ -5,7 +5,7 @@ import { HiAdjustmentsHorizontal, HiBriefcase} from "react-icons/hi2"
 import { HiLocationMarker, HiX} from 'react-icons/hi'
 import { filters } from '../../../../Constants/data'
 import Filter from '../Filter/Filter'
-import Button from '../../../Components/button/Button'
+import Button from '../../../Components/button/NavigateButton/NavigateButton'
 
 function SideBarBackup() {
     const [showFilter,setShowFilters]=useState(false)

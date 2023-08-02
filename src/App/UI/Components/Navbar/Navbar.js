@@ -4,34 +4,52 @@ import TextApp from '../Text/Text';
 import {navLinks} from '../../../Constants/data'
 import { HiMenu, HiX } from "react-icons/hi";
 import { Assets } from '../../../Constants/Assets';
-import Button from "../button/Button"
+import Button from "../button/NavigateButton/NavigateButton"
 import Andres from "../../../Image/png/Andres.png"
 
 const Navbar = () => {
   
   const [openNav, setOpenNav] = useState(false)
+const [loggedIn, setloggedIn] = useState(true)
+
   return (
     <div className='navbar'>
         <div className='nav-item-container'>
-        <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
-        <div className="nav-links">
-        <div className='nav-right-elements'>
-              {
+          <a href={"/home"}>
+            <img src={Assets.images['logo-lightmode']} height={"60px"} alt="iLinkLogo" />
+          </a>
+           
+          <div className="nav-links">
+            {
                 navLinks.map((item)=>{
                   return(
                     <div className="nav-link">
                       {
+                      <a href={item.href}>
                         <TextApp inputText={item.title} key={item.title}/>
+                      </a>
                       }
-                      </div>
+                    </div>
                   )
                 })
               }
-          </div>
+              </div>
+              
+
           <div className='navButtons'>
-            <Button text={'Login'} />
-            <img className='profile-picture' src={Andres} alt="profile" />
-          </div>
+            {
+              
+                loggedIn ?
+                <>
+                  <a href={"/profile"}>
+                    <img className='profile-picture' src={Andres} alt="profile" />
+                  </a>
+                </>
+                
+                :
+                <Button text={'Login'} />
+            }
+            
         </div>
 
         <div className="openIcon" onClick={()=>{setOpenNav(!openNav)}}>
@@ -45,11 +63,16 @@ const Navbar = () => {
           {
             navLinks.map((item)=>{
               return(
-                <TextApp inputText={item.title} key={item.title}/>
+                <>
+                  <a href={item.href}>
+                    <TextApp inputText={item.title} key={item.title}/>
+                  </a>
+                </>
+                
               )
             })
           } 
-          <div className='navButtons'>
+          <div className='navButtons-side'>
             <Button text={'Login'} />
           </div>
         </div>
