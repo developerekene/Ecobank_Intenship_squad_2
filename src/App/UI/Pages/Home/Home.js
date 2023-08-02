@@ -5,7 +5,6 @@ import lady from  "../../../Image/png/lady.png";
 import man2 from  "../../../Image/png/man2.png";
 import stats2 from "../../../Image/png/stats2.png"
 import partnership from "../../../Image/png/partnership.png";
-import Button from '../../Components/button/Button';
 import CV from "../../../Image/png/CV.png";
 import Button from '../../Components/button/NavigateButton/NavigateButton';
 import Navbar from '../../Components/Navbar/Navbar';
