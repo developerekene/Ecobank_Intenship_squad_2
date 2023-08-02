@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./LoginAndSignup.css";
+import { Assets } from '../../../Constants/Assets';
 import Signup from "./signup/Signup";
 import Login from "./login/Login";
 import handWave from '../../../Image/png/hand-wave.png';
@@ -14,8 +15,10 @@ const LoginAndSignup = () => {
     <div className="LoginSignup">
       <div className="Welcome-Users-Text">
           <img src={handWave} alt="wave emoji" width={"250px"} />
-          <h3>Welcome!</h3>
-          <p>Login or Signup to get see opportunities that are waiting for you</p>
+          <h3>Welcome! to
+          </h3>
+          <img src={Assets.images['logo-lightmode']} alt="iLinkLogo" />
+          <p>Login or Signup to see opportunities that are available for you</p>
       </div>
       <div className="card">
         {currentForm === "Login" ? (

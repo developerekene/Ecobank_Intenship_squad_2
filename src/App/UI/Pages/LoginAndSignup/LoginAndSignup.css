@@ -21,13 +21,17 @@
     text-align: center;
 }
 .Welcome-Users-Text h3{
-    font-size: 3rem;
+    font-size: 2.6rem;
     width: 60%;
+}
+.Welcome-Users-Text h3~img{
+    height: 100px;
 }
 .Welcome-Users-Text p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 60%;
 }
+
 
 @media (max-width:860px) {
 
