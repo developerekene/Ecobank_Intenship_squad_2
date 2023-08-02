@@ -4,15 +4,12 @@ import man from  "../../../Image/png/man.png";
 import lady from  "../../../Image/png/lady.png";
 import man2 from  "../../../Image/png/man2.png";
 import stats2 from "../../../Image/png/stats2.png"
-<<<<<<< HEAD
 import partnership from "../../../Image/png/partnership.png";
 import Button from '../../Components/button/Button';
 import CV from "../../../Image/png/CV.png";
-=======
 import Button from '../../Components/button/NavigateButton/NavigateButton';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
->>>>>>> 7c31f49b8888845e8b4ff996267e4aa9698412f7
 
 
 
@@ -37,26 +34,17 @@ const Home = () => {
                 <div className='card_text'>
                   <h3>Partnership</h3>
                   <p>Work with us</p>
-                </div>
-                <div class="card_image"></div>
-              </div>
-
-              <div class="cards">
-              <div className='card_text'>
-<<<<<<< HEAD
-                <h3>Partnership</h3>
-                <p>Work with us</p>
-                <Button text={"Learn more"} />
+                  <Button text={"Learn more"} />
               </div>
               <div class="card_image">
                 <img src={partnership} width={300}  ></img>
               </div>
-            </div>
+                </div>
 
             <div class="cards">
             <div className='card_text'>
                 <h3>Our Impact</h3>
-                <p>Over 90% of our interns secure job offers after completing projects.</p>
+                <p>Over 90% of our interns secure job offers after completing projects.KUM</p>
                 <Button text={"Reviews"} />
               </div>
               <div class="card_image">
@@ -64,39 +52,20 @@ const Home = () => {
               </div>
             </div>
 
-            <div class="cards">
-              <div class="card_text">
-                <h3>Upload or Update your CV</h3>
-                <p>Keep your potential employees up to date!</p>
-              </div>
-              <div class="card_image">
-                <img src={CV} width={150}></img>
-              </div>
-            </div>
-          </div>        
-    </section>
-=======
-                  <h3>Our Impact</h3>
-                  <Button text={"Reviews"} />
-                </div>
-                <div class="card_image">
-                  <img src={stats2} alt=""></img>
-                </div>
-              </div>
-
               <div class="cards">
                 <div class="card_text">
                   <h3>Upload or Update your CV</h3>
-                  <p></p>
+                  <p>Keep your potential employees up to date!</p>
                 </div>
-                <div class="card_image"></div>
+              <div class="card_image">
+                <img src={CV} width={150}></img>
               </div>
+                </div>
             </div>        
       </section>
       <Footer />
     </>
     
->>>>>>> 7c31f49b8888845e8b4ff996267e4aa9698412f7
   )
 }
 
