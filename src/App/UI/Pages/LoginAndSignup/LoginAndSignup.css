@@ -2,7 +2,53 @@
     padding-block: 2rem;
     width: 90%;
     max-width: 30rem;
+    margin: auto;
     border-radius: 30px;
-    margin:auto;
     box-shadow: 2px 2px 20px rgba(77, 77, 77, 0.441);
+}
+.LoginSignup{
+    display: flex;
+    padding-inline: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.Welcome-Users-Text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.Welcome-Users-Text h3{
+    font-size: 3rem;
+    width: 60%;
+}
+.Welcome-Users-Text p{
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+@media (max-width:860px) {
+
+    .LoginSignup{
+        flex-direction: column;
+        padding-inline: 1rem;
+    }
+    .Welcome-Users-Text{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .Welcome-Users-Text img{
+        width: 200px;
+    }
+    .Welcome-Users-Text h3{
+        font-size: 2rem;
+        width: 60%;
+    }
+    .Welcome-Users-Text p{
+        font-size: 1.1rem;
+        width: 60%;
+    }
+    
 }

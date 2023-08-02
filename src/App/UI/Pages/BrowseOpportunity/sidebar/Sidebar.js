@@ -1,6 +1,6 @@
 import React from 'react'
 import './Sidebar.css'
-import Button from '../../../Components/button/Button'
+import Button from '../../../Components/button/NavigateButton/NavigateButton'
 import { filters } from '../../../../Constants/data'
 import Filter from '../Filter/Filter'
 import { HiBriefcase} from "react-icons/hi2"
@@ -13,15 +13,14 @@ function Sidebar() {
     <div className='sidebar'>
                 <div className='search-input-container'>
                     <form action="">
-                        <div>
-                            <HiBriefcase />
-                            <input type="text" placeholder='Job Title'/>
-                        </div>
-                        <div>
-                            <HiLocationMarker />
-                            <input type="text" placeholder='Everywhere'/>
-                        </div>
-                        
+                    <div className='input-div'>
+                    <HiBriefcase />
+                    <input type="text" placeholder='Job Title'/>
+                </div>
+                <div className='input-div'>
+                    <HiLocationMarker />
+                    <input type="text" placeholder='Everywhere'/>
+                </div>
                         <Button text={"Search"}/>
                     </form>
                 </div>

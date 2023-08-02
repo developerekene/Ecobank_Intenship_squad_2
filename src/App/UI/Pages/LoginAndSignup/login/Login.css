@@ -7,7 +7,7 @@
     align-items: center;
     max-width: 600px;
 }
-h2{
+.cover h2{
     margin-block: 20px;
     font-weight: 900;
     font-size: 2rem;
@@ -32,6 +32,15 @@ form input{
 }
 form input:focus{
     outline-color: #FF7A00;
+}
+.cover form div:nth-of-type(1){
+ width: 100%;
+ position: relative;
+}
+.cover form div svg{
+    position:absolute;
+    right: 12px;
+    top: 12px;
 }
 form button{
     align-self: center;
