@@ -23,23 +23,27 @@ const Profile = () => {
 
 
         </div>
-        <div className="col-md-6">
-          <div className="middle-container">
+        <div className="middle-container">
+          <div className="col-md-6">
             <h5>Stephen Curry</h5>
             <h6>Frontend web developer</h6>
             <p className="profile-rating mt-3 mb-5">RANKINGS: <span> 6/10 </span></p>
 
+          </div>
 
-            <ul className="nav nav-tabs" role="tablist">
-              <li className="nav-item">
+          <div className='user-about-and-timeline-container'>
+            <ul className="user-about-and-timeline" role="tablist">
+              <li className="user-about">
                 <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab">About</a>
               </li>
-              <li className="nav-item">
+              <li className="user-timeline">
                 <a className="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab">Timeline</a>
               </li>
             </ul>
-
           </div>
+
+
+
 
 
 
@@ -54,7 +58,6 @@ const Profile = () => {
               <a>Instagram</a> <br />
               <a>Github</a> <br />
               <a>Figma</a> <br />
-              <a>Software Engineer</a> <br />
             </div>
           </div>
           {/* right side url */}
