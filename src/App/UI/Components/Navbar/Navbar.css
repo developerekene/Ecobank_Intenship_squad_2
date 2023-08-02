@@ -40,7 +40,7 @@
 .nav-item-container .nav-links .nav-link:hover{
     text-decoration: underline;
     text-underline-offset:5px;
-    
+    color: #FF7A00;
 }
 .nav-item-container .navButtons{
     display: flex;
