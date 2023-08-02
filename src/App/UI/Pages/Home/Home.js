@@ -4,7 +4,9 @@ import man from  "../../../Image/png/man.png";
 import lady from  "../../../Image/png/lady.png";
 import man2 from  "../../../Image/png/man2.png";
 import stats2 from "../../../Image/png/stats2.png"
+import partnership from "../../../Image/png/partnership.png";
 import Button from '../../Components/button/Button';
+import CV from "../../../Image/png/CV.png";
 
 
 
@@ -27,26 +29,32 @@ const Home = () => {
               <div className='card_text'>
                 <h3>Partnership</h3>
                 <p>Work with us</p>
+                <Button text={"Learn more"} />
               </div>
-              <div class="card_image"></div>
+              <div class="card_image">
+                <img src={partnership} width={300}  ></img>
+              </div>
             </div>
 
             <div class="cards">
             <div className='card_text'>
                 <h3>Our Impact</h3>
+                <p>Over 90% of our interns secure job offers after completing projects.</p>
                 <Button text={"Reviews"} />
               </div>
               <div class="card_image">
-                <img src={stats2}></img>
+                <img src={stats2} width={"200px"}></img>
               </div>
             </div>
 
             <div class="cards">
               <div class="card_text">
                 <h3>Upload or Update your CV</h3>
-                <p></p>
+                <p>Keep your potential employees up to date!</p>
               </div>
-              <div class="card_image"></div>
+              <div class="card_image">
+                <img src={CV} width={150}></img>
+              </div>
             </div>
           </div>        
     </section>
