@@ -18,7 +18,7 @@ const Profile = () => {
 
           </div>
           <div className="col-md-2">
-            <button type="submit" class="move-right">Edit Profile</button>
+            <Button type="submit" text="Edit Profile" />
           </div>
 
 

@@ -73,7 +73,7 @@
     cursor: pointer;
 }
 
-.move-right {
+.col-md-2 div button {
     margin: 6px 6px;
     cursor: pointer;
     display: flex;
@@ -81,19 +81,8 @@
     align-items: center;
 }
 
-.move-right {
-    background-color: #FF7A00;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-decoration: none;
-    color: white;
-}
 
-
-.move-right:hover {
+.col-md-2 div button:hover {
     background-color: rgba(5, 3, 4, 0.938);
     transition: all 0.3s ease-in-out;
     color: #FF7A00;
