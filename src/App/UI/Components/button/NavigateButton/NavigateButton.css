@@ -8,9 +8,9 @@
 
 .button {
     background-color: #FF7A00;
-    padding: 12px 24px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: 600;
     letter-spacing: 1.2px;
     text-decoration: none;
@@ -19,7 +19,9 @@
 
 
 .button:hover {
-    background-color: rgba(5, 3, 4, 0.938);
+    background-color: #ffb261;
     transition: all 0.3s ease-in-out;
-    color: #FF7A00;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
 }

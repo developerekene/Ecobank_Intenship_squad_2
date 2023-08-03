@@ -14,7 +14,7 @@ const LoginAndSignup = () => {
   return (
     <div className="LoginSignup">
       <div className="Welcome-Users-Text">
-          <img src={handWave} alt="wave emoji" width={"250px"} />
+          <img src={handWave} className="wave-emoji" alt="wave emoji" width={"250px"} />
           <h3>Welcome! to
           </h3>
           <img src={Assets.images['logo-lightmode']} alt="iLinkLogo" />

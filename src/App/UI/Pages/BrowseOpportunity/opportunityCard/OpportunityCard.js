@@ -1,10 +1,19 @@
-import React from 'react'
+import {useEffect,React} from 'react'
 import "./OpportunityCard.css"
 import noCompanyLogo from '../../../../Image/svg/noCompanyLogo.svg'
 
+//Importing Animate on Scroll library
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function OpportunityCard({companyLogo,opportunityType,jobTitle,companyName,NatureOfJob,TimePosted}) {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
-    <div className='OpportunityCard'>
+    <div data-aos="fade-left" className='OpportunityCard'>
       <div className='sponsor-logo'>
         {
         companyLogo===""? <img src={noCompanyLogo} alt="" />  : <img src={companyLogo} alt=""/>      

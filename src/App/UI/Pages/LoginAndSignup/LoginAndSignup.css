@@ -24,9 +24,25 @@
     font-size: 2.6rem;
     width: 60%;
 }
+.Welcome-Users-Text .wave-emoji{
+    animation: animateWave 2s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+}
+@keyframes animateWave {
+    0% {transform: translateY(-100px)}
+    25% {transform: translateY(0px)}
+    50% {transform: translateY(-50px)}
+    75% {transform: translateY(0px)}
+    80% {transform: translateY(-25px)}
+    85% {transform: translateY(0px)}
+    90% {transform: translateY(-15);}
+    100% {transform: translateY(0px)}
+
+}
 .Welcome-Users-Text h3~img{
     height: 100px;
+    
 }
+
 .Welcome-Users-Text p{
     font-size: 1.3rem;
     width: 60%;
@@ -43,9 +59,7 @@
         margin-top: 100px;
         margin-bottom: 100px;
     }
-    .Welcome-Users-Text img{
-        width: 200px;
-    }
+
     .Welcome-Users-Text h3{
         font-size: 2rem;
         width: 60%;

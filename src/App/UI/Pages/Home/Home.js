@@ -1,66 +1,83 @@
-import React from 'react';
+import {useEffect,React} from 'react';
 import "../Home/Home.css";
-import man from  "../../../Image/png/man.png";
 import lady from  "../../../Image/png/lady.png";
-import man2 from  "../../../Image/png/man2.png";
-import stats2 from "../../../Image/png/stats2.png"
-import partnership from "../../../Image/png/partnership.png";
-import CV from "../../../Image/png/CV.png";
+import potential from "../../../Image/png/potential.png"
+import Meet from "../../../Image/png/Meet.png"
+import vectorGroup from "../../../Image/svg/vector-group.svg"
+import discover from '../../../Image/png/discover.png'
+import vector from '../../../Image/svg/vector.svg'
 import Button from '../../Components/button/NavigateButton/NavigateButton';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
 
+//Importing Animate on Scroll library
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 
 const Home = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
+    
     <>
       <Navbar />
-      <section class="container">
-        <div class="welcome">
-          <div className="welcome_text_button">
+      <section className="Home">
+        <div className="hero-section">
+          <div className="welcome-text">
             <h2>Connecting Talent to Companies</h2>
-            <p>Providing you with the opportunity to maximize your abilities to the fullest</p>
-            <Button text={"Learn more"} />
+            <p>A revolutionary platform dedicated to empowering young interns by connecting them with companies seeking their skills and creativity.</p>
+            <Button text={"Get Started"} />
           </div>
-          <div class="welcome_image">
-            <img src={lady} ></img>
+          <div className="hero-image">
+            <img src={vectorGroup} alt="" />
+            <img src={lady} alt=''></img>
           </div>
         </div>
-        <div class="card">
-              <div class="cards">
-                <div className='card_text'>
-                  <h3>Partnership</h3>
-                  <p>Work with us</p>
-                  <Button text={"Learn more"} />
-              </div>
-              <div class="card_image">
-                <img src={partnership} width={300}  ></img>
-              </div>
-                </div>
-
-            <div class="cards">
-            <div className='card_text'>
-                <h3>Our Impact</h3>
-                <p>Over 90% of our interns secure job offers after completing projects.KUM</p>
-                <Button text={"Reviews"} />
-              </div>
-              <div class="card_image">
-                <img src={stats2} width={"200px"}></img>
-              </div>
+        <div className="WWD-Section">
+          <div data-aos="fade-up" className='caption'>
+            <h2>What We Do?</h2>
+            <p>Welcome to our "What We Do" section, where we take pride in our mission to bridge the gap between aspiring young interns and companies seeking fresh talent. </p>
+          </div>
+          <div className='description'>
+            <div data-aos="fade-right" className='description-image'>
+              <img src={potential} alt="" />
             </div>
-
-              <div class="cards">
-                <div class="card_text">
-                  <h3>Upload or Update your CV</h3>
-                  <p>Keep your potential employees up to date!</p>
-                </div>
-              <div class="card_image">
-                <img src={CV} width={150}></img>
-              </div>
-                </div>
-            </div>        
+            <div data-aos="fade-up">
+              <h3>We Give you the Key to Unlocking Your Potential</h3>
+              <p>Welcome to our platform dedicated to empowering young talent like you! Discover exciting internship opportunities with companies that
+                 value your skills and creativity. Whether you're a budding designer, marketer, programmer, or writer, we have the perfect internships to kickstart your career journey.</p>
+            </div>
+          </div>
+          <div className='description'>
+            <div data-aos="fade-right">
+              <h3>We Help you Discover Exceptional Interns</h3>
+              <p>Are you a company looking for fresh and motivated talent to join your ranks? Find your dream team of interns right here! Our platform connects you with aspiring young
+                 professionals who bring innovation and enthusiasm to your projects. Post your internships and let the next generation of talent contribute to your success.</p>
+            </div>
+            <div data-aos="fade-up" className='description-image'>
+            <img src={discover} alt="" />
+            </div>
+          </div>
+          <div className='description'>
+            <div data-aos="fade-right" className='description-image'>
+              <img src={Meet} alt="" />
+            </div>
+            <div data-aos="fade-up">
+              <h3>Where Passion Meets Purpose</h3>
+              <p>At our platform, we believe in the power of purpose-driven internships. We match passionate interns with companies that share their values and visions. Make a
+                 meaningful impact on real-world projects while gaining invaluable experience. Join us in shaping a future where passion and purpose unite to create a better world.</p>
+            </div>
+          </div>
+        </div>
+                      
       </section>
       <Footer />
     </>
