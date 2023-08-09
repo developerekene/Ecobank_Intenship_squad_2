@@ -18,10 +18,9 @@
     min-width: 5rem;
     padding: 0.5rem 1rem;
     border: none;
-    background: none;
+    background: #f5d2b1;
     color: rgba(0, 0, 0, 0.533);
     border-radius: 1rem;
-    border: 1px solid #FF7A00;
     font-weight: 600;
     font-size: 13px;
 }
