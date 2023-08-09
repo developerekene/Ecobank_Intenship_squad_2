@@ -8,6 +8,7 @@ import youtube from "../../../Image/png/youtube.png";
 import instagram from "../../../Image/png/instagram.png"
 import github from "../../../Image/png/github.png"
 import figma from "../../../Image/png/figma.png"
+import star from "../../../Image/png/star.png"
 
 
 const Profile = () => {
@@ -50,7 +51,7 @@ const Profile = () => {
         </div>
 
         <div className="skills-container">
-          <p>Skills</p>
+          <p>Skills <img src={star} /></p>
           <button>Web development</button>
           <button>UI Design</button>
           <button>UX Design</button>
