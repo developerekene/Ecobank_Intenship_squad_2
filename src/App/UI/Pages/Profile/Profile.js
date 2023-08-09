@@ -49,6 +49,14 @@ const Profile = () => {
           </div>
         </div>
 
+        <div className="skills-container">
+          <p>Skills</p>
+          <button>Web development</button>
+          <button>UI Design</button>
+          <button>UX Design</button>
+          <button>C++</button>
+        </div>
+
         <div className='user-about-and-timeline-container'>
           <ul className="user-about-and-timeline" role="tablist">
             <li className="user-about user-details" onClick={() => {

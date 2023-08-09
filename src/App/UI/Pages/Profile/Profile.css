@@ -9,6 +9,24 @@
     /* text-align: ; */
 }
 
+.skills-container p {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.skills-container button {
+    margin-right: 0.5rem;
+    min-width: 5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, 0.533);
+    border-radius: 1rem;
+    border: 1px solid #FF7A00;
+    font-weight: 600;
+    font-size: 13px;
+}
+
 .lower-container {
     margin-top: 60px;
 }
@@ -89,6 +107,12 @@
 .Profile .lower-container {
     position: relative;
     left: 95px;
+}
+
+.Profile .skills-container {
+    position: relative;
+    left: 95px;
+    margin-top: 30px;
 }
 
 .Profile .lower-container .col-md-4 .profile-work .title {
