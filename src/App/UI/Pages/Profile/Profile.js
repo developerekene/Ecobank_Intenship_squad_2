@@ -34,6 +34,7 @@ const Profile = () => {
           </div>
           <div className="col-md-2">
             <Button type="submit" text={"Edit Profile"} class="edit-profile" />
+            <Button type="submit" text={"Upload CV"} class="edit-profile" />
           </div>
 
 
