@@ -59,14 +59,16 @@ export const filters =[
         options:[
             {link:"Internship"},
             {link:"Project"},
-            {link:"Volunteer"}]
+            {link:"Volunteer"},
+        ]
     },
     {
         name:"Nature Of Job",
         options:[
             {link:"Onsite"},
             {link:"Hybrid"},
-            {link:"Remote"}]
+            {link:"Remote"},
+        ]
     },
     {
         name:"Duration",

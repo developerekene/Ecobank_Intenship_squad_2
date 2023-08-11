@@ -13,11 +13,16 @@
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.533);
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 .filter-item:hover{
     background-color: #FF7A00;
     color: white;
 
+}
+.filter .active{
+    background-color: #FF7A00;
+    color: white;
 }
 .filter >h4{
     font-size:14px;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React
+ from 'react'
 import './Sidebar.css'
 import Button from '../../../Components/button/NavigateButton/NavigateButton'
 import { filters } from '../../../../Constants/data'
@@ -7,8 +8,17 @@ import { HiBriefcase} from "react-icons/hi2"
 import { HiLocationMarker} from 'react-icons/hi'
 // import { filters } from '../../../Constants/data'
 
-function Sidebar() {
+function Sidebar() {    
     
+    const setActive =(e)=>{
+        const siblings = e.target.parentNode.children
+        for(let i=0; i<siblings.length;i++){
+           siblings[i].classList.remove("active")
+        }
+        e.target.classList.add("active")
+    }
+    
+
   return (
     <div className='sidebar'>
                 <div className='search-input-container'>
@@ -29,8 +39,9 @@ function Sidebar() {
                     <div className='filters-container'>
                         {
                             filters.map((item)=>(
-                                <Filter filterGroupName={item.name} filters={item.options}/>
+                                <Filter filterGroupName={item.name} filters={item.options} onClick={(e)=>setActive(e)}/>                
                             ))
+                                
                         }
                     </div>
                 </div>

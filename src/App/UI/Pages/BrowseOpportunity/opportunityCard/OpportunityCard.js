@@ -13,7 +13,7 @@ function OpportunityCard({companyLogo,opportunityType,jobTitle,companyName,Natur
   }, [])
 
   return (
-    <div data-aos="fade-left" className='OpportunityCard'>
+    <div data-aos="fade-up" className='OpportunityCard'>
       <div className='sponsor-logo'>
         {
         companyLogo===""? <img src={noCompanyLogo} alt="" />  : <img src={companyLogo} alt=""/>      
