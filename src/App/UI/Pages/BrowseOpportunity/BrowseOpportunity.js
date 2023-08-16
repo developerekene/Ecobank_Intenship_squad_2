@@ -29,6 +29,10 @@ function BrowseOpportunity() {
     })
     i++;
   }
+  const [filter,setFilter]= useState("")
+  const filteredItems = OpportunityList.filter((item)=>item.opportunityType.includes(filter))
+  console.log(filteredItems.length)
+  
   return (
     
     <div>
@@ -40,7 +44,7 @@ function BrowseOpportunity() {
           <p className="search-result">{"searchResult"}</p>
           <hr />
           {
-            OpportunityList.slice(firstPostIndex,lastPostIndex).map((item)=>(
+              filteredItems.slice(firstPostIndex,lastPostIndex).map((item)=>(
               <OpportunityCard 
               companyLogo={item.companyLogo}
               opportunityType={item.opportunityType}
@@ -52,7 +56,7 @@ function BrowseOpportunity() {
             ))
           }
           <Pagination 
-          totalItemsLength={OpportunityList.length} 
+          totalItemsLength={filteredItems.length} 
           setCurrentPage={setCurrentPage} 
           postPerPage={postPerPage}
           currentPage={currentPage}/>
