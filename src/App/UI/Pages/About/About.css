@@ -39,6 +39,7 @@
 .first-container .first-image {
     width: 800px;
     height: 585px;
+    object-fit: cover;
 }
 
 .first-container .underscore {
