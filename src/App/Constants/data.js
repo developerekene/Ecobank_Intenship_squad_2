@@ -10,10 +10,6 @@ export const navLinks = [
     {
         title: "Post ",
         href: "/post",
-    },
-    {
-        title: "How it works",
-        href: "/howitworks",
     }
     ,
     {
