@@ -41,7 +41,7 @@ function BrowseOpportunity() {
         <Sidebar />
         <SideBarBackup />
         <div className="result-display">
-          <p className="search-result">{"searchResult"}</p>
+          <p className="search-result">{filteredItems.length+" results found"}</p>
           <hr />
           {
               filteredItems.slice(firstPostIndex,lastPostIndex).map((item)=>(
