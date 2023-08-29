@@ -37,7 +37,7 @@ export const footerLinks = [
     {
         header:"Partners",
         links: [{link:"Ecobank Nigeria"},
-                 {link:"E-Process"},
+                 {link:"eProcess"},
                     {link: "Google"}]
     }
 ]
