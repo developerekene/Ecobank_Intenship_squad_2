@@ -20,25 +20,39 @@ export const navLinks = [
 
 export const footerLinks = [
     {
-        header: "For Business",
+        header: "Navigation",
         links : [
-            {link:"Partnership"},
-            {link:"Advertise"}
+            {link:"About us"},
+            {link:"FAQ"},
+            {link:"Privacy policy"},
+            {link:"Terms of Service"},
+            {link:"Careers"},
         ]
             
     },
     {
-        header: "Company",                
-        links : [{link:"Developer"},
-                    {link:"About"},
-                    {link:"Contact"},
-                    {link:"Privacy"}]
+        header: "Contact",                
+        links : [{link:"email"},
+                    {link:"phone number"},
+                    {link:"physical address"},
+                    ]
+    },
+
+    {
+        header:"Social media",
+        links:[
+            {link:"instagram"},
+            {link:"twitter"},
+            {link:"facebook"},
+            {link:"figma"},
+            {link:"git"},
+        ]
     },
     {
         header:"Partners",
         links: [{link:"Ecobank Nigeria"},
                  {link:"eProcess"},
-                    {link: "Google"}]
+                 {link: "Google"}]
     }
 ]
 
