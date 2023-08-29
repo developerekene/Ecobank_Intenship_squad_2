@@ -1,0 +1,29 @@
+.pagination-container{
+    display:flex;
+    gap:10px;
+    justify-content: flex-end;
+}
+.pagination-item{
+    border: 0;
+    outline-offset: 0;
+    outline: 1px solid #FF7A00;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 0px solid #FF7A00;
+    transition: all .6s cubic-bezier(.36,.63,.5,.73);
+    cursor: pointer;
+}
+.pagination-item:hover{
+    outline-offset: 2px;
+    outline-color: transparent;
+    background-color: #FF7A00;
+    color: white;
+}
+.pagination-container .active{
+    background-color:#FF7A00 ;
+    color: white;
+}
