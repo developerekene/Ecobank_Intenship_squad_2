@@ -1,0 +1,16 @@
+.search{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border: 1px solid gray;
+    max-width: 200px ;
+    border-radius: 5px;
+
+}
+.search >svg{
+    margin-left:10px;
+}
+.search > input{
+    border: 0;
+    outline: 0;
+}

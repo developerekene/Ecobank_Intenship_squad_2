@@ -25,35 +25,12 @@
     padding-inline:15% ;
     align-items: center;
 }
-.sidebar .search-input-container form div{
-    position:relative;
-    width: 100%;
-}
+
 .sidebar .search-input-container form div:nth-of-type(3){
     display: flex;
     justify-content: center;
 }
-.search-input-container form div svg{
-    font-size: 20px;
-    position: absolute;
-    margin-left: 10px;
-    margin-top:8px;
-}
-.sidebar .search-input-container form div input{
-    width:100%;
-    height: 40px;
-    border: 1.5px solid rgba(128, 128, 128, 0.36);
-    background-color: #f7f2ed;
-    border-radius: 10px;
-    transition: all 0.2s ease-in-out;
-    font-weight: 600;
-    font-size: .75rem;
-    box-sizing: border-box;
-}
-.sidebar .search-input-container form input:focus{
-    border: 1.5px solid #FF7A00;
-    outline: 0.5px solid #FF7A00;
-}
+
 .sidebar .filters{
     box-sizing: border-box;
     width: 100%;

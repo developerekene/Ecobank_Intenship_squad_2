@@ -64,7 +64,7 @@ const Home = () => {
             </div>
             <div data-aos="fade-up" className='description-image'>
             <img src={discover} alt="" />
-            </div>
+            </div>  
           </div>
           <div className='description'>
             <div data-aos="fade-right" className='description-image'>

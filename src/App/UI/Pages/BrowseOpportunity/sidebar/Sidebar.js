@@ -6,6 +6,7 @@ import { filters } from '../../../../Constants/data'
 import Filter from '../Filter/Filter'
 import { HiBriefcase} from "react-icons/hi2"
 import { HiLocationMarker} from 'react-icons/hi'
+import Search from '../../../Components/search/Search'
 // import { filters } from '../../../Constants/data'
 
 function Sidebar({setActive}) {    
@@ -14,17 +15,11 @@ function Sidebar({setActive}) {
   return (
     <div className='sidebar'>
                 <div className='search-input-container'>
-                    <form action="">
-                    <div className='input-div'>
-                    <HiBriefcase />
-                    <input type="text" placeholder='Job Title'/>
-                </div>
-                <div className='input-div'>
-                    <HiLocationMarker />
-                    <input type="text" placeholder='Everywhere'/>
-                </div>
-                        <Button text={"Search"}/>
-                    </form>
+                <form action="">
+                    <Search Icon={HiBriefcase} placeholder='Job Title'/>
+                    <Search Icon={HiLocationMarker} placeholder='Everywhere'/>
+                    <Button text={"Search"}/>
+                 </form>
                 </div>
                 <div className='filters'>
                     <h3>Filters</h3>
