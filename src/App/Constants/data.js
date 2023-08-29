@@ -10,10 +10,6 @@ export const navLinks = [
     {
         title: "Post ",
         href: "/post",
-    },
-    {
-        title: "How it works",
-        href: "/howitworks",
     }
     ,
     {
@@ -47,21 +43,6 @@ export const footerLinks = [
 ]
 
 export const filters =[
-    {
-        name:"Industry",
-        options:[
-            {link:"Technology"},
-            {link:"Marketing"},
-            {link:"Design"}]
-    },
-    {
-        name:"Type Of Opportunity",
-        options:[
-            {link:"Internship"},
-            {link:"Project"},
-            {link:"Volunteer"},
-        ]
-    },
     {
         name:"Nature Of Job",
         options:[

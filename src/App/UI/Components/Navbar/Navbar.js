@@ -11,6 +11,8 @@ const Navbar = () => {
   const [openNav, setOpenNav] = useState(false)
   const [loggedIn, setloggedIn] = useState(true)
 
+
+
   return (
     <div className='navbar'>
       <div className='nav-item-container'>
@@ -36,12 +38,13 @@ const Navbar = () => {
 
 
         <div className='navButtons'>
+          
           {
 
             loggedIn ?
               <>
                 <a href={"/profile"}>
-                  <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" />
+                  <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
                 </a>
               </>
 

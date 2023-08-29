@@ -1,18 +1,23 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react'
 import "./Filter.css"
 
 function Filter({filterGroupName, filters, onClick}) {
 
-  
-  
-  
+
   return (
     <div className='filter'>
       <h4>{filterGroupName}</h4>
       <div className='filter-container'>
         {
+        
         filters.map((item)=>(
-            <div href="" className='filter-item' onClick={onClick}>{item.link}</div>
+             
+            <div 
+            href="" 
+            className='filter-item'  
+            onClick={onClick}
+            >{item.link}</div>
         ))
       }
       </div>

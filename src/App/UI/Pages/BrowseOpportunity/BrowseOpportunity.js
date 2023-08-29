@@ -7,41 +7,40 @@ import SideBarBackup from "./sidebar_backup/SideBarBackup";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Pagination from "./Pagination/Pagination";
+import MOCK_DATA from '../../../Constants/MOCK_DATA.json'
 
 function BrowseOpportunity() {
   //For Pagination
   const [postPerPage, setPostPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const OpportunityList = [];
+
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   //Creating multiple item in the list with a loop
-  let i=0
-  while(i<30){
-    OpportunityList.push({
-      companyLogo: "",
-      opportunityType: `Internship${i}`,
-      jobTitle:`Frontend Developer${i}`,
-      companyName:`Ecobank Africa${i}`,
-      NatureOfJob:`Onsite ${i}`,
-      TimePosted:`${i} year ago`
-      
-    })
-    i++;
-  }
-  const [filter,setFilter]= useState("")
-  const filteredItems = OpportunityList.filter((item)=>item.opportunityType.includes(filter))
-  console.log(filteredItems.length)
+ 
+  const [filter,setFilter]= useState({});
+
+  const setActive =(e)=>{
+    const siblings = e.target.parentNode.children
+    console.log(e.target.parentNode)
+    for(let i=0; i<siblings.length;i++){
+       siblings[i].classList.remove("active")
+    }
+    e.target.classList.add("active");
+}
+
+  const filteredItems = MOCK_DATA
+
   
   return (
     
     <div>
     <Navbar/>
         <div className="BrowseOpportunity">
-        <Sidebar />
-        <SideBarBackup />
+        <Sidebar setActive={setActive}/>
+        <SideBarBackup setFilter={filter} filter={filter}/>
         <div className="result-display">
-          <p className="search-result">{"searchResult"}</p>
+          <p className="search-result">{filteredItems.length+" results found"}</p>
           <hr />
           {
               filteredItems.slice(firstPostIndex,lastPostIndex).map((item)=>(
