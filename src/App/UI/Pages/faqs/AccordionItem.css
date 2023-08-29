@@ -1,0 +1,52 @@
+
+article{
+    background: #ffffff;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 10px 0 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: orangered;
+    margin-bottom: 10px;
+    color: #f7f2ed;
+}
+header.active{
+    background: #ffa550;
+}
+header.active svg{
+    rotate:-180deg;
+}
+
+article h2{
+    margin:0;
+    font-size: 16px;
+    font-weight: 500;
+}
+article h2{
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+article span{
+    transition: 0.3s;
+}
+
+.collapse{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.collapse.show{
+    height: auto;
+}
