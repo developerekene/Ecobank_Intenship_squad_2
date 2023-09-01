@@ -15,6 +15,11 @@ const index = () => {
         <Route Component={Home} path={"/home"}></Route>
         <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
         <Route Component={Profile} path={"/profile"}></Route>
+        {/* <Route Component={About} path={"/"}></Route> */}
+        <Route Component={LoginAndSignup} path={"/"}></Route>
+        <Route Component={Home} path={"/home"}></Route>
+        <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
+        <Route Component={Profile} path={"/profile"}></Route>
         <Route Component={Faqs} path={"/faqs"}></Route>
         <Route Component={About} path={"/about"}></Route>
       </Routes>

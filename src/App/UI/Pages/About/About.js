@@ -61,10 +61,10 @@ const About = () => {
                                 <IoIosBriefcase />
                                 <div>
                                     <p>FOUNDED IN</p>
-                                    <h2>2014</h2>
+                                    <h2>2023</h2>
                                 </div>
                             </div>
-                            <p>iLink was from Anthony's dorm room at the University of Maryland.</p>
+                            <p>iLink was built by Interns of E-process Nigeria Limited</p>
                           
                         </div>
 
@@ -73,10 +73,10 @@ const About = () => {
                                 <BsCash />
                                 <div>
                                     <p>TRACKED SPENT</p> 
-                                    <h2>$3 Billion</h2>
+                                    <h2>$0</h2>
                                 </div>
                             </div>
-                            <p>iLink was from Anthony's dorm room at the University of Maryland.</p>
+                            <p>iLink is interested in having investors invest in our company</p>
                         </div>
 
                         <div className='card' data-aos="fade-left">
@@ -84,10 +84,10 @@ const About = () => {
                                 <IoCogSharp />
                                 <div>
                                     <p>INTEGRATION PARTNERS</p>
-                                    <h2>2000+</h2>
+                                    <h2>1</h2>
                                 </div>
                             </div>
-                            <p>iLink was from Anthony's dorm room at the University of Maryland.</p>
+                            <p>Currently we are a startup and we are only integrated with E-process Nigeria Limited</p>
                         </div>
 
                     
