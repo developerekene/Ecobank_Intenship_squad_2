@@ -2,10 +2,14 @@
     padding-inline: 3rem;
 }
 
+.to-flex {
+    display: flex;
+    justify-content: space-between;
+}
 
 .middle-container {
-    margin-top: 60px;
     width: 60%;
+    margin-top: 50px;
 }
 
 .skills-container p {
@@ -39,18 +43,76 @@
 
 
 .timeline-container {
-    border: 1px;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+    gap: 70px;
 }
 
-.timeline-container .col-md-6 {
-    display: inline-block;
-    width: 45%;
-    margin: 0;
-    padding: 0;
-    vertical-align: top;
+
+.Experience-section h3 {
+    margin-left: 25px;
 }
+
+.about-container p {
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+}
+
+.Education-section .timeline-content p {
+    text-align: left;
+}
+
+.timeline-container .Education-section .timeline-content:nth-of-type(1),
+.timeline-container .Experience-section .timeline-content:nth-of-type(1) {
+    margin-top: 30px;
+}
+
+.timeline-container .Education-section .timeline-content {
+    padding: 5px 25px;
+    padding-left: 0;
+    border-right: 1px solid #FF7A00;
+    position: relative;
+    text-align: right;
+    padding-bottom: 15px;
+}
+
+.timeline-container .Experience-section .timeline-content {
+    padding: 5px 25px;
+    padding-right: 0;
+    border-left: 1px solid #FF7A00;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.timeline-container .Education-section .timeline-content::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FF7A00;
+    border-radius: 50%;
+    right: -6px;
+    top: 0;
+
+}
+
+
+.timeline-container .Experience-section .timeline-content::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FF7A00;
+    border-radius: 50%;
+    left: -6px;
+    top: 0;
+}
+
 
 .timeline-container .col-md-6:before {
     padding: 5px;
@@ -61,7 +123,7 @@
 }
 
 .user-about-and-timeline-container {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .user-about-and-timeline .active {
@@ -71,10 +133,22 @@
 }
 
 .about-and-timeline {
-    width: 50%;
+    max-width: 100%;
     margin: auto;
     margin-top: 30px;
     justify-content: center;
+}
+
+.about-and-timeline .timeline-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.about-container P {
+    max-width: 1100px;
+    margin: auto;
 }
 
 .a .lower-container {
@@ -93,13 +167,12 @@
     height: 100px;
     border-radius: 50%;
     padding: 5px;
-    transform: translate(95px, 95px);
+    transform: translate(50px, 95px);
     border: 2px solid #FF7A00;
 }
 
 .Profile .col-md-6 {
-    position: relative;
-    left: 95px;
+    margin-left: 50px;
 }
 
 .Profile .lower-container {
@@ -108,8 +181,7 @@
 }
 
 .Profile .skills-container {
-    position: relative;
-    left: 95px;
+    margin-left: 50px;
     margin-top: 30px;
 }
 
@@ -139,23 +211,24 @@
     font-size: 20px;
 }
 
-.Profile .col-md-6 .middle-container .user-about-and-timeline-container .user-about-and-timeline {
-    display: flex;
-}
+
 
 .col-md-2 {
     display: flex;
-    justify-content: flex-end;
-    transform: translateY(105px);
+    height: 50px;
+    margin-top: 50px;
 }
 
 .user-about-and-timeline-container .user-about-and-timeline {
     list-style-type: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
     font-size: 20px;
     font-weight: 600;
+
 }
 
 .Profile a {
@@ -182,4 +255,142 @@
     align-items: center;
 }
 
+@media (max-width:860px) {
+    .about-and-timeline .timeline-content p {
+        font-size: 1rem;
+    }
 
+    .lower-container {
+        margin-right: 70px;
+    }
+
+    .about-container p {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:720px) {
+    .about-container p {
+        justify-content: center;
+        text-align: center;
+        width: 50%;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:640px) {
+    .about-container p {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:580px) {
+    .to-flex {
+        margin-top: 20px;
+    }
+
+    .skills-container button {
+        width: 100px;
+        font-size: 11px;
+        justify-content: center;
+    }
+
+    .skills-container button:nth-of-type(2) {
+        padding: 0.5rem 2rem;
+    }
+
+    .skills-container button:nth-of-type(3) {
+        padding: 0.5rem 2rem;
+    }
+
+    .skills-container button:nth-of-type(4) {
+        padding: 0.5rem 2rem;
+    }
+
+}
+
+@media (max-width:375px) {
+    .skills-container button {
+        display: flex;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 12px;
+        width: 100px;
+        justify-content: center;
+    }
+
+}
+
+/*@media (max-width:860px) {
+    .first-container{
+        flex-direction: column;
+        height: 100vh;
+    }
+    .first-container .first-image{
+        width: 100%;
+        height: 50vh;
+    }
+    .first-container .first-content{
+        width: 100vw;
+       padding-inline: 2rem;
+    }
+    .leader{
+        flex-direction: column;
+        height: fit-content;
+        margin-bottom: 100px;
+    }
+    .leader:nth-of-type(2){
+        flex-direction: column-reverse;
+    }
+    .leader .textarea p:nth-of-type(2) {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .leader .textarea {
+        padding-left: 0;
+    }
+    .leader img{
+        margin-bottom: 50px;
+        width: 340px !important;
+        height: 400px !important;
+    }
+
+}
+@media (max-width:720px){
+    .third-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 60%;
+        padding-inline: 0;
+        align-items: center;
+        margin: auto;
+    }
+}
+@media (max-width:640px){
+    .second-container .second-content{
+        width: 100%;
+    }
+}
+@media (max-width:580px){
+    .leader .textarea {
+     width: 100%;
+    }
+}
+@media (max-width:450px){
+    .first-container .first-content p{
+        font-size: 1.1rem;
+    }
+    .first-container .first-content a p{
+        font-size: 0.7rem;
+    }
+}
+@media (max-width:450px){
+    .leader img{
+        
+        width: 300px !important;
+        height: 380px !important;
+    }
+}*/
