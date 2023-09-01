@@ -304,6 +304,9 @@
         width: 300px !important;
         height: 380px !important;
     }
+    .fourth-container .fourth-description p{
+        text-align: center;
+    }
 }
 
 

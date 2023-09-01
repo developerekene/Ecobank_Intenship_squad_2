@@ -35,32 +35,20 @@ const Navbar = () => {
             })
           }
         </div>
-
-
         <div className='navButtons'>
-          
-          {
-
-            loggedIn ?
-              <>
-                <a href={"/profile"}>
-                  <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
-                </a>
-              </>
-
-              :
-              <Button text={'Login'} />
-          }
-
-        </div>
-
+            <a href={"/profile"}>
+              <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
+            </a>
+          </div>
         <div className="openIcon" onClick={() => { setOpenNav(!openNav) }}>
           <HiMenu />
         </div>
+      
         <div className={openNav ? "open-navbar" : "close-navbar"}>
           <div className="closeIcon" onClick={() => { setOpenNav(!openNav) }}>
             <HiX />
           </div>
+          
 
           {
             navLinks.map((item) => {
@@ -74,9 +62,6 @@ const Navbar = () => {
               )
             })
           }
-          <div className='navButtons-side'>
-            <Button text={'Login'} />
-          </div>
         </div>
       </div>
     </div>
