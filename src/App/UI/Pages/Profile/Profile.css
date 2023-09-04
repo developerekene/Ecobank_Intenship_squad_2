@@ -389,7 +389,7 @@
     }
 }
 
-@media (max-width:375px) {
+ @media (max-width:375px) { 
     .middle-container {
         margin-left: -50px;
     }
@@ -446,6 +446,20 @@
         font-size: 16px;
     }
 
+}
+
+@media (max-width:412px) {
+    .timeline-container {
+        gap: 50px;
+    }
+
+    .about-and-timeline .timeline-container .Education-section {
+        width: 133px;
+    }
+
+    .about-and-timeline .timeline-container .Experience-section {
+        width: 133px;
+    }
 
 }
 
@@ -461,4 +475,58 @@
     .about-and-timeline .timeline-container .Experience-section {
         width: 122px;
     }
+
+    .Profile .upper-container .col-md-4 .image-container img {
+        transform: translate(93px, 95px);
+    }
 }
+
+@media (max-width:393px) {
+    .timeline-container {
+        gap: 50px;
+    }
+
+    .about-and-timeline .timeline-container .Education-section {
+        width: 123.5px;
+    }
+
+    .about-and-timeline .timeline-container .Experience-section {
+        width: 123.5px;
+    }
+
+    .Profile .upper-container .col-md-4 .image-container img {
+        transform: translate(93px, 95px);
+    }
+
+}
+
+@media (max-width:360px) {
+    .timeline-container {
+        gap: 50px;
+    }
+
+    .about-and-timeline .timeline-container .Education-section {
+        width: 107px;
+    }
+
+    .about-and-timeline .timeline-container .Experience-section {
+        width: 107px;
+    }
+
+    .Profile .upper-container .col-md-4 .image-container img {
+        transform: translate(81px, 95px);
+    }
+
+    .skills-container .buttons .part-one button {
+        width: 250px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .skills-container .buttons .part-two button {
+        width: 250px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+

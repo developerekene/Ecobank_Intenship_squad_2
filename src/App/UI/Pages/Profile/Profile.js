@@ -5,10 +5,10 @@ import "./Profile.css"
 import Button from "../../Components/button/NavigateButton/NavigateButton";
 import { FaFlag } from 'react-icons/fa';
 import youtube from "../../../Image/png/youtube.png";
-import instagram from "../../../Image/png/instagram.png"
-import github from "../../../Image/png/github.png"
-import figma from "../../../Image/png/figma.png"
-import star from "../../../Image/png/star.png"
+import instagram from "../../../Image/png/instagram.png";
+import github from "../../../Image/png/github.png";
+import figma from "../../../Image/png/figma.png";
+import star from "../../../Image/png/star.png";
 
 
 import AOS from 'aos';
