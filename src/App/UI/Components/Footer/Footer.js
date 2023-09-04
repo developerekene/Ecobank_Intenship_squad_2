@@ -4,7 +4,7 @@
 import React from "react";
 import './Footer.css';
 import {footerLinks} from "../../../Constants/data"
-// import TextApp from "../Text/Text";
+
 
 
 const Footer=()=>{

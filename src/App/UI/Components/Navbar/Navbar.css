@@ -137,10 +137,9 @@ input{
         text-decoration-color: #FF7A00;
     }
     .nav-item-container .navButtons{
-        display: none;
-    }
-    .nav-item-container .navButtons button{
-        border: 1px solid #FF7A00;
+        position: absolute;
+        right: 90px;
+        margin-top: 8px;
     }
 
 }
@@ -150,5 +149,8 @@ input{
     }
     .open-navbar{
         width: 70%;
+    }
+    .nav-item-container .navButtons{
+        right: 70px;
     }
 }

@@ -47,7 +47,7 @@ const Home = () => {
             <p>Welcome to our "What We Do" section, where we take pride in our mission to bridge the gap between aspiring young interns and companies seeking fresh talent. </p>
           </div>
           <div className='description'>
-            <div data-aos="fade-right" className='description-image'>
+            <div data-aos="fade-up" className='description-image'>
               <img src={potential} alt="" />
             </div>
             <div data-aos="fade-up">
@@ -57,7 +57,7 @@ const Home = () => {
             </div>
           </div>
           <div className='description'>
-            <div data-aos="fade-right">
+            <div data-aos="fade-up">
               <h3>We Help you Discover Exceptional Interns</h3>
               <p>Are you a company looking for fresh and motivated talent to join your ranks? Find your dream team of interns right here! Our platform connects you with aspiring young
                  professionals who bring innovation and enthusiasm to your projects. Post your internships and let the next generation of talent contribute to your success.</p>
@@ -67,7 +67,7 @@ const Home = () => {
             </div>  
           </div>
           <div className='description'>
-            <div data-aos="fade-right" className='description-image'>
+            <div data-aos="fade-up" className='description-image'>
               <img src={Meet} alt="" />
             </div>
             <div data-aos="fade-up">
@@ -86,3 +86,5 @@ const Home = () => {
 }
 
 export default Home
+
+
