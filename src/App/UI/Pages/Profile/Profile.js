@@ -72,8 +72,6 @@ const Profile = () => {
               <button>Data science</button>
             </div>
           </div>
-
-
         </div>
 
         <div className='user-about-and-timeline-container'>
