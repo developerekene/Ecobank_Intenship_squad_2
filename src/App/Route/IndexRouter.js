@@ -16,13 +16,6 @@ const index = () => {
         <Route Component={Home} path={"/home"}></Route>
         <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
         <Route Component={Profile} path={"/profile"}></Route>
-<<<<<<< HEAD
-        <Route Component={LoginAndSignup} path={"/"}></Route>
-        <Route Component={Home} path={"/home"}></Route>
-        <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
-        <Route Component={Profile} path={"/profile"}></Route>
-=======
->>>>>>> 7c7cd09fe87cb8b5ba6e7c305e01c108cd44b108
         <Route Component={Faqs} path={"/faqs"}></Route>
         <Route Component={About} path={"/about"}></Route>
       </Routes>
