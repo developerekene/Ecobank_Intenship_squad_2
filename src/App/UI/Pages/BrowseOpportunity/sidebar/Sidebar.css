@@ -12,7 +12,8 @@
     max-width: 300px;
     height: 210px;
     border-radius: 10px;
-    box-shadow: 2px 2px 20px rgba(77, 77, 77, 0.441);
+    border: 1px solid var(--primary-color);
+    box-shadow: 2px 2px 20px rgba(77, 77, 77, 0.441)§;
     margin-bottom: 50px;
 }
 .sidebar .search-input-container form{
@@ -40,14 +41,17 @@
     padding-inline: 10%;
     padding-block: 30px;
     box-shadow: 2px 2px 20px rgba(77, 77, 77, 0.441);
+    border: 1px solid var(--primary-color);
 }
 .sidebar .filters h4{
     padding-block: 10px;
+    color: var(--primary-color);
     
 }
 .sidebar .filters>h3{
     font-weight: 700;
     margin-bottom: 5px;
+    color: var(--primary-color);
 }
 .sidebar .filters .filters-container{
     height: 80%;

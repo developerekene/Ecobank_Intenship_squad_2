@@ -7,6 +7,7 @@ import LoginAndSignup from "../UI/Pages/LoginAndSignup/LoginAndSignup";
 import Faqs from "../UI/Pages/faqs/Faqs";
 import About from "../UI/Pages/About/About";
 
+
 const index = () => {
   return (
     <BrowserRouter>

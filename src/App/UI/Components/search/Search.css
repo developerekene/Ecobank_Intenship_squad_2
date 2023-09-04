@@ -2,15 +2,19 @@
     display: flex;
     align-items: center;
     height: 35px;
-    border: 1px solid gray;
+    border: 1px solid var(--secondary-color);
     max-width: 200px ;
     border-radius: 5px;
+    color: var(--primary-color);
 
 }
 .search >svg{
-    margin-left:10px;
+    margin-top: -2px;
+    margin-left:5px;
+    margin-right: 5px;
 }
 .search > input{
     border: 0;
     outline: 0;
+    color: var(--primary-color);
 }

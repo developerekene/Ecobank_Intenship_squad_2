@@ -6,23 +6,20 @@ import { HiLocationMarker, HiX} from 'react-icons/hi'
 import { filters } from '../../../../Constants/data'
 import Filter from '../Filter/Filter'
 import Button from '../../../Components/button/NavigateButton/NavigateButton'
+import Search from '../../../Components/search/Search'
 
-function SideBarBackup() {
+function SideBarBackup({setActive}) {
     const [showFilter,setShowFilters]=useState(false)
+    
   return (
     <div className='sidebar-backup'>
         <div className='search-input-container'>
             <form action="">
-                <div className='input-div'>
-                    <HiBriefcase />
-                    <input type="text" placeholder='Job Title'/>
-                </div>
-                <div className='input-div'>
-                    <HiLocationMarker />
-                    <input type="text" placeholder='Everywhere'/>
-                </div>
+                <Search Icon={HiBriefcase} placeholder='Job Title'/>
+                <Search Icon={HiLocationMarker} placeholder='Everywhere'/>
                 <Button text={"Search"}/>
             </form>
+
         </div>
         <div className='filter-dropmenu'>
             <div onClick={()=>setShowFilters(!showFilter)}>
@@ -48,7 +45,7 @@ function SideBarBackup() {
                     <div className='filters-container'>
                         {
                             filters.map((item)=>(
-                                <Filter filterGroupName={item.name} filters={item.options}/>
+                                <Filter onClick={(e)=>{setActive(e)}} filterGroupName={item.name} filters={item.options}/>
                             ))
                         }
                     </div>

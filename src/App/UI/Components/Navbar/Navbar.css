@@ -4,12 +4,12 @@
     padding:0;
 }
 input{
-    background-color:#f7f2ed;
+    background-color:var(--bg-color);
 }
 .navbar{
     position: sticky;
     top: 0;
-    background-color:#f7f2ed;
+    background-color:var(--bg-color);
     padding-bottom:1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.196);
     z-index: 10;
@@ -38,7 +38,7 @@ input{
     width:50%;
 }
 .nav-item-container .nav-links .nav-link a{
-    color: black;
+    color: var(--primary-color);
 }
 .nav-item-container .nav-links .nav-link:hover{
     text-decoration: underline;
@@ -47,8 +47,8 @@ input{
 }
 .nav-item-container .navButtons{
     display: flex;
-    align-items: center;
-    gap:1rem;
+    justify-content: flex-end;
+   
 }
 .nav-item-container .navButtons .profile-picture{
     width: 40px;
@@ -65,7 +65,7 @@ input{
 }
 .openIcon svg{
     cursor: pointer;
-    color: #0000009c;
+    color: var(--primary-color);
     font-size: 24px;
 }
 .closeIcon{
@@ -80,7 +80,7 @@ input{
     width: 0;
 }
 .open-navbar div p{
-    color: #fff !important;
+    color: var(--tertiary-color) !important;
 }
 .closeIcon svg{
     color: #FF7A00;
@@ -123,14 +123,14 @@ input{
         top: 0;
         bottom: 0;
         right: 0;
-        width: 60%;
-        height:100dvh;
-        background-color: #000;
+        width: 60vw;
+        background-color: var(--primary-color);
         display: flex;
         gap: 2rem;
         flex-direction: column;
         align-items: center;
         padding-top: 30px;
+        z-index: 100;
     }
     .nav-item-container .nav-links .nav-link:hover{
         text-decoration: underline;
@@ -148,7 +148,7 @@ input{
         padding-inline:2rem;
     }
     .open-navbar{
-        width: 70%;
+        width: 70vw;
     }
     .nav-item-container .navButtons{
         right: 70px;
