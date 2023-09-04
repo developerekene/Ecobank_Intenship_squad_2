@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import "./Profile.css"
 import Button from "../../Components/button/NavigateButton/NavigateButton";
 import { FaFlag } from 'react-icons/fa';
 import youtube from "../../../Image/png/youtube.png";
-import instagram from "../../../Image/png/instagram.png"
-import github from "../../../Image/png/github.png"
-import figma from "../../../Image/png/figma.png"
-import star from "../../../Image/png/star.png"
+import instagram from "../../../Image/png/instagram.png";
+import github from "../../../Image/png/github.png";
+import figma from "../../../Image/png/figma.png";
+import star from "../../../Image/png/star.png";
 
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Profile = () => {
   const [toggler, setToggler] = useState("about")
@@ -20,6 +23,10 @@ const Profile = () => {
     }
     e.target.classList.add('active')
   }
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   return (
     <>
@@ -32,31 +39,39 @@ const Profile = () => {
             </div>
 
           </div>
+        </div>
+        <div className='to-flex'>
+
+          <div className="middle-container">
+            <div className="col-md-6">
+              <h5 className='name'>Stephen Curry</h5>
+              <h6 className='job'>Frontend web developer</h6>
+              <p>1234 Elm Street</p>
+              <p>City, State, Zip Code</p>
+              <p>
+                <FaFlag /> United States
+              </p>
+            </div>
+          </div>
           <div className="col-md-2">
             <Button type="submit" text={"Edit Profile"} class="edit-profile" />
             <Button type="submit" text={"Upload CV"} class="edit-profile" />
           </div>
-
-
         </div>
-        <div className="middle-container">
-          <div className="col-md-6">
-            <h5 className='name'>Stephen Curry</h5>
-            <h6 className='job'>Frontend web developer</h6>
-            <p>1234 Elm Street</p>
-            <p>City, State, Zip Code</p>
-            <p>
-              <FaFlag /> United States
-            </p>
-          </div>
-        </div>
+
 
         <div className="skills-container">
           <p>Skills <img src={star} /></p>
-          <button>Web development</button>
-          <button>UI Design</button>
-          <button>UX Design</button>
-          <button>C++</button>
+          <div className='buttons'>
+            <div className='part-one'>
+              <button>Web development</button>
+              <button>UX Design</button>
+            </div>
+            <div className='part-two'>
+              <button>UI Design</button>
+              <button>Data science</button>
+            </div>
+          </div>
         </div>
 
         <div className='user-about-and-timeline-container'>
@@ -83,43 +98,24 @@ const Profile = () => {
                 </div>
                 :
                 <div className='timeline-container'>
-                  <div className='timeline-content'>
+                  <div className='Education-section'>
+                    <h3>Education</h3>
+                    <div className='timeline-content' data-aos="fade-up">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis quam eget dui pulvinar, sed vulputate tortor vestibulum. Vivamus gravida dui vel justo ullamcorper, vel viverra elit blandit. Nullam nec consectetur orci. Quisque ac diam eu arcu euismod fringilla. Maecenas in bibendum ex.
+                      </p>
 
-                    <div className="col-md-6">
-                      <label>User ID</label>
                     </div>
-                    <div className="col-md-6">
-                      <p>749950764</p>
-                    </div>
+                  </div>
 
-                    <div className="col-md-6">
-                      <label>Duration</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>3 Months</p>
-                    </div>
+                  <div className='Experience-section'>
+                    <h3>Experience</h3>
+                    <div className='timeline-content' data-aos="fade-up">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis quam eget dui pulvinar, sed vulputate tortor vestibulum. Vivamus gravida dui vel justo ullamcorper, vel viverra elit blandit. Nullam nec consectetur orci. Quisque ac diam eu arcu euismod fringilla. Maecenas in bibendum ex.
+                      </p>
 
-                    <div className="col-md-6">
-                      <label>Email</label>
                     </div>
-                    <div className="col-md-6">
-                      <p>stephencurry30@gmail.com</p>
-                    </div>
-
-                    <div className="col-md-6">
-                      <label>Phone</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>+1(408) 785-9959</p>
-                    </div>
-
-                    <div className="col-md-6">
-                      <label>Profession Given</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>Web developer</p>
-                    </div>
-
 
                   </div>
                 </div>
