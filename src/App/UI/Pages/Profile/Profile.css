@@ -389,7 +389,7 @@
     }
 }
 
- @media (max-width:375px) { 
+@media (max-width:375px) {
     .middle-container {
         margin-left: -50px;
     }
@@ -529,4 +529,3 @@
         font-size: 12px;
     }
 }
-
