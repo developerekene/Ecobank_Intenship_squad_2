@@ -62,10 +62,18 @@ const Profile = () => {
 
         <div className="skills-container">
           <p>Skills <img src={star} /></p>
-          <button>Web development</button>
-          <button>UX Design</button>
-          <button>UI Design</button>
-          <button>Data science</button>
+          <div className='buttons'>
+            <div className='part-one'>
+              <button>Web development</button>
+              <button>UX Design</button>
+            </div>
+            <div className='part-two'>
+              <button>UI Design</button>
+              <button>Data science</button>
+            </div>
+          </div>
+
+
         </div>
 
         <div className='user-about-and-timeline-container'>
