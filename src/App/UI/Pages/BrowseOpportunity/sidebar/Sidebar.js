@@ -20,6 +20,7 @@ function Sidebar({setActive}) {
                     <Search Icon={HiLocationMarker} placeholder='Everywhere'/>
                     <Button text={"Search"}/>
                  </form>
+                 
                 </div>
                 <div className='filters'>
                     <h3>Filters</h3>

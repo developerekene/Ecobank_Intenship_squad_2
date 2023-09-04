@@ -7,6 +7,7 @@ import LoginAndSignup from "../UI/Pages/LoginAndSignup/LoginAndSignup";
 import Faqs from "../UI/Pages/faqs/Faqs";
 import About from "../UI/Pages/About/About"
 
+
 const index = () => {
   return (
     <BrowserRouter>
@@ -15,7 +16,6 @@ const index = () => {
         <Route Component={Home} path={"/home"}></Route>
         <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
         <Route Component={Profile} path={"/profile"}></Route>
-        {/* <Route Component={About} path={"/"}></Route> */}
         <Route Component={LoginAndSignup} path={"/"}></Route>
         <Route Component={Home} path={"/home"}></Route>
         <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>

@@ -116,6 +116,7 @@
 .skills-container p {
     display: flex;
     align-items: center;
+    color: var(--primary-color);
 }
 
 .skills-container p img {
@@ -125,18 +126,22 @@
 
 .Profile .lower-container .col-md-4 .profile-work .title {
     font-weight: 600;
+    color: var(--primary-color);
 }
 
 .Profile .lower-container .col-md-4 .profile-work {
     font-size: 20px;
+    color: var(--primary-color);
 }
 
 .Profile .middle-container .col-md-6 .name {
     font-size: 40px;
+    color: var(--primary-color);
 }
 
 .Profile .middle-container .col-md-6 .job {
     font-size: 20px;
+    color: var(--primary-color)
 }
 
 .Profile .col-md-6 .middle-container .user-about-and-timeline-container .user-about-and-timeline {
@@ -159,7 +164,7 @@
 }
 
 .Profile a {
-    color: black;
+    color: var(--primary-color);
 }
 
 .Profile a:hover {

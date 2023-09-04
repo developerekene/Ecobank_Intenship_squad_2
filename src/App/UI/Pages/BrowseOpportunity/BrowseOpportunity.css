@@ -8,14 +8,102 @@
 }
 .search-result{
     padding-block: 1rem;
-    color: rgba(0, 0, 0, 0.499);
+    color: var(--secondary-color);
 }
 .search-result ~ hr{
     width: 80%;
     margin: auto;
     margin-bottom: 2rem;
-    border: 1px solid rgba(128, 128, 128, 0.36);
+    border: 1px solid var(--secondary-color);
 }
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: var(--bg-color);
+}
+.modal-content {
+    overflow:scroll;
+    line-height: 1.4;
+    background: var(--bg-color);
+    padding: 50px;
+    border-radius: 3px;
+    max-width: 800px;
+    min-width:300px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    height: 450px;
+    
+}
+.modal-content h2{
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.modal .company{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    color: var(--primary-color);
+}
+.modal .nature-of-job{
+    padding: 3px;
+    width: 50px;
+    background-color: #FF7A00;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+.modal .time-posted{
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+.modal .job-description{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+.modal .description{
+    color: var(--secondary-color);
+}
+.modal .close-modal{
+    font-size: 30px;
+    position: relative;
+    top: 0px;
+    right: -20px;
+    color: var(--primary-color);
+    align-self: flex-end;
+}
+.modal .modal-container{
+    height: 500px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2rem;
+}
+
 @media (max-width:860px) {
     .BrowseOpportunity{
         display: flex;
@@ -27,8 +115,15 @@
         padding-right:0;
     }
 }
-@media (max-width:440px) {
+@media (max-width:450px) {
     .BrowseOpportunity{
-        padding-inline:3rem;
+        padding-inline:2rem;
+    }
+    .modal .description{
+        text-align: justify;
+        font-size: 0.9rem;
+    }
+    .modal-content h2{
+        font-size: 1.7rem;
     }
 }
