@@ -11,18 +11,18 @@
     padding: 5px;
     border: 1px solid #FF7A00;
     border-radius: 10px;
-    color: rgba(0, 0, 0, 0.533);
+    color: var(--secondary-color);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 .filter-item:hover{
     background-color: #FF7A00;
-    color: white;
+    color: var(--primary-color);
 
 }
 .filter .active{
     background-color: #FF7A00;
-    color: white;
+    color: var(--primary-color);
 }
 .filter >h4{
     font-size:14px;

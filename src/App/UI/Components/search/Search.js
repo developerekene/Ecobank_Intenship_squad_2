@@ -4,7 +4,7 @@ function Search({Icon, placeholder}) {
   return (
     <div>
       <div className='search'>
-        { Icon && <Icon />}
+          { Icon && <Icon />}
           <input type='text' placeholder={placeholder}></input>
       </div>
 

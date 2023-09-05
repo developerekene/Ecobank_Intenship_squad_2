@@ -4,9 +4,6 @@
     margin:0 ;
 }
 
-body{
-    background: #f7f2ed;
-}
 
 
 .hero-section{
@@ -49,10 +46,11 @@ body{
     font-size: 3.5rem;
     line-height: 50px;
     margin-bottom: 16px;
+    color: var(--primary-color);
 }
 .hero-section .welcome-text p{
     width: 75%;
-    color: rgba(33, 31, 31, 0.616);
+    color: var(--secondary-color);
     margin-bottom: 32px;
 }
 .hero-section .welcome-text p~div button{
@@ -61,6 +59,7 @@ body{
 .WWD-Section .caption h2{
     text-align: center;
     font-size: 2rem;
+    color: var(--primary-color);
 }
 .WWD-Section .caption p{
     margin-bottom: 100px;
@@ -68,7 +67,7 @@ body{
     text-align: center;
     margin:auto;
     margin-bottom: 100px;
-    color: rgba(33, 31, 31, 0.616);
+    color: var(--secondary-color);
 }
 .WWD-Section .description{
     display: flex;
@@ -104,7 +103,7 @@ body{
 }
 
 .WWD-Section .description div p{
-    color: rgba(33, 31, 31, 0.616);
+    color: var(--secondary-color);
 }
 
 .WWD-Section .description img{
