@@ -4,7 +4,7 @@ import AccordionItem from "./AccordionItem"
 const faqs =[
   {
     id:1,
-  header:"How do I search for jobs on iLink?",
+  header:"How do I search for jobs on INTERNHUB?",
   text:'You can search for jobs by using keywords, location, industry, and other filters in the search bar. The results will display relevant job listings.',
   },
 
@@ -17,7 +17,7 @@ const faqs =[
   {
     id:3,
       header:"Do I need an account to apply for jobs?",
-      text:'Yes, having an account on iLink is necessary to apply for jobs. This helps employers track your applications and communicate with you.'    
+      text:'Yes, having an account on INTERNHUB is necessary to apply for jobs. This helps employers track your applications and communicate with you.'    
   },
 
   {
@@ -29,7 +29,7 @@ const faqs =[
   {   
       id:5,
       header:"Are there resources for improving my job search?",
-      text:'Absolutely! iLink often provides blog posts, articles, and guides on resume writing, interview tips, career development, and more.'
+      text:'Absolutely! INTERNHUB often provides blog posts, articles, and guides on resume writing, interview tips, career development, and more.'
   }
 ]
 const Accordion = () => {

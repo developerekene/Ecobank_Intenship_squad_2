@@ -63,7 +63,7 @@ const About = () => {
                                     <h2>2023</h2>
                                 </div>
                             </div>
-                            <p>iLink was built by Interns of E-process Nigeria Limited</p>
+                            <p>INTERNHUB  was built by Interns of E-process Nigeria Limited</p>
                           
                         </div>
 
@@ -75,7 +75,7 @@ const About = () => {
                                     <h2>$0</h2>
                                 </div>
                             </div>
-                            <p>iLink is interested in having investors invest in our company</p>
+                            <p>INTERNHUB is interested in having investors invest in our company</p>
                         </div>
 
                         <div className='card' data-aos="fade-left">
@@ -98,7 +98,7 @@ const About = () => {
                             <HiUserGroup />
                         </div>  
                         <h2>Leadership</h2>
-                        <p>Get to know the leaders of Ilink community</p>
+                        <p>Get to know the leaders of INTERNHUB community</p>
                     </div>
                     <div className='leader-content'>
                         <div className="leader">
