@@ -14,11 +14,11 @@ return (
         <section>
         <Search placeholder={"What is your question?"} width={"200px"} />
 
-        <div>
+        <div className='header_text'>
           <p> General FAQs</p>
         </div>
         <Accordion />
-        <div>
+        <div className='header_text'>
           <p>For Job seekers</p>
         </div>
         <Accordion2/>

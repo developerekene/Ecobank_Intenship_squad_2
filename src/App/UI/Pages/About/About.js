@@ -2,18 +2,17 @@ import React,{useEffect} from 'react';
 import './About.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import intern1 from '../../../Image/png/intern1.png';
 import {BsCash} from "react-icons/bs";
 import {IoIosBriefcase} from "react-icons/io";
-import team from '../../../Image/png/team.png';
 import {IoBookSharp, IoCogSharp, IoLogoTwitter, IoLogoLinkedin} from "react-icons/io5";
 import {HiUserGroup} from "react-icons/hi";
-import leaderDummy from "../../../Image/png/leaderDummy.png"
+import { Tools } from '../../../utils/Constant';
 
 //Importing Animate on Scroll library
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 
 const About = () => {
     useEffect(() => {
@@ -35,7 +34,7 @@ const About = () => {
                         
                     </div>
                     <div className='first-image'>
-                        <img src={intern1} className='first-image' alt="" />
+                        <img src={Tools.images.intern1} className='first-image' alt="" />
                     </div>
                 </div>
 
@@ -103,7 +102,7 @@ const About = () => {
                     </div>
                     <div className='leader-content'>
                         <div className="leader">
-                            <img src={leaderDummy} data-aos="fade-right" alt="" />
+                            <img src={Tools.images.leaderDummy} data-aos="fade-right" alt="" />
                             <div className="textarea" data-aos="fade-left">
                                 <h3>Afolabi Ifekristi</h3>
                                 <p>CEO/FOUNDER</p>
@@ -124,10 +123,10 @@ const About = () => {
                                     <IoLogoLinkedin />
                                 </div>
                             </div>
-                            <img src={leaderDummy} data-aos="fade-left" alt="" />
+                            <img src={Tools.images.leaderDummy} data-aos="fade-left" alt="" />
                         </div>
                         <div className="leader">
-                            <img src={leaderDummy} data-aos="fade-right" alt="" />
+                            <img src={Tools.images.leaderDummy} data-aos="fade-right" alt="" />
                             <div className="textarea" data-aos="fade-left">
                                 <h3>David Adisa</h3>
                                 <p>CEO/FOUNDER</p>
