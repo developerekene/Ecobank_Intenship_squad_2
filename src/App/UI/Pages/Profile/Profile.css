@@ -10,6 +10,7 @@
 .middle-container {
     width: 60%;
     margin-top: 50px;
+    color: var(--primary-color);
 }
 
 .skills-container p {
@@ -59,10 +60,14 @@
     justify-content: center;
     text-align: center;
     width: 40%;
+    color: var(--primary-color);
 }
-
+.Education-section{
+    color: var(--primary-color);
+}
 .Education-section .timeline-content p {
     text-align: left;
+    color: var(--primary-color);
 }
 
 .timeline-container .Education-section .timeline-content:nth-of-type(1),
@@ -78,13 +83,16 @@
     text-align: right;
     padding-bottom: 15px;
 }
-
+.timeline-container .Experience-section{
+    color: var(--primary-color);
+}
 .timeline-container .Experience-section .timeline-content {
     padding: 5px 25px;
     padding-right: 0;
     border-left: 1px solid #FF7A00;
     position: relative;
     padding-bottom: 15px;
+    color: var(--primary-color);
 }
 
 .timeline-container .Education-section .timeline-content::after {
@@ -198,12 +206,16 @@
     font-weight: 600;
     color: var(--primary-color);
 }
-
+.Profile .lower-container .col-md-4 .profile-work .title img{
+    color: var(--primary-color);
+}
 .Profile .lower-container .col-md-4 .profile-work {
     font-size: 20px;
     color: var(--primary-color);
 }
-
+.Profile .lower-container .col-md-4 .profile-work a{
+    color: var(--primary-color);
+}
 .Profile .middle-container .col-md-6 .name {
     font-size: 40px;
     color: var(--primary-color);

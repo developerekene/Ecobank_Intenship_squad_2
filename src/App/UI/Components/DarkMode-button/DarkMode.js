@@ -17,7 +17,7 @@ const DarkMode = ({togglerState}) => {
         toggler.checked = false
       }
     })
-  
+   
     const toggleTheme = (e) => {
         const currentTheme = document.body.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
