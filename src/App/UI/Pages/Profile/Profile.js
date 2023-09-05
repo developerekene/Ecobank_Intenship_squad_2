@@ -4,7 +4,6 @@ import Footer from '../../Components/Footer/Footer';
 import "./Profile.css"
 import Button from "../../Components/button/NavigateButton/NavigateButton";
 import { FaFlag } from 'react-icons/fa';
-import star from "../../../Image/png/star.png";
 import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
 
@@ -60,7 +59,7 @@ const Profile = () => {
         <div className="skills-container">
           <div className='skills-header'>
             <p>Skills <FaRegStar /></p>
-          </div>
+          </div>.
 
           <div className='buttons'>
             <div className='part-one'>
