@@ -21,7 +21,6 @@ const Navbar = () => {
   const togglerState = (e) => {
     if(e.target.checked===true){
       document.querySelector('.logo').setAttribute('src',darkModeLogo);
-      console.log(document.querySelector('.logo').getAttribute('src'))
     }
     else{
       document.querySelector('.logo').setAttribute('src',lightModeLogo)

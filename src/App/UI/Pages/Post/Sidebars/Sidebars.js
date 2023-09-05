@@ -1,22 +1,20 @@
-import React
-    from 'react'
-import './Sidebar.css'
+import React from 'react'
+import './Sidebars.css'
 import Button from '../../../Components/button/NavigateButton/NavigateButton'
 import { filters } from '../../../../Constants/data'
-import Filter from '../Filter/Filter'
+import Sifter from "../Sifter/Sifter"
 import { HiBriefcase } from "react-icons/hi2"
 import { HiLocationMarker } from 'react-icons/hi'
 import Search from '../../../Components/search/Search'
-// import { filters } from '../../../Constants/data'
 
-function Sidebar({ setActive }) {
+function Sidebars({ setActive }) {
 
 
     return (
-        <div className='sidebar'>
+        <div className='sidebars'>
             <div className='search-input-container'>
                 <form action="">
-                    <Search Icon={HiBriefcase} placeholder='Job Title' />
+                    <Search Icon={HiBriefcase} placeholder='Intern search' />
                     <Search Icon={HiLocationMarker} placeholder='Everywhere' />
                     <Button text={"Search"} />
                 </form>
@@ -28,7 +26,7 @@ function Sidebar({ setActive }) {
                     {
                         filters.map((item) => (
 
-                            <Filter filterGroupName={item.name} filters={item.options} onClick={(e) => setActive(e)} />
+                            <Sifter filterGroupName={item.name} filters={item.options} onClick={(e) => setActive(e)} />
                         ))
 
                     }
@@ -40,4 +38,4 @@ function Sidebar({ setActive }) {
     )
 }
 
-export default Sidebar
+export default Sidebars;

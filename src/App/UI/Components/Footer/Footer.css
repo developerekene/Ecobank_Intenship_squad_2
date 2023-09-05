@@ -63,4 +63,5 @@ a{
 .sb__Footer-copyright{
     display:flex;
     justify-content: center;
+    color: var(--primary-color);
 }

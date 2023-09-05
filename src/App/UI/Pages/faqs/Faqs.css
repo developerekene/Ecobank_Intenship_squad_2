@@ -21,10 +21,12 @@
   /* Style for focused div */
   .faqs section div:focus {
     border-color: #FF7A00;
-  }
-  
-  /* Style for input elements within div */
-  .faqs section div input {
+
+}
+.faqs .header_text p{
+    color: var(--primary-color);
+}
+.faqs section div input{
     width: 100%;
     margin-left: 20px;
     background-color: white;
