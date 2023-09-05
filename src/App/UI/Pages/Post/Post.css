@@ -1,0 +1,146 @@
+.Post {
+    display: flex;
+    padding-inline: 3rem;
+}
+
+.Post .result-display {
+    width: 70%;
+
+}
+
+.Post .result-display .search-result {
+    padding-block: 1rem;
+    color: var(--secondary-color);
+}
+
+.Post .result-display .search-result~hr {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2rem;
+    border: 1px solid var(--secondary-color);
+}
+
+.Post body.active-modal {
+    overflow-y: hidden;
+}
+
+.Post .modal,
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.Post .overlay {
+    background: var(--bg-color);
+}
+
+.Post .modal-content {
+    overflow: scroll;
+    line-height: 1.4;
+    background: var(--bg-color);
+    padding: 50px;
+    border-radius: 3px;
+    max-width: 800px;
+    min-width: 300px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    height: 450px;
+
+}
+
+.Post .modal-content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.Post .modal .company {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.Post .modal .nature-of-job {
+    padding: 3px;
+    width: 50px;
+    background-color: #FF7A00;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.Post .modal .time-posted {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.Post .modal .job-description {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.Post .modal .description {
+    color: var(--secondary-color);
+}
+
+.Post .modal .close-modal {
+    font-size: 30px;
+    position: relative;
+    top: 0px;
+    right: -20px;
+    color: var(--primary-color);
+    align-self: flex-end;
+}
+
+.Post .modal .modal-container {
+    height: 500px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2rem;
+}
+
+@media (max-width:860px) {
+    .Post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Post .result-display {
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width:450px) {
+    .Post {
+        padding-inline: 2rem;
+    }
+
+    .Post .modal .description {
+        text-align: justify;
+        font-size: 0.9rem;
+    }
+
+    .Post .modal-content h2 {
+        font-size: 1.7rem;
+    }
+}

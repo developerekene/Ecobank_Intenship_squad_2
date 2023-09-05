@@ -214,7 +214,9 @@
     color: var(--primary-color)
 }
 
-
+.skills-header p {
+    gap: 5px;
+}
 
 .col-md-2 {
     display: flex;
@@ -386,7 +388,7 @@
     }
 
     .Profile .upper-container .col-md-4 .image-container img {
-        transform: translate(105px, 95px);
+        transform: translate(127px, 95px);
     }
 
     .about-and-timeline .timeline-content p {

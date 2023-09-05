@@ -4,26 +4,26 @@ import AccordionItem from "./AccordionItem"
 const faqs =[
   {
     id:1,
-  header:"what is iLink?",
-  text:'iLink is a platform that connects job seekers with a wide range of job opportunities from various industries and companies.',
+  header:"what is INTERNHUB?",
+  text:'INTERNHUB is a platform that connects job seekers with a wide range of job opportunities from various industries and companies.',
   },
 
   {
     id:2,
-      header:"How does iLink work?",
-      text:'iLink aggregates job listings from different companies and industries, making it easy for job seekers to search and apply for positions that match their skills and preferences.'
+      header:"How does INTERNHUB work?",
+      text:'INTERNHUB aggregates job listings from different companies and industries, making it easy for job seekers to search and apply for positions that match their skills and preferences.'
   },
 
   {
     id:3,
-      header:"Is iLink free to use?",
-      text:'Yes, iLink is completely free for job seekers to use. There are no charges for accessing job listings or applying for jobs.'    
+      header:"Is INTERNHUB free to use?",
+      text:'Yes, INTERNHUB is completely free for job seekers to use. There are no charges for accessing job listings or applying for jobs.'    
   },
 
   {
       id:4,
       header:"How do I create an account?",
-      text:'Creating an account on iLink is simple. Just click on the "Sign Up" button and follow the prompts to provide your information.'
+      text:'Creating an account on INTERNHUB is simple. Just click on the "Sign Up" button and follow the prompts to provide your information.'
   },
   
   {   
