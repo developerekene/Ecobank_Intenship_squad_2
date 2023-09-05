@@ -22,11 +22,29 @@ export const footerLinks = [
     {
         header: "Navigation",
         links : [
-            {link:"About us"},
-            {link:"FAQ"},
-            {link:"Privacy policy"},
-            {link:"Terms of Service"},
-            {link:"Careers"},
+            {link:"Home",
+                href:"/home",
+             },
+
+            {link:"About",
+                href:"/about",
+            },
+
+            {link:"Opportunity",
+                href:"/opportunity",
+            },
+
+            {link:"Post",
+                href:"/post",
+            },
+
+            {link:"Profile",
+                href:"/profile",
+             },
+
+            {link:"FAQs",
+            href:"/faqs",
+            },
         ]
             
     },

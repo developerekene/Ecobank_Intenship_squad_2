@@ -3,6 +3,7 @@
    width: 100%;
    bottom:0; */
    margin-top: 5rem;
+   border-top: 1px solid rgba(0, 0,0,0.196);
 }
 .section__padding{
     padding-inline: 5rem;

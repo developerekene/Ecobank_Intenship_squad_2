@@ -4,6 +4,8 @@
 import React from "react";
 import './Footer.css';
 import {footerLinks} from "../../../Constants/data"
+import { Link } from "react-router-dom";
+
 
 
 
@@ -19,7 +21,7 @@ const Footer=()=>{
                 <h4>{item.header}</h4>
                 <div>
                   {
-                  item.links.map((el)=>(<a href="#" >{el.link}</a>))
+                  item.links.map((el)=>(<a href={el.href} >{el.link}</a>))
                   }
                 </div>
               </div>
