@@ -4,12 +4,9 @@ import Footer from '../../Components/Footer/Footer';
 import "./Profile.css"
 import Button from "../../Components/button/NavigateButton/NavigateButton";
 import { FaFlag } from 'react-icons/fa';
-import youtube from "../../../Image/png/youtube.png";
-import instagram from "../../../Image/png/instagram.png";
-import github from "../../../Image/png/github.png";
-import figma from "../../../Image/png/figma.png";
 import star from "../../../Image/png/star.png";
-
+import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
+import { FaRegStar } from "react-icons/fa6";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -61,7 +58,10 @@ const Profile = () => {
 
 
         <div className="skills-container">
-          <p>Skills <img src={star} /></p>
+          <div className='skills-header'>
+            <p>Skills <FaRegStar /></p>
+          </div>
+
           <div className='buttons'>
             <div className='part-one'>
               <button>Web development</button>
@@ -128,10 +128,10 @@ const Profile = () => {
           <div className="col-md-4">
             <div className="profile-work">
               <p className='title'>WORK LINK</p>
-              <a><img src={youtube} />Youtube</a> <br />
-              <a><img src={instagram} />Instagram</a> <br />
-              <a><img src={github} />Github</a> <br />
-              <a><img src={figma} />Figma</a> <br />
+              <a><IoLogoYoutube />Youtube</a> <br />
+              <a><IoLogoInstagram />Instagram</a> <br />
+              <a><IoLogoGithub />Github</a> <br />
+              <a><IoLogoFigma />Figma</a> <br />
             </div>
           </div>
           {/* right side url */}
