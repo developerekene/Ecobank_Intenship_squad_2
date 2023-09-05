@@ -7,20 +7,23 @@ import noCompanyLogo from '../../../../Image/svg/noCompanyLogo.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function OpportunityCard({companyLogo,opportunityType,jobTitle,companyName,NatureOfJob,TimePosted}) {
+function OpportunityCard({companyLogo,jobTitle,companyName,NatureOfJob,TimePosted,onClick}) {
   useEffect(() => {
     AOS.init();
   }, [])
 
   return (
-    <div data-aos="fade-up" className='OpportunityCard'>
+    <div 
+    data-aos="fade-up"  
+    className='OpportunityCard' 
+    onClick={() =>{onClick(jobTitle,companyName,NatureOfJob,TimePosted,companyLogo)}}
+    >
       <div className='sponsor-logo'>
         {
         companyLogo===""? <img src={noCompanyLogo} alt="" />  : <img src={companyLogo} alt=""/>      
         }
       </div>
       <div className='Opportunity-description'>
-        <p>{opportunityType}</p>
         <h2>{jobTitle}</h2>
         <h3>{companyName}</h3>
         <div>{NatureOfJob}</div>

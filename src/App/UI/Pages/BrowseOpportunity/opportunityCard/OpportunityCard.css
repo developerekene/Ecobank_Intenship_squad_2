@@ -19,15 +19,17 @@
     border-top: 4px solid #FF7A00;
 }
 .sponsor-logo {
-    background-color: black;
+    background-color: var(--primary-color);
     padding: 1rem;
     border-radius: 50%;
     margin-left: 5%;
     text-align: center;
+    border: 1px solid var(--primary-color);
 }
+
 .sponsor-logo img{
     height: 50px;
-    width: 50px;
+    width: 55px;
 }
 .Opportunity-description{
     padding-right: 5%;
@@ -38,37 +40,59 @@
     width: 60px;
     border-radius: 10px;
     background-color: #FF7A00;
-    color: white;
+    color: var(--primary-color);
     padding: 5px;
     font-size: 12px;
     text-align: center;
 }
 .OpportunityCard .Opportunity-description p{
-    color: rgba(0, 0, 0, 0.493);
+    color: var(--secondary-color);
 }
 .OpportunityCard .Opportunity-description div ~ p{
-    color: rgba(0, 0, 0, 0.493);
+    color: var(--secondary-color);
 }
 .OpportunityCard .Opportunity-description h3{
-    color: rgba(0, 0, 0, 0.743);
+    color: var(--secondary-color);
 }
 .OpportunityCard .Opportunity-description h2{
     word-spacing: -3px;
+    color: var(--primary-color);
 }
 @media (max-width:860px){
     .OpportunityCard{
         gap: 20px;
+        height: 180px;
     }
     .OpportunityCard .Opportunity-description p{
-        font-size: 12px;
+        font-size: 16px;
     }
     .OpportunityCard .Opportunity-description h2{
-        font-size: 14px;
+        font-size: 20px;
+
     }
     .OpportunityCard .Opportunity-description h3{
         font-size: 12px;
     }
     .OpportunityCard .Opportunity-description div ~ p{
-        font-size: 10px;
+        font-size: 12px;
     }
+}
+@media (max-width:390px){
+    /* .OpportunityCard{
+        height: 180px;
+    }
+    .OpportunityCard .Opportunity-description p{
+        font-size: 16px;
+    } */
+    .OpportunityCard .Opportunity-description h2{
+       line-height: 20px;
+       font-size: 16px;
+       word-spacing: 1px;
+    }
+    /* .OpportunityCard .Opportunity-description h3{
+        font-size: 12px;
+    }
+    .OpportunityCard .Opportunity-description div ~ p{
+        font-size: 12px;
+    } */
 }

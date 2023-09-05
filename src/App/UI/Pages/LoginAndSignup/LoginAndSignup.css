@@ -1,14 +1,15 @@
 .LoginSignup .card{
-    padding-block: 2rem;
-    width: 90%;
+    width: 100%;
     max-width: 30rem;
     margin: auto;
-    border-radius: 30px;
-    box-shadow: 2px 2px 20px rgba(77, 77, 77, 0.441);
+    padding-bottom: 100px;
+    
+}
+.LoginSignup .card .cover form input{
+    font-size: 1rem;
 }
 .LoginSignup{
     display: flex;
-    padding-inline: 3rem;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
@@ -19,12 +20,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: #fff;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(#FF7A00 10%,#ff8c00 30%,#ff6a00 50%);
+    justify-content: center;
 }
 .Welcome-Users-Text h3{
     font-size: 2.6rem;
     width: 60%;
 }
 .Welcome-Users-Text .wave-emoji{
+    width: 200px;
+    margin-bottom: 40px;
     animation: animateWave 2s cubic-bezier(0.785, 0.135, 0.15, 0.86)
 }
 @keyframes animateWave {
@@ -53,11 +61,13 @@
 
     .LoginSignup{
         flex-direction: column;
-        padding-inline: 1rem;
     }
     .Welcome-Users-Text{
-        margin-top: 100px;
         margin-bottom: 100px;
+        width: 100%;
+        padding-bottom: 100px;
+        padding-top: 100px;
+        
     }
 
     .Welcome-Users-Text h3{
@@ -66,7 +76,7 @@
     }
     .Welcome-Users-Text p{
         font-size: 1.1rem;
-        width: 60%;
+        width: 50%;
     }
     
 }

@@ -15,9 +15,8 @@ const LoginAndSignup = () => {
     <div className="LoginSignup">
       <div className="Welcome-Users-Text">
           <img src={handWave} className="wave-emoji" alt="wave emoji" width={"250px"} />
-          <h3>Welcome! to
+          <h3>Welcome!
           </h3>
-          <img src={Assets.images['logo-lightmode']} alt="iLinkLogo" />
           <p>Login or Signup to see opportunities that are available for you</p>
       </div>
       <div className="card">

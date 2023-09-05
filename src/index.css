@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap');
+:root {
+  --bg-color:#f7f2ed;
+  --primary-color:black;
+  --secondary-color:rgba(33, 31, 31, 0.616);
+  --tertiary-color: white;
+}
+[data-theme='dark']{
+  --bg-color: black;
+  --primary-color:white;
+  --secondary-color:rgba(234, 234, 234, 0.616);
+  --tertiary-color: black;
+}
 body {
+  background-color:var(--bg-color) ;
   margin: 0;
   font-family: Mukta, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden !important;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 code {
