@@ -62,6 +62,10 @@
     color: var(--secondary-color);
 }
 
+.PostCard .Opportunity-description h4 {
+    color: var(--secondary-color);
+}
+
 .PostCard .Opportunity-description h2 {
     word-spacing: -3px;
     color: var(--primary-color);
@@ -102,6 +106,18 @@
     .PostCard .Opportunity-description h2 {
         line-height: 20px;
         font-size: 16px;
+        word-spacing: 1px;
+    }
+
+    .PostCard .Opportunity-description h3 {
+        line-height: 20px;
+        font-size: 14px;
+        word-spacing: 1px;
+    }
+
+    .PostCard .Opportunity-description h4 {
+        line-height: 20px;
+        font-size: 11px;
         word-spacing: 1px;
     }
 
