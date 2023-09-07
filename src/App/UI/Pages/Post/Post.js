@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Post.css";
 import PostCard from "./postCard/PostCard";
 import Sidebars from "./Sidebars/Sidebars";
-import Sidebarsbackup from "./Sidebars-backup/Sidebarsbackup"
+import Sidebarsbackup from "./Sidebars-backup/Sidebarsbackup";
 import Folio from "./Folio/Folio";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import INTERNSHIP from '../../../Constants/INTERNSHIP.json'
+import INTERNSHIP from '../../../Constants/INTERNSHIP.json';
 import { HiX } from "react-icons/hi";
 import { BiLogoGmail } from "react-icons/bi";
 
