@@ -4,7 +4,7 @@
 import React from "react";
 import './Footer.css';
 import {footerLinks} from "../../../Constants/data"
-
+import { Link } from "react-router-dom";
 
 
 const Footer=()=>{
@@ -19,7 +19,14 @@ const Footer=()=>{
                 <h4>{item.header}</h4>
                 <div>
                   {
-                  item.links.map((el)=>(<a href="#" >{el.link}</a>))
+                  item.links.map((el,id)=>(
+                  <a href={el.href} key={id}>
+                    {el.icon ? 
+                    <div className="footer_display">
+                     { el.icon }
+                     { el.link}
+                    </div>  : el.link}
+                  </a>))
                   }
                 </div>
               </div>
