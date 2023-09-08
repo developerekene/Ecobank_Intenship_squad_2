@@ -1,9 +1,10 @@
 import React from 'react'
 import "./Sidebarsbackup.css"
 import { useState } from 'react'
-import { HiAdjustmentsHorizontal, HiBriefcase } from "react-icons/hi2"
+import { HiAdjustmentsHorizontal } from "react-icons/hi2"
 import { HiLocationMarker, HiX } from 'react-icons/hi'
 import { filters } from '../../../../Constants/data'
+import { PiStudentFill } from "react-icons/pi";
 import Sifter from '../Sifter/Sifter'
 import Button from '../../../Components/button/NavigateButton/NavigateButton'
 import Search from '../../../Components/search/Search'
@@ -15,7 +16,7 @@ function SideBarsBackup({ setActive }) {
         <div className='sidebars-backup'>
             <div className='search-input-container'>
                 <form action="">
-                    <Search Icon={HiBriefcase} placeholder='Intern search' />
+                    <Search Icon={ PiStudentFill } placeholder='Intern search' />
                     <Search Icon={HiLocationMarker} placeholder='Everywhere' />
                     <Button text={"Search"} />
                 </form>

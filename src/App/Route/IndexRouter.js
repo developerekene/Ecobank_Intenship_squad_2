@@ -15,11 +15,11 @@ const index = () => {
       <Routes>
         <Route Component={LoginAndSignup} path={"/"}></Route>
         <Route Component={Home} path={"/home"}></Route>
-        <Route Component={BrowseOpportunity} path={"/opportunity"}></Route>
+        <Route Component={BrowseOpportunity} path={"/companies"}></Route>
         <Route Component={Profile} path={"/profile"}></Route>
         <Route Component={Faqs} path={"/faqs"}></Route>
         <Route Component={About} path={"/about"}></Route>
-        <Route Component={Post} path={"/post"}></Route>
+        <Route Component={Post} path={"/interns"}></Route>
       </Routes>
     </BrowserRouter>
   );

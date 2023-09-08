@@ -7,6 +7,13 @@
     justify-content: space-between;
 }
 
+.skills-container .skills-header {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+
 .middle-container {
     width: 60%;
     margin-top: 50px;
@@ -224,6 +231,10 @@
 .Profile .middle-container .col-md-6 .job {
     font-size: 20px;
     color: var(--primary-color)
+}
+
+.skills-container .buttons {
+    margin-top: -30px;
 }
 
 .skills-header p {

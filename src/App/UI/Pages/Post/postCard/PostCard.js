@@ -7,7 +7,7 @@ import noCompanyLogo from '../../../../Image/svg/noCompanyLogo.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-function PostCard({ companyLogo, jobTitle, companyName, NatureOfJob, TimePosted, onClick }) {
+function PostCard({ company_logo, internName, skills, contactInfo, gender, date, onClick }) {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -16,18 +16,19 @@ function PostCard({ companyLogo, jobTitle, companyName, NatureOfJob, TimePosted,
         <div
             data-aos="fade-up"
             className='PostCard'
-            onClick={() => { onClick(jobTitle, companyName, NatureOfJob, TimePosted, companyLogo) }}
+            onClick={() => { onClick(internName, skills, contactInfo, gender, date, company_logo) }}
         >
             <div className='sponsor-logo'>
                 {
-                    companyLogo === "" ? <img src={noCompanyLogo} alt="" /> : <img src={companyLogo} alt="" />
+                    company_logo === "" ? <img src={noCompanyLogo} alt="" /> : <img src={company_logo} alt="" />
                 }
             </div>
             <div className='Opportunity-description'>
-                <h2>{jobTitle}</h2>
-                <h3>{companyName}</h3>
-                <div>{NatureOfJob}</div>
-                <p>{TimePosted}</p>
+                <h2>{internName}</h2>
+                <h3>{skills}</h3>
+                <h4>{contactInfo}</h4>
+                <div>{gender}</div>
+                <p>{date}</p>
             </div>
         </div>
     )
