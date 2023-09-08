@@ -5,14 +5,35 @@ import NavigateButton from "../../../Components/button/NavigateButton/NavigateBu
 import {AiFillGoogleCircle, AiFillApple,AiFillGithub} from 'react-icons/ai'
 import {HiMiniEye, HiMiniEyeSlash} from "react-icons/hi2";
 import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
+// import Lottie from 'react-lottie';
+// import checkmarkData from '../../../../Constants/checkmark.json'
 
-const Signup = ({onFormSwitch}) =>{
+const Signup = ({onFormSwitch,toggleMessage}) =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[firstname, setFirstName] = useState("")
     const[lastname, setLastName] = useState("")
     const [viewPassword, setViewPassword]= useState(false)
+    // const [message, setMessage] = useState(false)
+    const [error, setError] = useState()
 
+    // const defaultOptions = {
+    //     loop: true, // Set to true if you want the animation to loop
+    //     autoplay: true, // Set to true if you want the animation to play automatically
+    //     animationData:checkmarkData, // The JSON animation data imported earlier
+    // };
+    // const toggleMessage =()=>{
+    //     setMessage(!message)
+    // }
+    const handleResponse=(res)=>{
+        if(res.status>=200&&res.status<300){
+            console.log("axios: ", res)
+            toggleMessage()
+        }
+    }
+    const handleError = ( err) =>{
+        setError(err);
+    }
     const handleSubmit = (e) =>{
         const Base_Url = "http://localhost:8080/api/users/signup"
         e.preventDefault()
@@ -22,12 +43,13 @@ const Signup = ({onFormSwitch}) =>{
             "email" : email,
             "password" : password
         }
-         AxiosPostRequests(Base_Url,requestBody)
+         AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
         
     }
 
     return(
-        <div className="cover">
+        <>
+         <div className="cover">
             <h2>SIGNUP</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="firstname">First Name</label>
@@ -56,6 +78,7 @@ const Signup = ({onFormSwitch}) =>{
 
                 }
                 </div>
+                <p className="email-in-use">{error}</p>
                 <NavigateButton text={"Signup"} type={"submit"}/>
             </form>
             <Button onClick={()=>onFormSwitch("Login")} text={"Already have an account? Login"} />
@@ -71,6 +94,10 @@ const Signup = ({onFormSwitch}) =>{
                 </div>
             </div>
         </div>
+
+        
+        </>
+       
     )
 }
 export default Signup

@@ -82,3 +82,53 @@
     }
     
 }
+.overlay-message{
+    height: 100%;
+    width: 100%;
+    z-index: 900;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.484);
+}
+/* .overlay-messsage .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.493);
+} */
+.overlay-message .message{
+    position: relative;
+    max-width: 800px !important;
+    width: 80%;
+    height: 400px !important;
+    z-index: 1000;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.message h3{
+    margin-bottom: 80px;
+}
+.message .button{
+    padding: 10px 15px;
+    background-color: #FF7A00;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.message .button:hover{
+    background-color: #ff932e;
+}
+body.active{
+    overflow-y: hidden;
+}

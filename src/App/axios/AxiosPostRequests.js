@@ -1,13 +1,11 @@
 import axios from "axios"
 
-const AxiosPostRequests = async (endPoint,requestBody) =>{
-    console.log(endPoint,requestBody)
+const AxiosPostRequests = async (endPoint,requestBody,handleResponse,handleError) =>{
     try{
-        console.log(endPoint, requestBody)
         const res = await axios.post(endPoint,requestBody)
-        alert(res.data.message)  
+        handleResponse(res)
     }catch(err){
-        alert(err)
+        handleError(err.response.data.message)
     }
 }
 
