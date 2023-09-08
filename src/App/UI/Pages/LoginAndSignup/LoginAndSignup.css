@@ -2,7 +2,6 @@
     width: 100%;
     max-width: 30rem;
     margin: auto;
-    padding-bottom: 100px;
     
 }
 .LoginSignup .card .cover form input{
@@ -61,6 +60,9 @@
 
     .LoginSignup{
         flex-direction: column;
+    }
+    .LoginSignup .card{
+        padding-bottom: 100px;
     }
     .Welcome-Users-Text{
         margin-bottom: 100px;

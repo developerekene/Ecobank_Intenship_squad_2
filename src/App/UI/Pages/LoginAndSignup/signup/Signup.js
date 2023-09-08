@@ -4,25 +4,38 @@ import Button from "../../../Components/button/ToggleSignupLogin/Button";
 import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton"
 import {AiFillGoogleCircle, AiFillApple,AiFillGithub} from 'react-icons/ai'
 import {HiMiniEye, HiMiniEyeSlash} from "react-icons/hi2";
+import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
 
 const Signup = ({onFormSwitch}) =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const[username, setUsername] = useState("");
+    const[firstname, setFirstName] = useState("")
+    const[lastname, setLastName] = useState("")
     const [viewPassword, setViewPassword]= useState(false)
 
     const handleSubmit = (e) =>{
+        const Base_Url = "http://localhost:8080/api/users/signup"
         e.preventDefault()
-        console.log(email)
+        const requestBody = {
+            "firstname" : firstname,
+            "lastname" : lastname,
+            "email" : email,
+            "password" : password
+        }
+         AxiosPostRequests(Base_Url,requestBody)
+        
     }
 
     return(
         <div className="cover">
             <h2>SIGNUP</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Full Name</label>
-                <input type="username" name="username" onChange={(e)=>setUsername(e.target.value)}
-                 value={username} placeholder="Full Name"/>
+                <label htmlFor="firstname">First Name</label>
+                <input type="firstname" name="firstname" onChange={(e)=>setFirstName(e.target.value)}
+                 value={firstname} placeholder="First Name"/>
+                 <label htmlFor="lastname">Last Name</label>
+                <input type="lastname" name="lastname" onChange={(e)=>setLastName(e.target.value)}
+                 value={lastname} placeholder="Last Name"/>
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" onChange={(e)=>setEmail(e.target.value)}
                  value={email} placeholder="example@gmail.com"/>
@@ -33,7 +46,7 @@ const Signup = ({onFormSwitch}) =>{
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                placeholder="*****"
+                placeholder="**************"
                 />
                 {
                 viewPassword ?
@@ -43,7 +56,7 @@ const Signup = ({onFormSwitch}) =>{
 
                 }
                 </div>
-                <NavigateButton text={"Signup"} type={"submit"} link="/home"/>
+                <NavigateButton text={"Signup"} type={"submit"}/>
             </form>
             <Button onClick={()=>onFormSwitch("Login")} text={"Already have an account? Login"} />
             <div className="social-networks">
