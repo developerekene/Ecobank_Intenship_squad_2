@@ -58,12 +58,15 @@
     color: var(--primary-color);
 }
 
+.Post .modal .company p {
+    margin-top: 3px;
+}
+
 .Post .modal .company {
     display: flex;
     gap: 5px;
     margin-bottom: 5px;
     align-items: center;
-    color: var(--primary-color);
 }
 
 .Post .modal .nature-of-job {

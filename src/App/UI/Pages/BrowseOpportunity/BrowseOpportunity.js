@@ -10,7 +10,7 @@ import Footer from "../../Components/Footer/Footer";
 import Pagination from "./Pagination/Pagination";
 import MOCK_DATA from '../../../Constants/MOCK_DATA.json'
 import { HiX } from "react-icons/hi";
-import youtube from "../../../Image/png/youtube.png";
+import { IoLogoYoutube } from "react-icons/io5";
 
 function BrowseOpportunity() {
   //For Pagination
@@ -110,7 +110,7 @@ console.log(filter==={natureOfJob:"onsite"})
                         <div className="modal-content">
                           <h2>{selectedCard.jobTitle}</h2>
                           <div className="company">
-                            <img src={youtube} alt="" />
+                            <IoLogoYoutube />
                             <p>{selectedCard.companyName}</p>
                           </div>
                           <div className="nature-of-job">

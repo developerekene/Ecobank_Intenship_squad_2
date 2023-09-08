@@ -6,12 +6,12 @@ export const navLinks = [
         href: "/about",
     },
     {
-        title: "Opportunity",
-        href: "/opportunity",
+        title: "Companies",
+        href: "/companies",
     },
     {
-        title: "Post ",
-        href: "/post",
+        title: "Interns ",
+        href: "/interns",
     }
     ,
     {
