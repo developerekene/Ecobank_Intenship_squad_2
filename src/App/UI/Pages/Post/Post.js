@@ -24,7 +24,7 @@ function Post() {
         setFilter({ natureOfJob: "onsite" })
         console.log(filter)
     }
-    console.log(filter === { natureOfJob: "onsite" })
+    // console.log(filter === { natureOfJob: "onsite" })
     // else if(){
 
     // }
@@ -108,7 +108,7 @@ function Post() {
                                     <div className="modal-content">
                                         <h2>{selectedCard.internName}</h2>
                                         <div className="company">
-                                            <BiLogoGmail />
+                                            <a href="https://mail.google.com/mail/u/0/"><BiLogoGmail /></a>
                                             <p>{selectedCard.skills}</p>
                                         </div>
                                         <div className="nature-of-job">
