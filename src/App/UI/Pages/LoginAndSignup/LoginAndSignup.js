@@ -52,7 +52,7 @@ const LoginAndSignup = () => {
                     </div>
                     <h3>Account Created successfully</h3>
                     
-                    <a  className="button" href="/home" onClick={()=>setActive(!active)}>Go to Homepage</a>
+                    <a  className="button" href="" onClick={()=>setActive(!active)}>Go to Loginpage</a>
                     
                    
                 </div>

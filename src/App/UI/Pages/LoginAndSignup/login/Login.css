@@ -57,3 +57,14 @@ form button{
     transition: all 0.4s ease-in-out;
     transform: scale(1.15);
 }
+.cover form h4{
+    color:#FF7A00;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.cover form h4:hover{
+    scale: 1.04;
+    color: #ff9d41;
+}

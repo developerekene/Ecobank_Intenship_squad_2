@@ -14,17 +14,8 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
     const[firstname, setFirstName] = useState("")
     const[lastname, setLastName] = useState("")
     const [viewPassword, setViewPassword]= useState(false)
-    // const [message, setMessage] = useState(false)
     const [error, setError] = useState()
 
-    // const defaultOptions = {
-    //     loop: true, // Set to true if you want the animation to loop
-    //     autoplay: true, // Set to true if you want the animation to play automatically
-    //     animationData:checkmarkData, // The JSON animation data imported earlier
-    // };
-    // const toggleMessage =()=>{
-    //     setMessage(!message)
-    // }
     const handleResponse=(res)=>{
         if(res.status>=200&&res.status<300){
             console.log("axios: ", res)
