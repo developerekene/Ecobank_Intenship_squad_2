@@ -23,76 +23,87 @@ export const navLinks = [
 export const footerLinks = [
     {
         header: "Navigation",
-        links : [
-            {link:"Home",
-                href:"/home",
-             },
-
-            {link:"About",
-                href:"/about",
+        links: [
+            {
+                link: "Home",
+                href: "/home",
             },
 
-            {link:"Opportunity",
-                href:"/opportunity",
+            {
+                link: "About",
+                href: "/about",
             },
 
-            {link:"Post",
-                href:"/post",
+            {
+                link: "Companies",
+                href: "/companies",
             },
 
-            {link:"Profile",
-                href:"/profile",
-             },
+            {
+                link: "Interns",
+                href: "/interns",
+            },
 
-            {link:"FAQs",
-            href:"/faqs",
+            {
+                link: "Profile",
+                href: "/profile",
+            },
+
+            {
+                link: "FAQs",
+                href: "/faqs",
             },
         ]
-            
+
     },
     {
-        header: "Contact",                
-        links : [{link:"email"},
-                    {link:"phone number"},
-                    {link:"physical address"},
-                    ]
+        header: "Contact",
+        links: [{ link: "Email" },
+        { link: "Phone number" },
+        { link: "Physical address" },
+        ]
     },
 
     {
         header: "Social media",
         links: [
-          { icon: <FaInstagram />,
-           href: "https://www.instagram.com",
-            link: "Instagram" },
-          { icon: <FaTwitter />,
-           href: "https://twitter.com",
-            link: "Twitter" },
-          { icon: <FaFacebook />,
-           href: "https://www.facebook.com",
-            link: "Facebook" },
-        ]
-      },
-    {
-        header:"Partners",
-        links: [{link:"Ecobank Nigeria"},
-                 {link:"eProcess"},
-                 {link: "Google"}]
-    }
-]
-
-export const filters =[
-    {
-        name:"Nature Of Job",
-        options:[
-            {link:"Onsite"},
-            {link:"Hybrid"},
-            {link:"Remote"},
+            {
+                icon: <FaInstagram />,
+                href: "https://www.instagram.com",
+                link: "Instagram"
+            },
+            {
+                icon: <FaTwitter />,
+                href: "https://twitter.com",
+                link: "Twitter"
+            },
+            {
+                icon: <FaFacebook />,
+                href: "https://www.facebook.com",
+                link: "Facebook"
+            },
         ]
     },
     {
-        name:"Duration",
-        options:[
-            {link:"Short-term"},
-           {link:"Long-term"}]
+        header: "Partners",
+        links: [
+        { link: "Google" }]
+    }
+]
+
+export const filters = [
+    {
+        name: "Nature Of Job",
+        options: [
+            { link: "Onsite" },
+            { link: "Hybrid" },
+            { link: "Remote" },
+        ]
+    },
+    {
+        name: "Duration",
+        options: [
+            { link: "Short-term" },
+            { link: "Long-term" }]
     }
 ]
