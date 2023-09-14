@@ -2,13 +2,18 @@
    /* position: relative;
    width: 100%;
    bottom:0; */
+   
    margin-top: 5rem;
-   border-top: 1px solid rgba(0, 0,0,0.196);
+   border-top: 1px solid #FF7A00;
 }
 .section__padding{
     padding-inline: 5rem;
     
 }
+
+
+
+
 
 .sb__footer{
     display: flex;
