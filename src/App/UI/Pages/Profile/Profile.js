@@ -39,7 +39,7 @@ const Profile = () => {
         <div className='to-flex'>
 
           <div className="middle-container">
-            <div className="col-md-6">
+            <div className="col-md-6" data-aos="fade-left">
               <h5 className='name'>Stephen Curry</h5>
               <h6 className='job'>Frontend web developer</h6>
               <p>1234 Elm Street</p>
@@ -51,7 +51,8 @@ const Profile = () => {
           </div>
           <div className="col-md-2">
             <Button type="submit" text={"Edit Profile"} class="edit-profile" />
-            <Button type="submit" text={"Upload CV"} class="edit-profile" />
+            <Button type="submit" text={"Upload CV"} class="upload-cv" />
+            <Button type="button" text={"Log Out"} class="log-out"/>
           </div>
         </div>
 
@@ -125,12 +126,12 @@ const Profile = () => {
         <div className="lower-container">
           {/* left side url */}
           <div className="col-md-4">
-            <div className="profile-work">
+            <div className="profile-work" data-aos="fade-up">
               <p className='title'>WORK LINK</p>
-              <a><IoLogoYoutube />Youtube</a> <br />
-              <a><IoLogoInstagram />Instagram</a> <br />
-              <a><IoLogoGithub />Github</a> <br />
-              <a><IoLogoFigma />Figma</a> <br />
+              <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a> <br />
+              <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> <br />
+              <a href='https://github.com/'><IoLogoGithub />Github</a> <br />
+              <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> <br />
             </div>
           </div>
           {/* right side url */}

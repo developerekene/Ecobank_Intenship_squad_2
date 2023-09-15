@@ -45,3 +45,7 @@ form button{
     font-size: 2rem;
 
 }
+
+.email-in-use{
+    color: rgb(255, 64, 25);
+}

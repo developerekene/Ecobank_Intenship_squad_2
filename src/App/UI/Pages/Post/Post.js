@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Post.css";
 import PostCard from "./postCard/PostCard";
 import Sidebars from "./Sidebars/Sidebars";
-import Sidebarsbackup from "./Sidebars-backup/Sidebarsbackup"
+import Sidebarsbackup from "./Sidebars-backup/Sidebarsbackup";
 import Folio from "./Folio/Folio";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import MOCK_DATA from '../../../Constants/MOCK_DATA.json'
+import INTERNSHIP from '../../../Constants/INTERNSHIP.json';
 import { HiX } from "react-icons/hi";
-import youtube from "../../../Image/png/youtube.png";
+import { BiLogoGmail } from "react-icons/bi";
 
 function Post() {
     //For Pagination
@@ -24,7 +24,7 @@ function Post() {
         setFilter({ natureOfJob: "onsite" })
         console.log(filter)
     }
-    console.log(filter === { natureOfJob: "onsite" })
+    // console.log(filter === { natureOfJob: "onsite" })
     // else if(){
 
     // }
@@ -39,7 +39,7 @@ function Post() {
         e.target.classList.add("active");
     }
 
-    const filteredItems = MOCK_DATA
+    const filteredItems = INTERNSHIP
 
     //Modal
     const [modal, setmodal] = useState(false);
@@ -54,8 +54,8 @@ function Post() {
         document.body.classList.remove('active-modal')
     }
 
-    const handleCardClick = (jobTitle, companyName, NatureOfJob, TimePosted, companyLogo) => {
-        setSelectedCard({ jobTitle, companyName, NatureOfJob, TimePosted, companyLogo });
+    const handleCardClick = (internName, skills, contactInfo, gender, date, company_logo) => {
+        setSelectedCard({ internName, skills, contactInfo, gender, date, company_logo });
         toggleModal();
     };
     return (
@@ -73,12 +73,12 @@ function Post() {
                             filteredItems.slice(firstPostIndex, lastPostIndex).map((item, index) => (
                                 <>
                                     <PostCard
-                                        companyLogo={item.companyLogo}
-                                        opportunityType={item.opportunityType}
-                                        jobTitle={item.jobTitle}
-                                        companyName={item.companyName}
-                                        NatureOfJob={item.NatureOfJob}
-                                        TimePosted={item.TimePosted}
+                                        company_logo={item.company_logo}
+                                        internName={item.internName}
+                                        skills={item.skills}
+                                        contactInfo={item.contactInfo}
+                                        gender={item.gender}
+                                        date={item.date}
                                         onClick={handleCardClick}
                                     />
                                 </>
@@ -106,17 +106,17 @@ function Post() {
                                         <HiX />
                                     </div>
                                     <div className="modal-content">
-                                        <h2>{selectedCard.jobTitle}</h2>
+                                        <h2>{selectedCard.internName}</h2>
                                         <div className="company">
-                                            <img src={youtube} alt="" />
-                                            <p>{selectedCard.companyName}</p>
+                                            <a href="https://mail.google.com/mail/u/0/"><BiLogoGmail /></a>
+                                            <p>{selectedCard.skills}</p>
                                         </div>
                                         <div className="nature-of-job">
                                             <p>
-                                                {selectedCard.NatureOfJob}
+                                                {selectedCard.gender}
                                             </p>
                                         </div>
-                                        <p className="time-posted">{selectedCard.TimePosted}</p>
+                                        <p className="time-posted">{selectedCard.date}</p>
                                         <p className="job-description">Resume</p>
                                         <div className="overflow-hidden">
                                             <p className='description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nesciunt voluptatum aliquam a, id, eligendi ipsam quibusdam
