@@ -4,18 +4,24 @@ import Button from "../../../Components/button/ToggleSignupLogin/Button";
 import "./Login.css";
 import { AiFillGoogleCircle, AiFillApple, AiFillGithub } from "react-icons/ai";
 import {HiMiniEye, HiMiniEyeSlash} from "react-icons/hi2";
+import loginlink from "../../../Components/loginbackend/loginlink";
+import handleLogin from "../../../Components/loginbackend/loginlink";
 
 const Login = ({ onFormSwitch }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [viewPassword, setViewPassword]= useState(false)
   
-
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(email);
+   const  Base_Url = 'http://localhost:8080/api/login'
+   const requestBody = {
+      email:email,
+      password:password,
+    }
+    handleLogin(Base_Url,requestBody)
   };
-
+ 
   return (
     <div className="cover">
       <h2>LOGIN</h2>
