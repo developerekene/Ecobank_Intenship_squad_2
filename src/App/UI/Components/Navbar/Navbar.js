@@ -8,22 +8,22 @@ import lightModeLogo from "../../../Image/svg/internhub-lightmode.svg"
 import DarkMode from '../DarkMode-button/DarkMode';
 
 const Navbar = () => {
- const [currentLogo,setCurrentLogo] = useState(null)
+  const [currentLogo, setCurrentLogo] = useState(null)
 
-  useEffect(()=>{
-    if (localStorage.getItem("theme") === 'dark'){
-      document.querySelector('.logo').setAttribute('src',darkModeLogo)
+  useEffect(() => {
+    if (localStorage.getItem("theme") === 'dark') {
+      document.querySelector('.logo').setAttribute('src', darkModeLogo)
     }
-    else{
-      document.querySelector('.logo').setAttribute('src',lightModeLogo)
+    else {
+      document.querySelector('.logo').setAttribute('src', lightModeLogo)
     }
   })
   const togglerState = (e) => {
-    if(e.target.checked===true){
-      document.querySelector('.logo').setAttribute('src',darkModeLogo);
+    if (e.target.checked === true) {
+      document.querySelector('.logo').setAttribute('src', darkModeLogo);
     }
-    else{
-      document.querySelector('.logo').setAttribute('src',lightModeLogo)
+    else {
+      document.querySelector('.logo').setAttribute('src', lightModeLogo)
     }
   }
   const [openNav, setOpenNav] = useState(false)
@@ -33,9 +33,9 @@ const Navbar = () => {
     <div className='navbar'>
       <div className='nav-item-container'>
         <a href={"/home"}>
-          <img className='logo' 
-          src={currentLogo}
-          height={"45px"} alt="iLinkLogo" />
+          <img className='logo'
+            src={currentLogo}
+            height={"45px"} alt="iLinkLogo" />
         </a>
 
         <div className="nav-links">
@@ -54,23 +54,23 @@ const Navbar = () => {
           }
         </div>
         <div className='navButtons'>
-            <a href={"/profile"}>
-              <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
-            </a>
-            <DarkMode togglerState ={togglerState} />
+          <a href={"/profile"}>
+            <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
+          </a>
+          <DarkMode togglerState={togglerState} />
         </div>
         <div className="openIcon" onClick={() => { setOpenNav(!openNav) }}>
           <HiMenu />
         </div>
-      
+
         <div className={openNav ? "open-navbar" : "close-navbar"}>
           <div className="closeIcon" onClick={() => { setOpenNav(!openNav) }}>
             <HiX />
           </div>
-          
+
 
           {
-            navLinks.map((item,index) => {
+            navLinks.map((item, index) => {
               return (
                 <>
                   <a href={item.href}>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 </>
               )
             })
-          
+
           }
         </div>
       </div>
