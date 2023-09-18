@@ -48,7 +48,7 @@ const LoginAndSignup = () => {
             <div className="overlay-message">
                 <div className="message">
                     <div>
-                        <Lottie options={defaultOptions} height={50} width={50} /> 
+                        <Lottie loop={false} options={defaultOptions} height={50} width={50} /> 
                     </div>
                     <h3>Account Created successfully</h3>
                     

@@ -54,3 +54,21 @@ form button{
 .email-in-use{
     color: rgb(255, 64, 25);
 }
+
+#emailVal{
+    position: relative;
+    font-size: 0.8rem;
+    color:rgb(255, 64, 25);
+    text-align: center;
+    left: 0;
+    top: -10px;
+}
+#passVal{
+    font-size: 0.8rem;
+    color:rgb(255, 64, 25);
+    position: relative;
+    left: 0;
+    top: -10px;
+    text-align: center;
+
+}
