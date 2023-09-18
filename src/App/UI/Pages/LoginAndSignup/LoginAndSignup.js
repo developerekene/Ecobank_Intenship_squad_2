@@ -48,11 +48,11 @@ const LoginAndSignup = () => {
             <div className="overlay-message">
                 <div className="message">
                     <div>
-                        <Lottie options={defaultOptions} height={50} width={50} /> 
+                        <Lottie loop={false} options={defaultOptions} height={50} width={50} /> 
                     </div>
                     <h3>Account Created successfully</h3>
                     
-                    <a  className="button" href="/home" onClick={()=>setActive(!active)}>Go to Homepage</a>
+                    <a  className="button" href="" onClick={()=>setActive(!active)}>Go to Loginpage</a>
                     
                    
                 </div>

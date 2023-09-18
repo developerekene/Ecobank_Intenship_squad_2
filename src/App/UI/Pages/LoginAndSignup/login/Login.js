@@ -45,6 +45,7 @@ const Login = ({ onFormSwitch }) => {
 
          }
         </div>
+        <h4>Forgot password?</h4>
         
         {/* <a href="/opportunity"> */}
           <NavigateButton text={"Login"} type={"submit"} link={"/home"}/>
