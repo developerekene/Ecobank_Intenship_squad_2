@@ -17,12 +17,12 @@
 }
 .filter-item:hover{
     background-color: #FF7A00;
-    color: var(--primary-color);
+    color: white;
 
 }
 .filter .active{
     background-color: #FF7A00;
-    color: var(--primary-color);
+    color: white;
 }
 .filter >h4{
     font-size:14px;

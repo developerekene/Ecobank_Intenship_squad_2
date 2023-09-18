@@ -14,17 +14,8 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
     const[firstname, setFirstName] = useState("")
     const[lastname, setLastName] = useState("")
     const [viewPassword, setViewPassword]= useState(false)
-    // const [message, setMessage] = useState(false)
     const [error, setError] = useState()
 
-    // const defaultOptions = {
-    //     loop: true, // Set to true if you want the animation to loop
-    //     autoplay: true, // Set to true if you want the animation to play automatically
-    //     animationData:checkmarkData, // The JSON animation data imported earlier
-    // };
-    // const toggleMessage =()=>{
-    //     setMessage(!message)
-    // }
     const handleResponse=(res)=>{
         if(res.status>=200&&res.status<300){
             console.log("axios: ", res)
@@ -35,15 +26,37 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
         setError(err);
     }
     const handleSubmit = (e) =>{
-        const Base_Url = "http://localhost:8080/api/users/signup"
-        e.preventDefault()
-        const requestBody = {
-            "firstname" : firstname,
-            "lastname" : lastname,
-            "email" : email,
-            "password" : password
+        let isValid = true;
+        // Check email
+        const email = document.getElementById("email").value;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            isValid=false;
+            document.getElementById("emailVal").innerText="Invalid email address.";
         }
-         AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
+        
+        const password = document.getElementById("password").value;
+        if (password.length < 8) {
+            isValid = false;
+            document.getElementById("passVal").innerText="Password must be at least 8 characters long.";
+        }
+
+        if(isValid===true){
+            e.preventDefault()
+            const Base_Url = "http://localhost:8080/api/users/signup"
+            
+            const requestBody = {
+                "firstname" : firstname,
+                "lastname" : lastname,
+                "email" : email,
+                "password" : password
+            }
+            AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
+        }
+        else{
+            e.preventDefault()
+        }
+        
         
     }
 
@@ -59,17 +72,20 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 <input type="lastname" name="lastname" onChange={(e)=>setLastName(e.target.value)}
                  value={lastname} placeholder="Last Name"/>
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" onChange={(e)=>setEmail(e.target.value)}
+                <input name="email" id="email" onChange={(e)=>setEmail(e.target.value)}
                  value={email} placeholder="example@gmail.com"/>
+                 <p id="emailVal">{error}</p>
                 <label htmlFor="password">Password</label>
                 <div>
                 <input
                 type={viewPassword?"text":"password" }
                 name="password"
+                id="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder="**************"
                 />
+                <p id="passVal"></p>
                 {
                 viewPassword ?
                 <HiMiniEyeSlash onClick={()=>setViewPassword(false)}/>
@@ -78,7 +94,6 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
 
                 }
                 </div>
-                <p className="email-in-use">{error}</p>
                 <NavigateButton text={"Signup"} type={"submit"}/>
             </form>
             <Button onClick={()=>onFormSwitch("Login")} text={"Already have an account? Login"} />
