@@ -23,14 +23,19 @@
 .cover form label{
     align-self: flex-start;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 .cover form input{
     margin-bottom: 1rem;
-    height: 40px;
+    height: 35px;
     width: 100%;
     text-align: center;
     border: 1px solid rgba(77, 77, 77, 0.441);
     border-radius: 10px;
+    font-size: 0.9rem;
+}
+.cover form input::placeholder{
+    font-size: 0.8rem;
 }
 form button{
     align-self: center;
@@ -48,4 +53,22 @@ form button{
 
 .email-in-use{
     color: rgb(255, 64, 25);
+}
+
+#emailVal{
+    position: relative;
+    font-size: 0.8rem;
+    color:rgb(255, 64, 25);
+    text-align: center;
+    left: 0;
+    top: -10px;
+}
+#passVal{
+    font-size: 0.8rem;
+    color:rgb(255, 64, 25);
+    position: relative;
+    left: 0;
+    top: -10px;
+    text-align: center;
+
 }
