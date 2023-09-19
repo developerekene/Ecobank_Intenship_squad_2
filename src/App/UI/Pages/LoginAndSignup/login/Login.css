@@ -57,11 +57,10 @@ form button{
     transition: all 0.4s ease-in-out;
     transform: scale(1.15);
 }
-<<<<<<< HEAD
 #AuthErr{
     color: rgb(255, 64, 25);
     font-size: 0.9rem;
-=======
+}
 .cover form h4{
     color:#FF7A00;
     transition: all 0.3s ease-in-out;
@@ -72,5 +71,4 @@ form button{
 .cover form h4:hover{
     scale: 1.04;
     color: #ff9d41;
->>>>>>> 758d6485f954e2b49d1014fd67b786510bb18812
 }

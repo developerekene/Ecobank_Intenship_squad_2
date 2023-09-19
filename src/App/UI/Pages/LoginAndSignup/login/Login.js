@@ -67,16 +67,8 @@ const Login = ({ onFormSwitch }) => {
             <HiMiniEye onClick={() => setViewPassword(true)} />
           )}
         </div>
-<<<<<<< HEAD
 
         <NavigateButton text={"Login"} type={"submit"} />
-=======
-        <h4>Forgot password?</h4>
-        
-        {/* <a href="/opportunity"> */}
-          <NavigateButton text={"Login"} type={"submit"} link={"/home"}/>
-        {/* </a> */}
->>>>>>> 758d6485f954e2b49d1014fd67b786510bb18812
       </form>
       <Button
         onClick={() => onFormSwitch("Signup")}
