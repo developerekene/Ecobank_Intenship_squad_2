@@ -59,7 +59,12 @@ form button{
 }
 #AuthErr{
     color: rgb(255, 64, 25);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+.email-Err{
+    color: rgb(255, 64, 25);
+    font-size: 0.8rem;
+    margin-top: -10px;
 }
 .cover form h4{
     color:#FF7A00;

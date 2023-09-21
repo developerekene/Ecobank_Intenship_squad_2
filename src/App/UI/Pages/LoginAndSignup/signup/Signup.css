@@ -72,3 +72,11 @@ form button{
     text-align: center;
 
 }
+.Error-Message{
+    font-size: 0.8rem;
+    color:rgb(255, 64, 25);
+    position: relative;
+    left: 0;
+    top: -10px;
+    text-align: center;
+}
