@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Signup.css'
 import Button from "../../../Components/button/ToggleSignupLogin/Button";
 import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton"
@@ -26,21 +26,18 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
         setError(err);
     }
     const handleSubmit = (e) =>{
+        e.preventDefault()
         let isValid = true;
         // Check email
-        const email = document.getElementById("email").value;
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailPattern.test(email)) {
             isValid=false;
-            document.getElementById("emailVal").innerText="Invalid email address.";
+            document.getElementById("emailVal").innerText="Invalid email address";
         }
-        
-        const password = document.getElementById("password").value;
         if (password.length < 8) {
             isValid = false;
-            document.getElementById("passVal").innerText="Password must be at least 8 characters long.";
+            document.getElementById("passVal").innerText="Password must be at least 8 characters long";
         }
-
         if(isValid===true){
             e.preventDefault()
             const Base_Url = "http://localhost:8080/api/users/signup"
@@ -53,12 +50,32 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
             }
             AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
         }
-        else{
-            e.preventDefault()
+        if (firstname==="") {
+            document.getElementById("fnameVal").innerText="cannot be empty";
+        }
+        if (lastname==="") {
+            document.getElementById("lnameVal").innerText="cannot be empty";
         }
         
+    };
+    useEffect(()=>{
+        document.getElementById("emailInput").addEventListener("keypress",()=>{
+          document.getElementById('emailVal').innerText=''
+          
+        })
+        document.getElementById("passInput").addEventListener("keydown",()=>{
+            document.getElementById('passVal').innerText=''
+            
+          })
+        document.getElementById("fnameInput").addEventListener("keydown",()=>{
+        document.getElementById('fnameVal').innerText=''
         
-    }
+        })
+        document.getElementById("lnameInput").addEventListener("keydown",()=>{
+            document.getElementById('lnameVal').innerText=''
+            
+          })
+      },[])
 
     return(
         <>
@@ -66,13 +83,27 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
             <h2>SIGNUP</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="firstname">First Name</label>
-                <input type="firstname" name="firstname" onChange={(e)=>setFirstName(e.target.value)}
-                 value={firstname} placeholder="First Name"/>
+                <input type="firstname" 
+                name="firstname" 
+                onChange={(e)=>{setFirstName(e.target.value)}}
+                id="fnameInput"
+                value={firstname} placeholder="First Name"/>
+                 <p id="fnameVal" className="Error-Message"></p>
                  <label htmlFor="lastname">Last Name</label>
-                <input type="lastname" name="lastname" onChange={(e)=>setLastName(e.target.value)}
-                 value={lastname} placeholder="Last Name"/>
+                <input 
+                type="lastname" 
+                id="lnameInput" 
+                name="lastname" 
+                onChange={(e)=>{setLastName(e.target.value)}}
+                value={lastname} placeholder="Last Name"/>
+                 <p id="lnameVal" className="Error-Message"></p>
                 <label htmlFor="email">Email</label>
-                <input name="email" id="email" onChange={(e)=>setEmail(e.target.value)}
+                <input 
+                name="email" 
+                id="emailInput" 
+                onChange={(e)=>{
+                    setEmail(e.target.value)
+                }}
                  value={email} placeholder="example@gmail.com"/>
                  <p id="emailVal">{error}</p>
                 <label htmlFor="password">Password</label>
@@ -80,7 +111,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 <input
                 type={viewPassword?"text":"password" }
                 name="password"
-                id="password"
+                id="passInput"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 placeholder="**************"

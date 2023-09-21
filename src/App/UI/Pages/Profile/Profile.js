@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import "./Profile.css"
-import Button from "../../Components/button/NavigateButton/NavigateButton";
+import NavigateButton from "../../Components/button/NavigateButton/NavigateButton";
+import Button from "../../Components/button/ToggleSignupLogin/Button"
 import { FaFlag } from 'react-icons/fa';
 import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const [toggler, setToggler] = useState("about")
@@ -20,6 +22,7 @@ const Profile = () => {
     e.target.classList.add('active')
   }
 
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, [])
@@ -50,9 +53,9 @@ const Profile = () => {
             </div>
           </div>
           <div className="col-md-2">
-            <Button type="submit" text={"Edit Profile"} class="edit-profile" />
-            <Button type="submit" text={"Upload CV"} class="upload-cv" />
-            <Button type="button" text={"Log Out"} class="log-out"/>
+            <NavigateButton type="submit" text={"Edit Profile"} class="edit-profile" />
+            <NavigateButton type="submit" text={"Upload CV"} class="upload-cv" />
+            <Button type="button" onClick={()=>{localStorage.removeItem("token"); navigate("/login")}} text={"Log Out"}/>
           </div>
         </div>
 

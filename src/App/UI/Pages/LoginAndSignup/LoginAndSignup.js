@@ -3,7 +3,7 @@ import "./LoginAndSignup.css";
 import Signup from "./signup/Signup";
 import Login from "./login/Login";
 import handWave from '../../../Image/png/hand-wave.png';
-import Lottie from 'react-lottie';
+import Lottie from "lottie-react";
 import checkmarkData from '../../../Constants/checkmark.json'
 
 const LoginAndSignup = () => {
@@ -18,10 +18,9 @@ const LoginAndSignup = () => {
     document.body.classList.remove('active')
   }
 
-  const defaultOptions = {
-    loop: true, // Set to true if you want the animation to loop
-    autoplay: true, // Set to true if you want the animation to play automatically
-    animationData:checkmarkData, // The JSON animation data imported earlier
+  const style = {
+    height: 120,
+    width:120
   };
   const toggleMessage =()=>{
     setMessage(!message)
@@ -48,7 +47,7 @@ const LoginAndSignup = () => {
             <div className="overlay-message">
                 <div className="message">
                     <div>
-                        <Lottie loop={false} options={defaultOptions} height={50} width={50} /> 
+                        <Lottie loop={false} animationData={checkmarkData} style={style}/> 
                     </div>
                     <h3>Account Created successfully</h3>
                     

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton";
 import Button from "../../../Components/button/ToggleSignupLogin/Button";
 import "./Login.css";
 import { AiFillGoogleCircle, AiFillApple, AiFillGithub } from "react-icons/ai";
 import { HiMiniEye, HiMiniEyeSlash } from "react-icons/hi2";
-import handleLogin from "../../../Components/loginbackend/loginlink";
 import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = ({ onFormSwitch }) => {
@@ -14,29 +14,46 @@ const Login = ({ onFormSwitch }) => {
   const [viewPassword, setViewPassword] = useState(false);
   const [error, setError] = useState('')
 
+
+  const navigate = useNavigate();
+  //This function handles response from API
   const handleResponse = (response) => {
-    console.log("Response:", response);
-  };
-  
+    const token = response.data.token;
+    localStorage.setItem("token",token);
+    console.log(localStorage.getItem("token"))
+    navigate("/")
+  }
+  //This function handles Error from API
   const handleError = (error) => {
     setError(error)
   };
 
-  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  //This function handles Form submit
   const handleClick = (e) => {
     e.preventDefault();
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if(!emailRegex.test(email)){
       document.getElementById('emailErr').innerText='invalid Email'
     }
-    const Base_Url = "http://localhost:8080/api/login";
-    const requestBody = {
-      email: email,
-      password: password,
-    };
-    handleLogin(Base_Url, requestBody);
-    AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError);
+    else{
+      const Base_Url = "http://localhost:8080/api/login";
+      const requestBody = {
+        email: email,
+        password: password,
+      };
+      AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError);
+    }
+    
   };
-
+  useEffect(()=>{
+    document.getElementById("emailInput").addEventListener("keypress",()=>{
+      document.getElementById('emailErr').innerText=''
+      
+    })
+    // document.getElementById('passwordInput').addEventListener("keypress",()=>{
+    //   document.getElementById("AuthErr").innerText=""
+    // })
+  },[])
   return (
     <div className="cover">
       <h2>LOGIN</h2>
@@ -47,10 +64,11 @@ const Login = ({ onFormSwitch }) => {
           type="email"
           name="email"
           onChange={(e)=>{setEmail(e.target.value)}}
+          id="emailInput"
           value={email}
           placeholder="example@gmail.com"
         />
-        <p id='emailErr'></p>
+        <p id='emailErr' className="email-Err"></p>
 
         <label htmlFor="password">Password</label>
         <div>
@@ -59,6 +77,7 @@ const Login = ({ onFormSwitch }) => {
             name="password"
             onChange={(e)=>{setPassword(e.target.value)}}
             value={password}
+            id="passwordInput"
             placeholder="*****"
           />
           {viewPassword ? (
@@ -88,5 +107,4 @@ const Login = ({ onFormSwitch }) => {
     </div>
   );
 };
-
 export default Login;

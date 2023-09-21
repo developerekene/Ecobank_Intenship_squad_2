@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='nav-item-container'>
-        <a href={"/home"}>
+        <a href={"/"}>
           <img className='logo' 
           src={currentLogo}
           height={"45px"} alt="iLinkLogo" />
