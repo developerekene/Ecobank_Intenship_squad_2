@@ -66,7 +66,6 @@ const Login = ({ onFormSwitch }) => {
           onChange={(e)=>{setEmail(e.target.value)}}
           id="emailInput"
           value={email}
-          placeholder="example@gmail.com"
         />
         <p id='emailErr' className="email-Err"></p>
 
@@ -78,7 +77,6 @@ const Login = ({ onFormSwitch }) => {
             onChange={(e)=>{setPassword(e.target.value)}}
             value={password}
             id="passwordInput"
-            placeholder="*****"
           />
           {viewPassword ? (
             <HiMiniEyeSlash onClick={() => setViewPassword(false)} />

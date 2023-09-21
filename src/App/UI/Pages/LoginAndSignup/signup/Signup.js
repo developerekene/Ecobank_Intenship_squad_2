@@ -87,7 +87,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 name="firstname" 
                 onChange={(e)=>{setFirstName(e.target.value)}}
                 id="fnameInput"
-                value={firstname} placeholder="First Name"/>
+                value={firstname}/>
                  <p id="fnameVal" className="Error-Message"></p>
                  <label htmlFor="lastname">Last Name</label>
                 <input 
@@ -95,7 +95,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 id="lnameInput" 
                 name="lastname" 
                 onChange={(e)=>{setLastName(e.target.value)}}
-                value={lastname} placeholder="Last Name"/>
+                value={lastname} />
                  <p id="lnameVal" className="Error-Message"></p>
                 <label htmlFor="email">Email</label>
                 <input 
@@ -104,7 +104,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 onChange={(e)=>{
                     setEmail(e.target.value)
                 }}
-                 value={email} placeholder="example@gmail.com"/>
+                 value={email}/>
                  <p id="emailVal">{error}</p>
                 <label htmlFor="password">Password</label>
                 <div>
@@ -114,7 +114,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 id="passInput"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                placeholder="**************"
+                
                 />
                 <p id="passVal"></p>
                 {
