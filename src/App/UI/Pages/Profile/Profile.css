@@ -13,9 +13,33 @@
     gap: 5px;
 }
 
+.col-md-2 button {
+    margin: 6px 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF7A00;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    color: white;
+}
+
+.col-md-2 button:hover {
+    background-color: #ffb261;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
 /* .col-md-2 Button:nth-of-type(3) { */
-    /* display: flex; */
-    /* flex-direction: column; */
+/* display: flex; */
+/* flex-direction: column; */
 /* } */
 
 .middle-container {
@@ -237,9 +261,9 @@
 }
 
 .Profile .lower-container .col-md-4 .profile-work a:hover {
-   color: #FF7A00;
-   text-decoration: underline;
-   text-underline-offset: 5px;
+    color: #FF7A00;
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 .Profile .middle-container .col-md-6 .name {
@@ -298,6 +322,55 @@
     justify-content: flex-end;
 }
 
+.buttons .cancel {
+    background-color: white;
+    padding: 12px 20px;
+    border: 2px solid red;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    color: black;
+}
+.buttons .cancel:hover {
+    background-color: rgb(216, 106, 106);
+    transition: all 0.3s ease-in-out;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+/* .address {
+    margin-top: 20px;
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.aboutTimeline .about{
+    margin-top: 20px;
+}
+
+.aboutTimeline .timeline{
+    margin-top: 20px;
+}
+
+.workLink {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-bottom: -10px;
+} */
+
+.bu
+.header .text {
+    margin-top: -150px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
 .col-md-2 div button {
     margin: 6px 6px;
     cursor: pointer;
@@ -305,6 +378,11 @@
     justify-content: center;
     align-items: center;
 }
+
+/* .aboutTimeline {
+    display: flex;
+    flex-direction: column;
+} */
 
 @media (max-width:860px) {
     .about-and-timeline .timeline-content p {

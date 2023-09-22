@@ -6,11 +6,47 @@ import Button from "../../Components/button/NavigateButton/NavigateButton";
 import { FaFlag } from 'react-icons/fa';
 import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
-
+import Input from '../../Components/input/Input';
+import TextArea from '../../Components/textarea/TextArea';
+// import Modal from '../../Components/Modal/Modal';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// import { IoLocationSharp } from "react-icons/io5";
+// import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
+// import { FcAbout } from "react-icons/fc";
+// import { CiViewTimeline } from "react-icons/ci";
+// import { IoLink } from "react-icons/io5";
+
+
 const Profile = () => {
+
+  const [modal, setmodal] = useState(false);
+  const [address, setAddress] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [skills, setSkills] = useState("");
+  const [about, setAbout] = useState("");
+  const [education, setEducation] = useState("");
+  const [experience, setExperience] = useState("");
+  const [youtube, setYoutube] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [github, setGithub] = useState("");
+  const [figma, setFigma] = useState("");
+  const toggleModal = () => {
+    setmodal(!modal);
+  }
+
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
+
+
   const [toggler, setToggler] = useState("about")
   const userDetails = document.getElementsByClassName('tab')
   const setActive = (e) => {
@@ -50,9 +86,92 @@ const Profile = () => {
             </div>
           </div>
           <div className="col-md-2">
-            <Button type="submit" text={"Edit Profile"} class="edit-profile" />
             <Button type="submit" text={"Upload CV"} class="upload-cv" />
-            <Button type="button" text={"Log Out"} class="log-out"/>
+            <Button type="button" text={"Log Out"} class="log-out" />
+
+            {
+              modal && (
+                <div className="modal">
+
+                  <div className="overlay">
+                  </div>
+                  <div className="modal-container">
+                    <div className="modal-content">
+                      <h2>Profile Setting</h2>
+                      <form style={{ width: "100%", }}>
+                        <Input type={"text"} id={"jobTitle"} labelCont="Job Title" elementContent={jobTitle} setter={setJobTitle} />
+                        <Input type={"text"} id={"address"} labelCont="Address" elementContent={address} setter={setAddress} />
+                        <Input type={"text"} id={"skills"} labelCont="Skills" elementContent={skills} setter={setSkills} />
+                        <TextArea labelCont={"About"} id={"about"} rows={4} cols={""} elementContent={about} setter={setAbout} />
+                        <TextArea labelCont={"Education"} id={"education"} rows={4} cols={""} elementContent={education} setter={setEducation} />
+                        <TextArea labelCont={"Experience"} id={"experience"} rows={4} cols={""} elementContent={experience} setter={setExperience} />
+                        <Input type={"text"} id={"youtube"} labelCont="Youtube Link" elementContent={youtube} setter={setYoutube} />
+                        <Input type={"text"} id={"Instagram"} labelCont="Instagram Link" elementContent={instagram} setter={setInstagram} />
+                        <Input type={"text"} id={"github"} labelCont="Github Link" elementContent={github} setter={setGithub} />
+                        <Input type={"text"} id={"address"} labelCont="Figma Link" elementContent={figma} setter={setFigma} />
+                      </form>
+                      <OnClick
+                        type={"text"}
+                        onClick={() => {
+                          handleSubmit();
+                          toggleModal()
+                        }}
+                        text={"Save"} />
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            {/* <div>
+              <button onClick={openModal}>Edit Profile</button>
+              <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <div className='header'>
+                  <div className='text'>Edit Profile</div>
+                  <div className='underline'></div>
+                </div>
+                <div className='imageChange'>
+                  <p></p>
+                </div>
+                <div className='name'>
+                  <MdOutlineDriveFileRenameOutline />
+                  <textarea id="workLink" name="workLink" rows="2"></textarea>
+                </div>
+                <div className='address'>
+                  <IoLocationSharp />
+                  <textarea id="workLink" name="workLink" rows="2"></textarea>
+                </div>
+                <div className='skills'>
+                  <FaRegStar />
+                  <select type="level" name="level">
+                    <option value="100level">100 Level</option>
+                    <option value="200level">200 Level</option>
+                    <option value="300level">300 Level</option>
+                    <option value="400level">400 Level</option>
+                    <option value="a'level">A'Level</option>
+                  </select>
+                </div>
+                <div className='aboutTimeline'>
+                  <div className='about'>
+                    <FcAbout />
+                    <textarea id="workLink" name="workLink" rows="3"></textarea>
+                  </div>
+                  <div className='timeline'>
+                    <CiViewTimeline />
+                    <textarea id="workLink" name="workLink" rows="3"></textarea>
+                  </div>
+                </div>
+                <div className='workLink'>
+                  <IoLink />
+                  <textarea id="workLink" name="workLink" rows="3"></textarea>
+                </div>
+                <div className='buttons'>
+                  <button className='cancel' onClick={closeModal}>Cancel</button>
+                  <button className='contin'>Update</button>
+                </div>
+              </Modal>
+            </div> */}
+
+
           </div>
         </div>
 
