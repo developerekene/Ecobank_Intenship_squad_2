@@ -19,8 +19,9 @@ const Login = ({ onFormSwitch }) => {
   //This function handles response from API
   const handleResponse = (response) => {
     const token = response.data.token;
+    const profileData = response.data.profileData;
     localStorage.setItem("token",token);
-    console.log(localStorage.getItem("token"))
+    localStorage.setItem("profileData",profileData);
     navigate("/")
   }
   //This function handles Error from API

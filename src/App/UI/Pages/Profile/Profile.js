@@ -15,6 +15,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const Profile = () => {
   const [toggler, setToggler] = useState("about")
   const userDetails = document.getElementsByClassName('tab')
+  const [fullname, setFullname] = useState("");
   const setActive = (e) => {
     for (let i = 0; i < userDetails.length; i++) {
       userDetails[i].classList.remove('active')
@@ -26,6 +27,8 @@ const Profile = () => {
   useEffect(() => {
     AOS.init();
   }, [])
+  // const profileData = JSON.parse(localStorage.getItem("profileData")) 
+  // setFullname(profileData.fullname)
 
   return (
     <>
@@ -43,7 +46,7 @@ const Profile = () => {
 
           <div className="middle-container">
             <div className="col-md-6" data-aos="fade-left">
-              <h5 className='name'>Stephen Curry</h5>
+              <h5 className='name'>{fullname}</h5>
               <h6 className='job'>Frontend web developer</h6>
               <p>1234 Elm Street</p>
               <p>City, State, Zip Code</p>
@@ -66,14 +69,10 @@ const Profile = () => {
           </div>.
 
           <div className='buttons'>
-            <div className='part-one'>
               <button>Web development</button>
               <button>UX Design</button>
-            </div>
-            <div className='part-two'>
               <button>UI Design</button>
               <button>Data science</button>
-            </div>
           </div>
         </div>
 
@@ -131,10 +130,13 @@ const Profile = () => {
           <div className="col-md-4">
             <div className="profile-work" data-aos="fade-up">
               <p className='title'>WORK LINK</p>
-              <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a> <br />
-              <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> <br />
-              <a href='https://github.com/'><IoLogoGithub />Github</a> <br />
-              <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> <br />
+              <div>
+                <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>
+                <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> 
+                <a href='https://github.com/'><IoLogoGithub />Github</a> 
+                <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> 
+              </div>
+              
             </div>
           </div>
           {/* right side url */}
