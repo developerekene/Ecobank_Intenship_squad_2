@@ -8,15 +8,12 @@ import Faqs from "../UI/Pages/faqs/Faqs";
 import About from "../UI/Pages/About/About";
 import Post from "../UI/Pages/Post/Post";
 import ProtectedRoutes from "../Route/ProtectedRoutes"
-import { useDispatch, useSelector } from 'react-redux';
-import { loginSuccess } from "../utils/redux/AuthSlice";
 import ProtectedLogin from "./ProtectedLogin";
 import PageNotFound from "../UI/Pages/pagenotfound/PageNotFound";
 
 
 const Index = () => {
-  const token = localStorage.getItem("token");
-  console.log(token)
+
     return (
     <BrowserRouter>
       <Routes>
