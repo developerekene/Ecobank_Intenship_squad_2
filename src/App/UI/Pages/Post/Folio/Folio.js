@@ -12,7 +12,7 @@ const Folio = ({ totalItemsLength, postPerPage, setCurrentPage, currentPage }) =
     return (
         <div className='folio-container'>
             {pageNumbers.map((pageNumber, index) => (
-                <div className={`folio-item ${pageNumber == currentPage ? "active" : ""}`} key={index} onClick={() => { setCurrentPage(pageNumber) }}>{pageNumber}</div>
+                <div className={`folio-item ${pageNumber === currentPage ? "active" : ""}`} key={index} onClick={() => { setCurrentPage(pageNumber) }}>{pageNumber}</div>
             ))}
         </div>
     )

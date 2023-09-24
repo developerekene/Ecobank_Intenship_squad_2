@@ -1,55 +1,92 @@
-import React, { useState } from "react";
-import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton"
+import React, { useEffect, useState } from "react";
+import NavigateButton from "../../../Components/button/NavigateButton/NavigateButton";
 import Button from "../../../Components/button/ToggleSignupLogin/Button";
 import "./Login.css";
 import { AiFillGoogleCircle, AiFillApple, AiFillGithub } from "react-icons/ai";
-import {HiMiniEye, HiMiniEyeSlash} from "react-icons/hi2";
+import { HiMiniEye, HiMiniEyeSlash } from "react-icons/hi2";
+import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = ({ onFormSwitch }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [viewPassword, setViewPassword]= useState(false)
-  
+  const [viewPassword, setViewPassword] = useState(false);
+  const [error, setError] = useState('')
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log(email);
+
+  const navigate = useNavigate();
+  //This function handles response from API
+  const handleResponse = (response) => {
+    const token = response.data.token;
+    const profileData = response.data.profileData;
+    localStorage.setItem("token", token);
+    localStorage.setItem("profileData", profileData);
+    navigate("/")
+  }
+  //This function handles Error from API
+  const handleError = (error) => {
+    setError(error)
   };
 
+  //This function handles Form submit
+  const handleClick = (e) => {
+    e.preventDefault();
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!emailRegex.test(email)) {
+      document.getElementById('emailErr').innerText = 'invalid Email'
+    }
+    else {
+      const Base_Url = "http://192.168.211.47:8080/api/login";
+      const requestBody = {
+        email: email,
+        password: password,
+      };
+      AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError);
+    }
+
+  };
+  useEffect(() => {
+    document.getElementById("emailInput").addEventListener("keypress", () => {
+      document.getElementById('emailErr').innerText = ''
+
+    })
+    // document.getElementById('passwordInput').addEventListener("keypress",()=>{
+    //   document.getElementById("AuthErr").innerText=""
+    // })
+  }, [])
   return (
     <div className="cover">
       <h2>LOGIN</h2>
       <form onSubmit={handleClick}>
+        {error && <p id='AuthErr'>{error}</p>}
         <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => { setEmail(e.target.value) }}
+          id="emailInput"
           value={email}
-          placeholder="example@gmail.com"
         />
+        <p id='emailErr' className="email-Err"></p>
+
         <label htmlFor="password">Password</label>
         <div>
           <input
-          type={viewPassword?"text":"password" }
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="*****"
-        />
-         {
-          viewPassword ?
-          <HiMiniEyeSlash onClick={()=>setViewPassword(false)}/>
-          :
-          <HiMiniEye onClick={()=>setViewPassword(true)}/>
-
-         }
+            type={viewPassword ? "text" : "password"}
+            name="password"
+            onChange={(e) => { setPassword(e.target.value) }}
+            value={password}
+            id="passwordInput"
+          />
+          {viewPassword ? (
+            <HiMiniEyeSlash onClick={() => setViewPassword(false)} />
+          ) : (
+            <HiMiniEye onClick={() => setViewPassword(true)} />
+          )}
         </div>
-        <h4>Forgot password?</h4>
-        
-        {/* <a href="/opportunity"> */}
-          <NavigateButton text={"Login"} type={"submit"} link={"/home"}/>
-        {/* </a> */}
+
+        <NavigateButton text={"Login"} type={"submit"} />
       </form>
       <Button
         onClick={() => onFormSwitch("Signup")}
@@ -69,5 +106,4 @@ const Login = ({ onFormSwitch }) => {
     </div>
   );
 };
-
 export default Login;

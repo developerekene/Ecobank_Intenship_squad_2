@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import "./Profile.css"
-import Button from "../../Components/button/NavigateButton/NavigateButton";
+import NavigateButton from "../../Components/button/NavigateButton/NavigateButton";
+import Button from "../../Components/button/ToggleSignupLogin/Button"
 import { FaFlag } from 'react-icons/fa';
 import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
 import Input from '../../Components/input/Input';
 import TextArea from '../../Components/textarea/TextArea';
-// import Modal from '../../Components/Modal/Modal';
+import { HiX } from "react-icons/hi";
+import Select from 'react-select';
+
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
-// import { IoLocationSharp } from "react-icons/io5";
-// import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
-// import { FcAbout } from "react-icons/fc";
-// import { CiViewTimeline } from "react-icons/ci";
-// import { IoLink } from "react-icons/io5";
 
 
 const Profile = () => {
@@ -36,26 +36,28 @@ const Profile = () => {
     setmodal(!modal);
   }
 
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const openModal = () => {
-  //   setIsModalOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // };
-
+  const options = [
+    { value: '100level', label: 'Web Development' },
+    { value: '200level', label: 'UX Design' },
+    { value: '300level', label: 'UI Design' },
+    { value: '400level', label: 'Data Science' },
+    { value: 'a-level', label: 'Others...' },
+  ]
 
   const [toggler, setToggler] = useState("about")
   const userDetails = document.getElementsByClassName('tab')
+  const [fullname, setFullname] = useState("");
   const setActive = (e) => {
     for (let i = 0; i < userDetails.length; i++) {
       userDetails[i].classList.remove('active')
     }
     e.target.classList.add('active')
   }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert("form submitted")
+  }
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, [])
@@ -76,7 +78,7 @@ const Profile = () => {
 
           <div className="middle-container">
             <div className="col-md-6" data-aos="fade-left">
-              <h5 className='name'>Stephen Curry</h5>
+              <h5 className='name'>{fullname}</h5>
               <h6 className='job'>Frontend web developer</h6>
               <p>1234 Elm Street</p>
               <p>City, State, Zip Code</p>
@@ -86,8 +88,6 @@ const Profile = () => {
             </div>
           </div>
           <div className="col-md-2">
-            <Button type="submit" text={"Upload CV"} class="upload-cv" />
-            <Button type="button" text={"Log Out"} class="log-out" />
 
             {
               modal && (
@@ -96,9 +96,12 @@ const Profile = () => {
                   <div className="overlay">
                   </div>
                   <div className="modal-container">
+                    <div className="close-modal" onClick={toggleModal}>
+                      <HiX />
+                    </div>
                     <div className="modal-content">
                       <h2>Profile Setting</h2>
-                      <form style={{ width: "100%", }}>
+                      <form style={{ width: "100%", }} onSubmit={(e) => handleSubmit()}>
                         <Input type={"text"} id={"jobTitle"} labelCont="Job Title" elementContent={jobTitle} setter={setJobTitle} />
                         <Input type={"text"} id={"address"} labelCont="Address" elementContent={address} setter={setAddress} />
                         <Input type={"text"} id={"skills"} labelCont="Skills" elementContent={skills} setter={setSkills} />
@@ -110,10 +113,9 @@ const Profile = () => {
                         <Input type={"text"} id={"github"} labelCont="Github Link" elementContent={github} setter={setGithub} />
                         <Input type={"text"} id={"address"} labelCont="Figma Link" elementContent={figma} setter={setFigma} />
                       </form>
-                      <OnClick
-                        type={"text"}
+                      <Button
+                        type={"submit"}
                         onClick={() => {
-                          handleSubmit();
                           toggleModal()
                         }}
                         text={"Save"} />
@@ -122,56 +124,10 @@ const Profile = () => {
                 </div>
               )
             }
-            {/* <div>
-              <button onClick={openModal}>Edit Profile</button>
-              <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <div className='header'>
-                  <div className='text'>Edit Profile</div>
-                  <div className='underline'></div>
-                </div>
-                <div className='imageChange'>
-                  <p></p>
-                </div>
-                <div className='name'>
-                  <MdOutlineDriveFileRenameOutline />
-                  <textarea id="workLink" name="workLink" rows="2"></textarea>
-                </div>
-                <div className='address'>
-                  <IoLocationSharp />
-                  <textarea id="workLink" name="workLink" rows="2"></textarea>
-                </div>
-                <div className='skills'>
-                  <FaRegStar />
-                  <select type="level" name="level">
-                    <option value="100level">100 Level</option>
-                    <option value="200level">200 Level</option>
-                    <option value="300level">300 Level</option>
-                    <option value="400level">400 Level</option>
-                    <option value="a'level">A'Level</option>
-                  </select>
-                </div>
-                <div className='aboutTimeline'>
-                  <div className='about'>
-                    <FcAbout />
-                    <textarea id="workLink" name="workLink" rows="3"></textarea>
-                  </div>
-                  <div className='timeline'>
-                    <CiViewTimeline />
-                    <textarea id="workLink" name="workLink" rows="3"></textarea>
-                  </div>
-                </div>
-                <div className='workLink'>
-                  <IoLink />
-                  <textarea id="workLink" name="workLink" rows="3"></textarea>
-                </div>
-                <div className='buttons'>
-                  <button className='cancel' onClick={closeModal}>Cancel</button>
-                  <button className='contin'>Update</button>
-                </div>
-              </Modal>
-            </div> */}
 
-
+            <Button type="submit" text={"Edit Profile"} onClick={() => toggleModal()} class="edit-profile" />
+            <NavigateButton type="submit" text={"Upload CV"} class="upload-cv" />
+            <Button type="button" onClick={() => { localStorage.removeItem("token"); navigate("/login") }} text={"Log Out"} />
           </div>
         </div>
 
@@ -182,14 +138,10 @@ const Profile = () => {
           </div>.
 
           <div className='buttons'>
-            <div className='part-one'>
-              <button>Web development</button>
-              <button>UX Design</button>
-            </div>
-            <div className='part-two'>
-              <button>UI Design</button>
-              <button>Data science</button>
-            </div>
+            <button>Web development</button>
+            <button>UX Design</button>
+            <button>UI Design</button>
+            <button>Data science</button>
           </div>
         </div>
 
@@ -247,10 +199,13 @@ const Profile = () => {
           <div className="col-md-4">
             <div className="profile-work" data-aos="fade-up">
               <p className='title'>WORK LINK</p>
-              <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a> <br />
-              <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> <br />
-              <a href='https://github.com/'><IoLogoGithub />Github</a> <br />
-              <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> <br />
+              <div>
+                <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>
+                <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a>
+                <a href='https://github.com/'><IoLogoGithub />Github</a>
+                <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a>
+              </div>
+
             </div>
           </div>
           {/* right side url */}

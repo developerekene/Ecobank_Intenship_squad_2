@@ -1,0 +1,15 @@
+.textAreaComp{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.textAreaComp textarea{
+    background-color: var(--bg-color);
+    resize: none;
+    font-family: Mukta, sans-serif;
+    font-size: 1rem;
+    overflow-y: auto;
+    padding-left: 10px;
+    line-height: 20px;
+    border-radius: 10px;
+}

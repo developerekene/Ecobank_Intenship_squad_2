@@ -26,7 +26,7 @@ export const footerLinks = [
         links: [
             {
                 link: "Home",
-                href: "/home",
+                href: "/",
             },
 
             {

@@ -32,10 +32,10 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='nav-item-container'>
-        <a href={"/home"}>
-          <img className='logo'
-            src={currentLogo}
-            height={"45px"} alt="iLinkLogo" />
+        <a href={"/"}>
+          <img className='logo' 
+          src={currentLogo}
+          height={"45px"} alt="iLinkLogo" />
         </a>
 
         <div className="nav-links">

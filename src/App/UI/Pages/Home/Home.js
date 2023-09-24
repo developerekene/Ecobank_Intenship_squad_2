@@ -2,6 +2,7 @@ import {useEffect,React} from 'react';
 import "../Home/Home.css";
 import vectorGroup from "../../../Image/svg/vector-group.svg"
 import Button from '../../Components/button/NavigateButton/NavigateButton';
+import OnClick from '../../Components/button/ToggleSignupLogin/Button'
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
@@ -11,12 +12,15 @@ import Footer from '../../Components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Tools } from '../../../utils/Constant';
+import { useState } from 'react';
+import Input from '../../Components/input/Input';
+import TextArea from '../../Components/textarea/TextArea';
 
 
 
 
 function Home() {
-
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -73,7 +77,6 @@ function Home() {
             </div>
           </div>
         </div>
-
       </section>
       <Footer />
     </>
