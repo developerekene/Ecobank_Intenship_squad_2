@@ -20,7 +20,9 @@
 body.active-modal {
     overflow-y: hidden;
 }
-
+.modal{
+    z-index: 1000;
+}
 .modal, .overlay {
     width: 100vw;
     height: 100vh;

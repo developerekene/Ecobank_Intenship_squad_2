@@ -82,6 +82,7 @@ function BrowseOpportunity() {
                     NatureOfJob={item.NatureOfJob}
                     TimePosted={item.TimePosted}
                     onClick={handleCardClick}
+                    id={index}
                   />
                 </>
               ))
