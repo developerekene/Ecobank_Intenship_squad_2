@@ -1,11 +1,11 @@
 import React from 'react';
-import IndexRouter from './../Route/IndexRouter'
+import IndexRouter from './../Route/IndexRouter';
 
 const AppEntry = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <IndexRouter/>
+      <IndexRouter />
       {/* <Footer /> */}
     </>
   )

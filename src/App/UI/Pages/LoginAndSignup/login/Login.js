@@ -20,8 +20,8 @@ const Login = ({ onFormSwitch }) => {
   const handleResponse = (response) => {
     const token = response.data.token;
     const profileData = response.data.profileData;
-    localStorage.setItem("token",token);
-    localStorage.setItem("profileData",profileData);
+    localStorage.setItem("token", token);
+    localStorage.setItem("profileData", profileData);
     navigate("/")
   }
   //This function handles Error from API
@@ -33,38 +33,38 @@ const Login = ({ onFormSwitch }) => {
   const handleClick = (e) => {
     e.preventDefault();
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    if(!emailRegex.test(email)){
-      document.getElementById('emailErr').innerText='invalid Email'
+    if (!emailRegex.test(email)) {
+      document.getElementById('emailErr').innerText = 'invalid Email'
     }
-    else{
-      const Base_Url = "http://localhost:8080/api/login";
+    else {
+      const Base_Url = "http://192.168.211.47:8080/api/login";
       const requestBody = {
         email: email,
         password: password,
       };
       AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError);
     }
-    
+
   };
-  useEffect(()=>{
-    document.getElementById("emailInput").addEventListener("keypress",()=>{
-      document.getElementById('emailErr').innerText=''
-      
+  useEffect(() => {
+    document.getElementById("emailInput").addEventListener("keypress", () => {
+      document.getElementById('emailErr').innerText = ''
+
     })
     // document.getElementById('passwordInput').addEventListener("keypress",()=>{
     //   document.getElementById("AuthErr").innerText=""
     // })
-  },[])
+  }, [])
   return (
     <div className="cover">
       <h2>LOGIN</h2>
       <form onSubmit={handleClick}>
-        {error&&<p id='AuthErr'>{error}</p>}
+        {error && <p id='AuthErr'>{error}</p>}
         <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
-          onChange={(e)=>{setEmail(e.target.value)}}
+          onChange={(e) => { setEmail(e.target.value) }}
           id="emailInput"
           value={email}
         />
@@ -75,7 +75,7 @@ const Login = ({ onFormSwitch }) => {
           <input
             type={viewPassword ? "text" : "password"}
             name="password"
-            onChange={(e)=>{setPassword(e.target.value)}}
+            onChange={(e) => { setPassword(e.target.value) }}
             value={password}
             id="passwordInput"
           />

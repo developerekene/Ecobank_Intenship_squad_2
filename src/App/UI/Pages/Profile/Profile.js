@@ -7,12 +7,43 @@ import Button from "../../Components/button/ToggleSignupLogin/Button"
 import { FaFlag } from 'react-icons/fa';
 import { IoLogoYoutube, IoLogoInstagram, IoLogoGithub, IoLogoFigma } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
+import Input from '../../Components/input/Input';
+import TextArea from '../../Components/textarea/TextArea';
+import { HiX } from "react-icons/hi";
+import Select from 'react-select';
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Navigate, useNavigate } from 'react-router-dom';
 
+
+
 const Profile = () => {
+
+  const [modal, setmodal] = useState(false);
+  const [address, setAddress] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [skills, setSkills] = useState("");
+  const [about, setAbout] = useState("");
+  const [education, setEducation] = useState("");
+  const [experience, setExperience] = useState("");
+  const [youtube, setYoutube] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [github, setGithub] = useState("");
+  const [figma, setFigma] = useState("");
+  const toggleModal = () => {
+    setmodal(!modal);
+  }
+
+  const options = [
+    { value: '100level', label: 'Web Development' },
+    { value: '200level', label: 'UX Design' },
+    { value: '300level', label: 'UI Design' },
+    { value: '400level', label: 'Data Science' },
+    { value: 'a-level', label: 'Others...' },
+  ]
+
   const [toggler, setToggler] = useState("about")
   const userDetails = document.getElementsByClassName('tab')
   const [fullname, setFullname] = useState("");
@@ -22,13 +53,14 @@ const Profile = () => {
     }
     e.target.classList.add('active')
   }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert("form submitted")
+  }
   const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
   }, [])
-  // const profileData = JSON.parse(localStorage.getItem("profileData")) 
-  // setFullname(profileData.fullname)
 
   return (
     <>
@@ -56,9 +88,46 @@ const Profile = () => {
             </div>
           </div>
           <div className="col-md-2">
-            <NavigateButton type="submit" text={"Edit Profile"} class="edit-profile" />
+
+            {
+              modal && (
+                <div className="modal">
+
+                  <div className="overlay">
+                  </div>
+                  <div className="modal-container">
+                    <div className="close-modal" onClick={toggleModal}>
+                      <HiX />
+                    </div>
+                    <div className="modal-content">
+                      <h2>Profile Setting</h2>
+                      <form style={{ width: "100%", }} onSubmit={(e) => handleSubmit()}>
+                        <Input type={"text"} id={"jobTitle"} labelCont="Job Title" elementContent={jobTitle} setter={setJobTitle} />
+                        <Input type={"text"} id={"address"} labelCont="Address" elementContent={address} setter={setAddress} />
+                        <Input type={"text"} id={"skills"} labelCont="Skills" elementContent={skills} setter={setSkills} />
+                        <TextArea labelCont={"About"} id={"about"} rows={4} cols={""} elementContent={about} setter={setAbout} />
+                        <TextArea labelCont={"Education"} id={"education"} rows={4} cols={""} elementContent={education} setter={setEducation} />
+                        <TextArea labelCont={"Experience"} id={"experience"} rows={4} cols={""} elementContent={experience} setter={setExperience} />
+                        <Input type={"text"} id={"youtube"} labelCont="Youtube Link" elementContent={youtube} setter={setYoutube} />
+                        <Input type={"text"} id={"Instagram"} labelCont="Instagram Link" elementContent={instagram} setter={setInstagram} />
+                        <Input type={"text"} id={"github"} labelCont="Github Link" elementContent={github} setter={setGithub} />
+                        <Input type={"text"} id={"address"} labelCont="Figma Link" elementContent={figma} setter={setFigma} />
+                      </form>
+                      <Button
+                        type={"submit"}
+                        onClick={() => {
+                          toggleModal()
+                        }}
+                        text={"Save"} />
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+
+            <Button type="submit" text={"Edit Profile"} onClick={() => toggleModal()} class="edit-profile" />
             <NavigateButton type="submit" text={"Upload CV"} class="upload-cv" />
-            <Button type="button" onClick={()=>{localStorage.removeItem("token"); navigate("/login")}} text={"Log Out"}/>
+            <Button type="button" onClick={() => { localStorage.removeItem("token"); navigate("/login") }} text={"Log Out"} />
           </div>
         </div>
 
@@ -69,10 +138,10 @@ const Profile = () => {
           </div>.
 
           <div className='buttons'>
-              <button>Web development</button>
-              <button>UX Design</button>
-              <button>UI Design</button>
-              <button>Data science</button>
+            <button>Web development</button>
+            <button>UX Design</button>
+            <button>UI Design</button>
+            <button>Data science</button>
           </div>
         </div>
 
@@ -132,11 +201,11 @@ const Profile = () => {
               <p className='title'>WORK LINK</p>
               <div>
                 <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>
-                <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> 
-                <a href='https://github.com/'><IoLogoGithub />Github</a> 
-                <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> 
+                <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a>
+                <a href='https://github.com/'><IoLogoGithub />Github</a>
+                <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a>
               </div>
-              
+
             </div>
           </div>
           {/* right side url */}
