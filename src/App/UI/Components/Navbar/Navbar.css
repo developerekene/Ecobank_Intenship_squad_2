@@ -60,6 +60,20 @@ input{
     transform: scale(1.08);
     transition: all 0.5s ease-in-out;
 }
+.nav-item-container .navButtons{
+    position: relative;
+}
+.nav-item-container .navButtons .required::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position:absolute;
+    top: 0;
+    left: 30px;
+    
+}
 .openIcon{
     display: none;
 }

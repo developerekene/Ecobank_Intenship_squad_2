@@ -20,8 +20,10 @@ const Login = ({ onFormSwitch }) => {
   const handleResponse = (response) => {
     const token = response.data.token;
     const profileData = response.data.profileData;
-    localStorage.setItem("token", token);
-    localStorage.setItem("profileData", profileData);
+    const profileDataString = JSON.stringify(profileData);
+    console.log(profileDataString)
+    localStorage.setItem("token",token);
+    localStorage.setItem("profileData",profileDataString);
     navigate("/")
   }
   //This function handles Error from API

@@ -54,10 +54,10 @@ const Navbar = () => {
           }
         </div>
         <div className='navButtons'>
-          <a href={"/profile"}>
-            <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
-          </a>
-          <DarkMode togglerState={togglerState} />
+            <a href={"/profile"} className={`${localStorage.getItem("dataNull") ? "required": ""}`}>
+              <img className='profile-picture' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsQKVgKb7G1p4Y-l2k9Vk9VSy5rVixd4D8mQ&usqp=CAU" alt='' />
+            </a>
+            <DarkMode togglerState ={togglerState} />
         </div>
         <div className="openIcon" onClick={() => { setOpenNav(!openNav) }}>
           <HiMenu />

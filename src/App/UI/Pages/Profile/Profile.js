@@ -10,12 +10,15 @@ import { FaRegStar } from "react-icons/fa6";
 import Input from '../../Components/input/Input';
 import TextArea from '../../Components/textarea/TextArea';
 import { HiX } from "react-icons/hi";
-import Select from 'react-select';
 
-
+import {FcAbout} from "react-icons/fc"
+import {IoMdAddCircle} from "react-icons/io"
 import AOS from 'aos';
+
 import 'aos/dist/aos.css';
 import { Navigate, useNavigate } from 'react-router-dom';
+import Skills from '../../Components/skills/Skills';
+import Timelinecontent from './Timelinecontent';
 
 
 
@@ -36,14 +39,6 @@ const Profile = () => {
     setmodal(!modal);
   }
 
-  const options = [
-    { value: '100level', label: 'Web Development' },
-    { value: '200level', label: 'UX Design' },
-    { value: '300level', label: 'UI Design' },
-    { value: '400level', label: 'Data Science' },
-    { value: 'a-level', label: 'Others...' },
-  ]
-
   const [toggler, setToggler] = useState("about")
   const userDetails = document.getElementsByClassName('tab')
   const [fullname, setFullname] = useState("");
@@ -58,9 +53,21 @@ const Profile = () => {
     alert("form submitted")
   }
   const navigate = useNavigate();
+
+  const profileData = JSON.parse(localStorage.getItem("profileData"));
+  const {aboutD,addressD,educationD,experienceD,figmaD,fullnameD,githubD,instagramD,jobTitleD,skillsD,youtubeD}=profileData;
+  
+  console.log(profileData)
   useEffect(() => {
     AOS.init();
-  }, [])
+    for(const el in profileData){
+      if(profileData[el]===null&&el!=="id"){
+        localStorage.setItem("dataNull",true)
+      }
+    }
+  }, [profileData]);
+
+  
 
   return (
     <>
@@ -78,12 +85,10 @@ const Profile = () => {
 
           <div className="middle-container">
             <div className="col-md-6" data-aos="fade-left">
-              <h5 className='name'>{fullname}</h5>
-              <h6 className='job'>Frontend web developer</h6>
-              <p>1234 Elm Street</p>
-              <p>City, State, Zip Code</p>
-              <p>
-                <FaFlag /> United States
+              <h5 className='name'>{profileData.fullname}</h5>
+              <h6 className='job'><i>{profileData.jobTitle!==null? profileData.jobTitle : "Job title not set"}</i></h6>
+              <p className='address'>
+                <i>{profileData.address!==null? profileData.address : "Address not set"}</i>
               </p>
             </div>
           </div>
@@ -124,10 +129,11 @@ const Profile = () => {
                 </div>
               )
             }
-
-            <Button type="submit" text={"Edit Profile"} onClick={() => toggleModal()} class="edit-profile" />
+            <Button type="submit" text={"Edit Profile"} onClick={() => toggleModal()} Class={`${localStorage.getItem("dataNull") ? "shakeButton" : ""} `} />
             <NavigateButton type="submit" text={"Upload CV"} class="upload-cv" />
-            <Button type="button" onClick={() => { localStorage.removeItem("token"); navigate("/login") }} text={"Log Out"} />
+            <Button type="button" onClick={()=>{
+              localStorage.removeItem("token"); 
+            navigate("/login")}} text={"Log Out"}/>
           </div>
         </div>
 
@@ -138,10 +144,13 @@ const Profile = () => {
           </div>.
 
           <div className='buttons'>
-            <button>Web development</button>
-            <button>UX Design</button>
-            <button>UI Design</button>
-            <button>Data science</button>
+            { profileData.skills ?
+              profileData.skills.map((skill,id)=>(
+                <Skills skill={skill} id={id}/>
+              ))
+              :
+              <em style={{color:"var(--primary-color)"}}>Skills not set</em>
+            }
           </div>
         </div>
 
@@ -165,28 +174,47 @@ const Profile = () => {
             {
               toggler === "about" ?
                 <div className='about-container'>
-                  <p>I'm a Product Designer based in Los Angeles, USA. I specialise in Web development, brand strategy and UX/UI desin. I'm always striving to grow and learn something new and I don't take myself too seriously.</p>
+                  {
+                    profileData.about ?
+                    <p>{profileData.about}</p>
+                    :
+                    <div>
+                      <FcAbout />
+                      <h4>Tell companies about you</h4>
+                    </div>
+                  }
+                  
                 </div>
                 :
                 <div className='timeline-container'>
                   <div className='Education-section'>
                     <h3>Education</h3>
-                    <div className='timeline-content' data-aos="fade-up">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis quam eget dui pulvinar, sed vulputate tortor vestibulum. Vivamus gravida dui vel justo ullamcorper, vel viverra elit blandit. Nullam nec consectetur orci. Quisque ac diam eu arcu euismod fringilla. Maecenas in bibendum ex.
-                      </p>
-
-                    </div>
+                    {
+                      profileData.education ?
+                      profileData.education.map((education,id)=>(
+                        <Timelinecontent content={education} key={id} />
+                      ))
+                      :
+                      <div className='addTimeline'>
+                        <IoMdAddCircle />
+                        <span>Let Companies know about your education</span>
+                      </div>
+                    }
                   </div>
 
                   <div className='Experience-section'>
                     <h3>Experience</h3>
-                    <div className='timeline-content' data-aos="fade-up">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis quam eget dui pulvinar, sed vulputate tortor vestibulum. Vivamus gravida dui vel justo ullamcorper, vel viverra elit blandit. Nullam nec consectetur orci. Quisque ac diam eu arcu euismod fringilla. Maecenas in bibendum ex.
-                      </p>
-
-                    </div>
+                    {
+                      profileData.experience ?
+                      profileData.experience.map((experience,id)=>(
+                        <Timelinecontent content={experience} key={id} />
+                      ))
+                      :
+                      <div className='addTimeline'> 
+                        <IoMdAddCircle />
+                        <p>Let Companies know about your Experience</p>
+                      </div>
+                    }
 
                   </div>
                 </div>
@@ -200,10 +228,10 @@ const Profile = () => {
             <div className="profile-work" data-aos="fade-up">
               <p className='title'>WORK LINK</p>
               <div>
-                <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>
-                <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a>
-                <a href='https://github.com/'><IoLogoGithub />Github</a>
-                <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a>
+                {profileData.youtube && <a href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>}
+               { profileData.instagram && <a href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> }
+                {profileData.github && <a href='https://github.com/'><IoLogoGithub />Github</a> }
+                {profileData.figma && <a href=' https://www.figma.com/'><IoLogoFigma />Figma</a> }
               </div>
 
             </div>

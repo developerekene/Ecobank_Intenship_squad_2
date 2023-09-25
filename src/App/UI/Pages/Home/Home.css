@@ -115,13 +115,6 @@
     padding-inline: 3rem;
     margin-top: 20px;
 }
-.Home .modal-content{
-    max-width: unset;
-    width: 70%;
-}
-.Home .modal-content h2{
-    margin-bottom: 20px;
-}
 @media (max-width:860px) {
 
     .hero-section .hero-image img:nth-of-type(2){
