@@ -12,9 +12,7 @@ import Footer from '../../Components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Tools } from '../../../utils/Constant';
-import { useState } from 'react';
-import Input from '../../Components/input/Input';
-import TextArea from '../../Components/textarea/TextArea';
+
 
 
 
@@ -23,6 +21,7 @@ function Home() {
   
   useEffect(() => {
     AOS.init();
+    console.log(JSON.parse(localStorage.getItem("profileData")))
   }, []);
 
   return (

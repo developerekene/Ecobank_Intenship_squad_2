@@ -465,6 +465,58 @@ div.react-select__placeholder {
     top: -3px;
     right: -3px;
 }
+.profileSubmit {
+    background-color: #FF7A00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    color: white;
+    margin: 6px 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileModal .modal-content{
+    max-width: unset !important;
+    width: 70% !important;
+}
+.profileModal .modal-content h2{
+    margin-bottom: 20px !important;
+}
+.profileSubmit:hover {
+    background-color: #ffb261;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+.modal-content .skillset{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.modal-content .skillset div{
+    display: flex;
+    background-color: #ffb261;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    gap: 5px;
+    text-transform: capitalize;
+}
+.modal-content .skillset div svg{
+    font-size: 1.2rem;
+}
 @keyframes shakeButton {
     0% {
         transform: rotateZ(0deg);
@@ -612,7 +664,9 @@ div.react-select__placeholder {
     .skills-container .buttons button {
         font-size: 0.6rem;
     }
-
+    .profileModal .modal-content h2{
+        font-size: 1.5rem;
+    }
     .about-container p {
         width: 90%;
     }

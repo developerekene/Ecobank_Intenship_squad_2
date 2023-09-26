@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Button({type,onClick,text,Class}) {
+function Button({onClick,text,Class,id}) {
+
   return (
     <div>
-      <button onClick={onClick} type={type} className={`button ${Class}`}>
+      <button onClick={onClick} id={id} className={`button ${Class}`}>
         {text}
       </button>
     </div>

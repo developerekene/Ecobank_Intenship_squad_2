@@ -18,13 +18,14 @@ const Login = ({ onFormSwitch }) => {
   const navigate = useNavigate();
   //This function handles response from API
   const handleResponse = (response) => {
+    console.log(response)
     const token = response.data.token;
     const profileData = response.data.profileData;
     const profileDataString = JSON.stringify(profileData);
-    console.log(profileDataString)
     localStorage.setItem("token",token);
     localStorage.setItem("profileData",profileDataString);
     navigate("/")
+
   }
   //This function handles Error from API
   const handleError = (error) => {
@@ -39,7 +40,7 @@ const Login = ({ onFormSwitch }) => {
       document.getElementById('emailErr').innerText = 'invalid Email'
     }
     else {
-      const Base_Url = "http://192.168.211.47:8080/api/login";
+      const Base_Url = "http://localhost:8080/api/login";
       const requestBody = {
         email: email,
         password: password,
@@ -51,11 +52,8 @@ const Login = ({ onFormSwitch }) => {
   useEffect(() => {
     document.getElementById("emailInput").addEventListener("keypress", () => {
       document.getElementById('emailErr').innerText = ''
-
     })
-    // document.getElementById('passwordInput').addEventListener("keypress",()=>{
-    //   document.getElementById("AuthErr").innerText=""
-    // })
+    
   }, [])
   return (
     <div className="cover">

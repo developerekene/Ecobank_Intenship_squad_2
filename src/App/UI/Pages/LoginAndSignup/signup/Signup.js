@@ -39,8 +39,8 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
             document.getElementById("passVal").innerText="Password must be at least 8 characters long";
         }
         if(isValid===true){
-            e.preventDefault()
-            const Base_Url = "http://192.168.211.47:8080/api/users/signup"
+            
+            const Base_Url = "http://localhost:8080/api/users/signup"
             
             const requestBody = {
                 "firstname" : firstname,
