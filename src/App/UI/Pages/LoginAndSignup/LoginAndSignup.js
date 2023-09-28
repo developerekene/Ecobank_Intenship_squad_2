@@ -5,11 +5,14 @@ import Login from "./login/Login";
 import handWave from '../../../Image/png/hand-wave.png';
 import Lottie from "lottie-react";
 import checkmarkData from '../../../Constants/checkmark.json'
+import {MutatingDots} from "react-loader-spinner"
+
 
 const LoginAndSignup = () => {
   const [currentForm, setCurrentForm] = useState("Login");
   const [message, setMessage] = useState(false)
   const [active, setActive] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   if(active){
     document.body.classList.add('active')
@@ -35,7 +38,7 @@ const LoginAndSignup = () => {
   //   setMessage(!message)
   // }
   return (
-    <div className="LoginSignup">
+    <div className="LoginSignup" style={loading===true ? {overflow: 'hidden',backgroundColor:"#8282826f"} : {}}>
       <div className="Welcome-Users-Text">
           <img src={handWave} className="wave-emoji" alt="wave emoji" width={"250px"} />
           <h3>Welcome!
@@ -59,15 +62,30 @@ const LoginAndSignup = () => {
             :
             <></>
         }
-      <div className="card">
+      <div className="card"  >
         {currentForm === "Login" ? (
           // <a href="/opportunity">
-            <Login onFormSwitch={toggleForm} />
+            <Login onFormSwitch={toggleForm} setLoading={setLoading}/>
           // </a>
         ) : (
           <Signup onFormSwitch={toggleForm} toggleMessage={toggleMessage}/>
         )}
       </div>
+        {
+        loading&&
+        <MutatingDots 
+        height="100"
+        width="100"
+        color="#FF7A00"
+        secondaryColor= '#FF7A00'
+        radius='12'
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass="spinner"
+        visible={true}
+        />
+       
+      } 
     </div>
   )
 };

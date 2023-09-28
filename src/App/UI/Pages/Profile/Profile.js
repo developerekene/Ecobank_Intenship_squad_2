@@ -17,6 +17,7 @@ import Skills from '../../Components/skills/Skills';
 import Timelinecontent from './Timelinecontent';
 import {BsCheckSquareFill} from 'react-icons/bs'
 import AxiosPostRequests from "../../../axios/AxiosPostRequests"
+import {MutatingDots} from "react-loader-spinner"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -36,6 +37,7 @@ const Profile = () => {
   const [instagram, setInstagram] = useState("");
   const [github, setGithub] = useState("");
   const [figma, setFigma] = useState("");
+  const [loading, setLoading] = useState(false);
   const toggleModal = () => {
     setmodal(!modal);
   }
@@ -90,7 +92,7 @@ const handleError = ( err) =>{
     profileData.figma = figma;
     const Base_Url = "http://localhost:8080/api/users/profile/update"
     const requestBody = profileData
-    AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
+    AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError, setLoading)
     toggleModal();
   }
 
@@ -303,6 +305,21 @@ const handleError = ( err) =>{
               )
             }
       <Footer />
+      {
+        loading&&
+        <MutatingDots 
+        height="100"
+        width="100"
+        color="#FF7A00"
+        secondaryColor= '#FF7A00'
+        radius='12'
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass="spinner"
+        visible={true}
+        />
+       
+      }
     </>
 
   )

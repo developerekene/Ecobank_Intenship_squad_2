@@ -2,7 +2,6 @@ import {useEffect,React} from 'react';
 import "../Home/Home.css";
 import vectorGroup from "../../../Image/svg/vector-group.svg"
 import Button from '../../Components/button/NavigateButton/NavigateButton';
-import OnClick from '../../Components/button/ToggleSignupLogin/Button'
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 
@@ -32,7 +31,7 @@ function Home() {
           <div className="welcome-text">
             <h2>Connecting Talent to Companies</h2>
             <p>A revolutionary platform dedicated to empowering young interns by connecting them with companies seeking their skills and creativity.</p>
-            <Button text={"Get Started"} />
+            <Button link={"/companies"}  text={"Get Started"} />
           </div>
           <div className="hero-image">
             <img src={vectorGroup} alt="" />
