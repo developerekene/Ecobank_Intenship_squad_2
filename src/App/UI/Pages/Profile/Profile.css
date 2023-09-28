@@ -480,7 +480,12 @@ div.react-select__placeholder {
     justify-content: center;
     align-items: center;
 }
-
+.profileModal .modal-content h2, form,input,textarea{
+    color: var(--primary-color);
+}
+.profileModal .modal-content form .skillset{
+    color: black;
+}
 .profileModal .modal-content{
     max-width: unset !important;
     width: 70% !important;
