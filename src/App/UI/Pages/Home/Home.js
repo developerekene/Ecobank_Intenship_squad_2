@@ -21,7 +21,6 @@ function Home() {
   
   useEffect(() => {
     AOS.init();
-    console.log(JSON.parse(localStorage.getItem("profileData")))
   }, []);
 
   return (
