@@ -68,7 +68,7 @@ const LoginAndSignup = () => {
             <Login onFormSwitch={toggleForm} setLoading={setLoading}/>
           // </a>
         ) : (
-          <Signup onFormSwitch={toggleForm} toggleMessage={toggleMessage}/>
+          <Signup onFormSwitch={toggleForm} toggleMessage={toggleMessage} setLoading={setLoading}/>
         )}
       </div>
         {

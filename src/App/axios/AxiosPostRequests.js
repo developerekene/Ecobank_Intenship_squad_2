@@ -6,14 +6,8 @@ const AxiosPostRequests = async (endPoint,requestBody,handleResponse,handleError
         setLoading(false)
         handleResponse(res)
         
-    }catch(err){
-      
-        if(err.code!=="ERR_NETWORK")
-        handleError(err.response.data.message)
-    else{
-       
+    }catch(err){    
         console.log(err.message)
-    }
     }
 }
 
