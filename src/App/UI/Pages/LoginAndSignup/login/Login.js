@@ -8,7 +8,8 @@ import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = ({ onFormSwitch }) => {
+
+const Login = ({ onFormSwitch, setLoading}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [viewPassword, setViewPassword] = useState(false);
@@ -18,7 +19,6 @@ const Login = ({ onFormSwitch }) => {
   const navigate = useNavigate();
   //This function handles response from API
   const handleResponse = (response) => {
-    console.log(response)
     const token = response.data.token;
     const profileData = response.data.profileData;
     const profileDataString = JSON.stringify(profileData);
@@ -35,6 +35,7 @@ const Login = ({ onFormSwitch }) => {
   //This function handles Form submit
   const handleClick = (e) => {
     e.preventDefault();
+    setLoading(true);
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     if (!emailRegex.test(email)) {
       document.getElementById('emailErr').innerText = 'invalid Email'
@@ -45,7 +46,7 @@ const Login = ({ onFormSwitch }) => {
         email: email,
         password: password,
       };
-      AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError);
+      AxiosPostRequests(Base_Url, requestBody, handleResponse, handleError, setLoading);
     }
 
   };

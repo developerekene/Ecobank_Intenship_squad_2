@@ -8,7 +8,7 @@ import AxiosPostRequests from "../../../../axios/AxiosPostRequests";
 // import Lottie from 'react-lottie';
 // import checkmarkData from '../../../../Constants/checkmark.json'
 
-const Signup = ({onFormSwitch,toggleMessage}) =>{
+const Signup = ({onFormSwitch,toggleMessage,setLoading}) =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const[firstname, setFirstName] = useState("")
@@ -48,7 +48,7 @@ const Signup = ({onFormSwitch,toggleMessage}) =>{
                 "email" : email,
                 "password" : password
             }
-            AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
+            AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError,setLoading)
         }
         if (firstname==="") {
             document.getElementById("fnameVal").innerText="cannot be empty";

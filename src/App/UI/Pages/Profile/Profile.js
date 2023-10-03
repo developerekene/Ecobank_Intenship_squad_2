@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
@@ -16,6 +17,7 @@ import Skills from '../../Components/skills/Skills';
 import Timelinecontent from './Timelinecontent';
 import {BsCheckSquareFill} from 'react-icons/bs'
 import AxiosPostRequests from "../../../axios/AxiosPostRequests"
+import {MutatingDots} from "react-loader-spinner"
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,6 +37,7 @@ const Profile = () => {
   const [instagram, setInstagram] = useState("");
   const [github, setGithub] = useState("");
   const [figma, setFigma] = useState("");
+  const [loading, setLoading] = useState(false);
   const toggleModal = () => {
     setmodal(!modal);
   }
@@ -50,7 +53,6 @@ const Profile = () => {
     return storedData ? JSON.parse(storedData) : {};
   });
 
-
   const setActive = (e) => {
     for (let i = 0; i < userDetails.length; i++) {
       userDetails[i].classList.remove('active')
@@ -61,9 +63,6 @@ const Profile = () => {
  
 
   const navigate = useNavigate();
-  // useEffect(()=>{
-  //   localStorage.setItem("profileData",JSON.stringify(localStorage.getItem(updateData)))
-  // },[updateData])
 
   const handleResponse=(res)=>{
     if(res.status>=200&&res.status<300){
@@ -81,7 +80,6 @@ const handleError = ( err) =>{
 }
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("form submitted")
     profileData.jobTitle = jobTitle;
     profileData.address = address;
     profileData.skills = skillSet;
@@ -94,12 +92,13 @@ const handleError = ( err) =>{
     profileData.figma = figma;
     const Base_Url = "http://localhost:8080/api/users/profile/update"
     const requestBody = profileData
-    AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError)
+    AxiosPostRequests(Base_Url,requestBody,handleResponse,handleError, setLoading)
     toggleModal();
-   
   }
+
   const editProfile =()=>{
     toggleModal();
+    //Set the form input and textArea values as what is the localstorage
     setJobTitle(profileData.jobTitle)
     setAddress(profileData.address)
     setSkillSet(profileData.skills)
@@ -110,7 +109,6 @@ const handleError = ( err) =>{
     setInstagram(profileData.instagram)
     setGithub(profileData.github)
     setFigma(profileData.figma)
-   //Make Axios Request
   }
   useEffect(() => {
     AOS.init();
@@ -122,12 +120,9 @@ const handleError = ( err) =>{
         break; // Exit the loop since you've already found a null property
       }
     }
-    
     localStorage.setItem("dataNull", dataNull);
   }, [profileData,handleSubmit]);
-
-  console.log(localStorage.getItem("dataNull"))
- 
+  
   const handleskillList =(list)=>{
     setSkillSet(list);
   }
@@ -135,8 +130,6 @@ const handleError = ( err) =>{
     console.log(skillSet)
     setSkillSet(skillSet.filter((item, index) => index !== id))
   }
-
-  console.log("profileData.skills:", profileData.skills)
   return (
     <>
       <Navbar />
@@ -225,7 +218,7 @@ const handleError = ( err) =>{
                     {
                       profileData.education !==null&& profileData.education!==""?
                     
-                      <Timelinecontent content={education}/>
+                      <Timelinecontent content={profileData.education}/>
                       
                       :
                       <div className='addTimeline'>
@@ -239,7 +232,7 @@ const handleError = ( err) =>{
                     <h3>Experience</h3>
                     {
                       profileData.experience !==null&& profileData.experience!==""?
-                      <Timelinecontent content={experience} />
+                      <Timelinecontent content={profileData.experience} />
                       :
                       <div className='addTimeline'> 
                         <IoMdAddCircle />
@@ -259,10 +252,10 @@ const handleError = ( err) =>{
             <div className="profile-work" data-aos="fade-up">
               <p className='title'>WORK LINK</p>
               <div>
-                {profileData.youtube && <a target="_blank" href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>}
-               { profileData.instagram && <a target="_blank" href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> }
-                {profileData.github && <a target="_blank" href='https://github.com/'><IoLogoGithub />Github</a> }
-                {profileData.figma && <a target="_blank" href=' https://www.figma.com/'><IoLogoFigma />Figma</a> }
+                {profileData.youtube && <a target="_blank" rel='noreferrer' href=' https://www.youtube.com/'><IoLogoYoutube />Youtube</a>}
+               { profileData.instagram && <a target="_blank" rel='noreferrer' href='https://www.instagram.com/'><IoLogoInstagram />Instagram</a> }
+                {profileData.github && <a target="_blank" rel='noreferrer' href='https://github.com/'><IoLogoGithub />Github</a> }
+                {profileData.figma && <a target="_blank" rel='noreferrer' href=' https://www.figma.com/'><IoLogoFigma />Figma</a> }
               </div>
 
             </div>
@@ -312,6 +305,21 @@ const handleError = ( err) =>{
               )
             }
       <Footer />
+      {
+        loading&&
+        <MutatingDots 
+        height="100"
+        width="100"
+        color="#FF7A00"
+        secondaryColor= '#FF7A00'
+        radius='12'
+        ariaLabel="mutating-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass="spinner"
+        visible={true}
+        />
+       
+      }
     </>
 
   )

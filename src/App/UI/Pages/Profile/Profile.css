@@ -137,7 +137,9 @@
     gap: 20px;
     color: rgb(143, 143, 143);
 }
-
+.timeline-container div{
+    flex: 0.5;
+}
 .timeline-container .Experience-section {
     color: var(--primary-color);
 }
@@ -344,10 +346,7 @@
     cursor: pointer;
 }
 
-/* .col-md-2 div {
-    display: flex;
-    justify-content: flex-end;
-} */
+
 
 .buttons .cancel {
     background-color: white;
@@ -367,32 +366,7 @@
     transform: scale(1.05);
 }
 
-/* .address {
-    margin-top: 20px;
-}
 
-.skills {
-    margin-top: 20px;
-}
-
-.aboutTimeline .about{
-    margin-top: 20px;
-}
-
-.aboutTimeline .timeline{
-    margin-top: 20px;
-}
-
-.workLink {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.buttons {
-    margin-bottom: -10px;
-} */
-
-/* styles.css */
 
 div.react-select-container {
     width: 100%;
@@ -480,7 +454,12 @@ div.react-select__placeholder {
     justify-content: center;
     align-items: center;
 }
-
+.profileModal .modal-content h2, form,input,textarea{
+    color: var(--primary-color);
+}
+.profileModal .modal-content form .skillset{
+    color: black;
+}
 .profileModal .modal-content{
     max-width: unset !important;
     width: 70% !important;

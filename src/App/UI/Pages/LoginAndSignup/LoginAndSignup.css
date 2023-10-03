@@ -7,6 +7,14 @@
 .LoginSignup .card .cover form input{
     font-size: 1rem;
 }
+.spinner{
+    position:absolute;
+    left: 50%;
+    align-items: center;
+    height: 100vh;
+    width: 100vh;
+    
+}
 .LoginSignup{
     display: flex;
     align-items: center;
